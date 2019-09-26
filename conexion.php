@@ -12,5 +12,5 @@
 	if(!$conection){
 		echo "Error en la conexión";
 	}
-
+//comentarios...
 ?>
