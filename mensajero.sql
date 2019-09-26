@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-12-2018 a las 06:54:16
--- Versión del servidor: 10.1.28-MariaDB
--- Versión de PHP: 7.1.10
+-- Tiempo de generación: 26-09-2019 a las 20:45:24
+-- Versión del servidor: 10.1.19-MariaDB
+-- Versión de PHP: 5.6.24
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -19,8 +17,55 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `facturacion`
+-- Base de datos: `mensajero`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `carta`
+--
+
+CREATE TABLE `carta` (
+  `id_carta` int(11) NOT NULL,
+  `titulo` varchar(50) NOT NULL,
+  `categoria` varchar(50) DEFAULT NULL,
+  `contenido` varchar(5000) DEFAULT NULL,
+  `nombre_imagen` varchar(200) NOT NULL,
+  `imagen` varchar(300) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `carta`
+--
+
+INSERT INTO `carta` (`id_carta`, `titulo`, `categoria`, `contenido`, `nombre_imagen`, `imagen`) VALUES
+(13, 'test1', 'test1', 'test1', 'test1', 'repo_imagenes/registrar producto.jpg'),
+(14, '33', '33', '33333', '455555', 'repo_imagenes/notebook-gaming-5.jpg'),
+(15, 'ww', 'ww', 'wwww', 'world', 'repo_imagenes/Rog Wallpaper.jpg'),
+(16, 'dadadad', 'dadadada', 'gsdkheglfawegfljahwebjfaheb,dj', 'dadadada', 'repo_imagenes/descarga.jpg'),
+(17, 'dag', 'faffafafa', 'dhflasjeh', 'kluhliygldufys', 'repo_imagenes/2.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `categoria`
+--
+
+CREATE TABLE `categoria` (
+  `id_categoria` int(11) NOT NULL,
+  `categoria` varchar(40) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `categoria`
+--
+
+INSERT INTO `categoria` (`id_categoria`, `categoria`) VALUES
+(1, 'Medicina'),
+(2, 'Tecnologia'),
+(3, 'Ciencia'),
+(4, 'Naturaleza');
 
 -- --------------------------------------------------------
 
@@ -117,20 +162,6 @@ INSERT INTO `entradas` (`correlativo`, `codproducto`, `fecha`, `cantidad`, `prec
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `factura`
---
-
-CREATE TABLE `factura` (
-  `nofactura` bigint(11) NOT NULL,
-  `fecha` datetime NOT NULL,
-  `usuario` int(11) DEFAULT NULL,
-  `codcliente` int(11) DEFAULT NULL,
-  `totaltactura` decimal(10,2) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `producto`
 --
 
@@ -174,56 +205,23 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `proveedor`
+-- Estructura de tabla para la tabla `tipo_usuario`
 --
 
-CREATE TABLE `proveedor` (
-  `codproveedor` int(11) NOT NULL,
-  `proveedor` varchar(100) DEFAULT NULL,
-  `contacto` varchar(100) DEFAULT NULL,
-  `telefono` bigint(11) DEFAULT NULL,
-  `direccion` text,
-  `date_add` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `usuario_id` int(11) NOT NULL,
-  `estatus` int(11) NOT NULL DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `tipo_usuario` (
+  `id_tipousuario` int(11) NOT NULL,
+  `tipo_usuario` varchar(20) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcado de datos para la tabla `proveedor`
+-- Volcado de datos para la tabla `tipo_usuario`
 --
 
-INSERT INTO `proveedor` (`codproveedor`, `proveedor`, `contacto`, `telefono`, `direccion`, `date_add`, `usuario_id`, `estatus`) VALUES
-(1, 'BIC', 'Claudia Rosales', 789877889, 'Avenida las Americas', '2018-03-20 23:13:43', 1, 0),
-(2, 'CASIO', 'Jorge Herrera', 565656565656, 'Calzada Las Flores', '2018-03-20 23:14:41', 2, 0),
-(3, 'Omega', 'Julio Estrada', 982877489, 'Avenida Elena Zona 4, Guatemala', '2018-03-24 23:21:10', 1, 1),
-(4, 'Dell Compani', 'Roberto Estrada', 2147483647, 'Guatemala, Guatemala', '2018-03-24 23:21:59', 1, 1),
-(5, 'Olimpia S.A', 'Elena Franco Morales', 564535676, '5ta. Avenida Zona 4 Ciudad', '2018-03-24 23:22:45', 1, 1),
-(6, 'Oster', 'Fernando Guerra', 78987678, 'Calzada La Paz, Guatemala', '2018-03-24 23:24:43', 1, 1),
-(7, 'ACELTECSA S.A', 'Ruben PÃ©rez', 789879889, 'Colonia las Victorias', '2018-03-24 23:25:39', 1, 1),
-(8, 'Sony', 'Julieta Contreras', 89476787, 'Antigua Guatemala', '2018-03-24 23:26:45', 1, 1),
-(9, 'VAIO', 'Felix Arnoldo Rojas', 476378276, 'Avenida las Americas Zona 13', '2018-03-24 23:30:33', 1, 1),
-(10, 'SUMAR', 'Oscar Maldonado', 788376787, 'Colonia San Jose, Zona 5 Guatemala', '2018-03-24 23:32:28', 1, 1),
-(11, 'HP', 'Angel Cardona', 2147483647, '5ta. calle zona 4 Guatemala', '2018-03-24 23:52:20', 2, 1);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `rol`
---
-
-CREATE TABLE `rol` (
-  `idrol` int(11) NOT NULL,
-  `rol` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `rol`
---
-
-INSERT INTO `rol` (`idrol`, `rol`) VALUES
+INSERT INTO `tipo_usuario` (`id_tipousuario`, `tipo_usuario`) VALUES
 (1, 'Administrador'),
-(2, 'Supervisor'),
-(3, 'Vendedor');
+(2, 'Editor'),
+(3, 'Especialista'),
+(4, 'NiÃ±o');
 
 -- --------------------------------------------------------
 
@@ -233,220 +231,82 @@ INSERT INTO `rol` (`idrol`, `rol`) VALUES
 
 CREATE TABLE `usuario` (
   `idusuario` int(11) NOT NULL,
-  `nombre` varchar(50) DEFAULT NULL,
-  `correo` varchar(100) DEFAULT NULL,
-  `usuario` varchar(15) DEFAULT NULL,
-  `clave` varchar(100) DEFAULT NULL,
-  `rol` int(11) DEFAULT NULL,
+  `nombre` varchar(50) CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT NULL,
+  `correo` varchar(100) CHARACTER SET latin1 DEFAULT NULL,
+  `usuario` varchar(15) CHARACTER SET latin1 DEFAULT NULL,
+  `clave` varchar(100) CHARACTER SET latin1 DEFAULT NULL,
+  `tipo_usuario` int(11) DEFAULT NULL,
   `estatus` int(11) NOT NULL DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`idusuario`, `nombre`, `correo`, `usuario`, `clave`, `rol`, `estatus`) VALUES
-(1, 'Abel', 'info@abelosh.com', 'admin', '202cb962ac59075b964b07152d234b70', 1, 1),
-(2, 'Julio Estrada', 'julio@gmail.com', 'julio', 'c027636003b468821081e281758e35ff', 2, 1),
-(3, 'Carlos HernÃ¡ndez', 'carlos@gmail.com', 'carlos', 'dc599a9972fde3045dab59dbd1ae170b', 3, 1),
-(5, 'Marta Elena Franco', 'marta@gmail.com', 'marta', 'a763a66f984948ca463b081bf0f0e6d0', 3, 1),
-(7, 'Carol Cabrera', 'carol@gmail.com', 'carol', 'a9a0198010a6073db96434f6cc5f22a8', 2, 0),
-(8, 'Marvin Solares ', 'marvin@gmail.com', 'marvin', 'dba0079f1cb3a3b56e102dd5e04fa2af', 3, 1),
-(9, 'Alan Melgar', 'alan@gmail.com', 'alan', '02558a70324e7c4f269c69825450cec8', 2, 1),
-(10, 'Efrain GÃ³mez', 'efrain@gmail.com', 'efrain', '69423f0c254e5c1d2b0f5ee202459d2c', 2, 1),
-(11, 'Fran Escobar', 'fran@gmail.com', 'fran', '2c20cb5558626540a1704b1fe524ea9a', 1, 1),
-(12, 'Hana Montenegro', 'hana@gmail.com', 'hana', '52fd46504e1b86d80cfa22c0a1168a9d', 3, 1),
-(13, 'Fredy Miranda', 'fredy@gmail.com', 'fredy', 'b89845d7eb5f8388e090fcc151d618c8', 2, 1),
-(14, 'Roberto Salazar', 'roberto@hotmail.com', 'roberto', 'c1bfc188dba59d2681648aa0e6ca8c8e', 3, 1),
-(15, 'William Fernando PÃ©rez', 'william@hotmail.com', 'william', 'fd820a2b4461bddd116c1518bc4b0f77', 3, 1),
-(16, 'Francisco Mora', 'frans@gmail.com', 'frans', '64dd0133f9fb666ca6f4692543844f31', 3, 1),
-(17, 'Ruben Guevara', 'ruben@hotmail.es', 'ruben', '32252792b9dccf239f5a5bd8e778dbc2', 3, 1);
+INSERT INTO `usuario` (`idusuario`, `nombre`, `correo`, `usuario`, `clave`, `tipo_usuario`, `estatus`) VALUES
+(1, 'dag', 'dagner87@gmail.com', 'dag', 'b14061217e60302c96dfd2e510f3aa76', 1, 1),
+(2, 'Abel', 'info@abelosh.com', 'admin', '202cb962ac59075b964b07152d234b70', 1, 1),
+(4, 'Carlos HernÃ¡ndez', 'carlos@gmail.com', 'carlos', 'dc599a9972fde3045dab59dbd1ae170b', 3, 1),
+(18, 'perri', 'perri@gmail.com', 'perri', 'd6529b0e7871e4dd77343a741c60c350', 1, 1),
+(19, 'kid', 'kid@gmail.com', 'kid', '7de007e43f108e4b54b079f66e4285d8', 4, 1),
+(20, 'niÃ±o', 'nino@gmail.com', 'niÃ±o@gmail.com', '66e2d69fe0ec7dd2a6fd547b2e269303', 4, 1),
+(21, 'car', 'car@gmail.com', 'car', 'e6d96502596d7e7887b76646c5f615d9', 2, 1),
+(22, 'oo', 'oo@gmail.com', 'oo', 'e47ca7a09cf6781e29634502345930a7', 4, 1),
+(23, 'ssssssss', 'ss@gmail.com', 'sssss', '2d02e669731cbade6a64b58d602cf2a4', 1, 1),
+(24, '123', '123@gmail.com', '123', '202cb962ac59075b964b07152d234b70', 4, 1);
 
 --
 -- Índices para tablas volcadas
 --
 
 --
--- Indices de la tabla `cliente`
+-- Indices de la tabla `carta`
 --
-ALTER TABLE `cliente`
-  ADD PRIMARY KEY (`idcliente`),
-  ADD KEY `usuario_id` (`usuario_id`);
+ALTER TABLE `carta`
+  ADD PRIMARY KEY (`id_carta`);
 
 --
--- Indices de la tabla `detallefactura`
+-- Indices de la tabla `categoria`
 --
-ALTER TABLE `detallefactura`
-  ADD PRIMARY KEY (`correlativo`),
-  ADD KEY `codproducto` (`codproducto`),
-  ADD KEY `nofactura` (`nofactura`);
+ALTER TABLE `categoria`
+  ADD PRIMARY KEY (`id_categoria`);
 
 --
--- Indices de la tabla `detalle_temp`
+-- Indices de la tabla `tipo_usuario`
 --
-ALTER TABLE `detalle_temp`
-  ADD PRIMARY KEY (`correlativo`),
-  ADD KEY `nofactura` (`nofactura`),
-  ADD KEY `codproducto` (`codproducto`);
-
---
--- Indices de la tabla `entradas`
---
-ALTER TABLE `entradas`
-  ADD PRIMARY KEY (`correlativo`),
-  ADD KEY `codproducto` (`codproducto`);
-
---
--- Indices de la tabla `factura`
---
-ALTER TABLE `factura`
-  ADD PRIMARY KEY (`nofactura`),
-  ADD KEY `usuario` (`usuario`),
-  ADD KEY `codcliente` (`codcliente`);
-
---
--- Indices de la tabla `producto`
---
-ALTER TABLE `producto`
-  ADD PRIMARY KEY (`codproducto`),
-  ADD KEY `proveedor` (`proveedor`),
-  ADD KEY `usuario_id` (`usuario_id`);
-
---
--- Indices de la tabla `proveedor`
---
-ALTER TABLE `proveedor`
-  ADD PRIMARY KEY (`codproveedor`),
-  ADD KEY `usuario_id` (`usuario_id`);
-
---
--- Indices de la tabla `rol`
---
-ALTER TABLE `rol`
-  ADD PRIMARY KEY (`idrol`);
+ALTER TABLE `tipo_usuario`
+  ADD PRIMARY KEY (`id_tipousuario`);
 
 --
 -- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`idusuario`),
-  ADD KEY `rol` (`rol`);
+  ADD PRIMARY KEY (`idusuario`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT de la tabla `cliente`
+-- AUTO_INCREMENT de la tabla `carta`
 --
-ALTER TABLE `cliente`
-  MODIFY `idcliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
+ALTER TABLE `carta`
+  MODIFY `id_carta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 --
--- AUTO_INCREMENT de la tabla `detallefactura`
+-- AUTO_INCREMENT de la tabla `categoria`
 --
-ALTER TABLE `detallefactura`
-  MODIFY `correlativo` bigint(11) NOT NULL AUTO_INCREMENT;
-
+ALTER TABLE `categoria`
+  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
--- AUTO_INCREMENT de la tabla `detalle_temp`
+-- AUTO_INCREMENT de la tabla `tipo_usuario`
 --
-ALTER TABLE `detalle_temp`
-  MODIFY `correlativo` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `entradas`
---
-ALTER TABLE `entradas`
-  MODIFY `correlativo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
--- AUTO_INCREMENT de la tabla `factura`
---
-ALTER TABLE `factura`
-  MODIFY `nofactura` bigint(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `producto`
---
-ALTER TABLE `producto`
-  MODIFY `codproducto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
--- AUTO_INCREMENT de la tabla `proveedor`
---
-ALTER TABLE `proveedor`
-  MODIFY `codproveedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
---
--- AUTO_INCREMENT de la tabla `rol`
---
-ALTER TABLE `rol`
-  MODIFY `idrol` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
+ALTER TABLE `tipo_usuario`
+  MODIFY `id_tipousuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
-
---
--- Restricciones para tablas volcadas
---
-
---
--- Filtros para la tabla `cliente`
---
-ALTER TABLE `cliente`
-  ADD CONSTRAINT `cliente_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`idusuario`);
-
---
--- Filtros para la tabla `detallefactura`
---
-ALTER TABLE `detallefactura`
-  ADD CONSTRAINT `detallefactura_ibfk_2` FOREIGN KEY (`codproducto`) REFERENCES `producto` (`codproducto`),
-  ADD CONSTRAINT `detallefactura_ibfk_3` FOREIGN KEY (`nofactura`) REFERENCES `factura` (`nofactura`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `detalle_temp`
---
-ALTER TABLE `detalle_temp`
-  ADD CONSTRAINT `detalle_temp_ibfk_1` FOREIGN KEY (`nofactura`) REFERENCES `factura` (`nofactura`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `detalle_temp_ibfk_2` FOREIGN KEY (`codproducto`) REFERENCES `producto` (`codproducto`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `entradas`
---
-ALTER TABLE `entradas`
-  ADD CONSTRAINT `entradas_ibfk_1` FOREIGN KEY (`codproducto`) REFERENCES `producto` (`codproducto`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `factura`
---
-ALTER TABLE `factura`
-  ADD CONSTRAINT `factura_ibfk_2` FOREIGN KEY (`codcliente`) REFERENCES `cliente` (`idcliente`),
-  ADD CONSTRAINT `factura_ibfk_3` FOREIGN KEY (`usuario`) REFERENCES `usuario` (`idusuario`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `producto`
---
-ALTER TABLE `producto`
-  ADD CONSTRAINT `producto_ibfk_1` FOREIGN KEY (`proveedor`) REFERENCES `proveedor` (`codproveedor`),
-  ADD CONSTRAINT `producto_ibfk_2` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`idusuario`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `proveedor`
---
-ALTER TABLE `proveedor`
-  ADD CONSTRAINT `proveedor_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`idusuario`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `usuario`
---
-ALTER TABLE `usuario`
-  ADD CONSTRAINT `usuario_ibfk_1` FOREIGN KEY (`rol`) REFERENCES `rol` (`idrol`) ON DELETE CASCADE ON UPDATE CASCADE;
-COMMIT;
-
+  MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

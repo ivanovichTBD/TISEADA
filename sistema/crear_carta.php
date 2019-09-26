@@ -14,11 +14,16 @@
 		{
 			$alert='<p class="msg_error">Escribe tu carta, No dejes los campos vacios</p>';
 		}else{
-
+			
 			$titulo = $_POST['titulo'];
 			$categoria  = $_POST['categoria'];
 			$contenido   = $_POST['contenido'];
-            
+
+			$nombre_imagen = $_REQUEST['nombre_imagen'];
+			$imagen = $_FILES['imagen']['name'];
+			$ruta   = $_FILES['imagen']['tmp_name']; //ruta 
+			$destino = "repo_imagenes/".$imagen;  //destino donde se almacenara y le adjuntamos el nombre de la imagen
+			copy($ruta, $destino);   //para copiar el archivo al repositorio
             
 			$query = mysqli_query($conection,"SELECT * FROM carta WHERE titulo = '$titulo' OR contenido = '$contenido' ");
 			$result = mysqli_fetch_array($query);
@@ -27,8 +32,8 @@
 				$alert='<p class="msg_error">El titulo o contenido ya existen, prueba escribiendo otro</p>';
 			}else{
 
-				$query_insert = mysqli_query($conection,"INSERT INTO carta(titulo, categoria, contenido)
-																	VALUES('$titulo','$categoria','$contenido')");
+				$query_insert = mysqli_query($conection,"INSERT INTO carta(titulo, categoria, contenido, nombre_imagen, imagen)
+																	VALUES('$titulo','$categoria','$contenido', '$nombre_imagen','$destino')");
 				if($query_insert){
 					$alert='<p class="msg_save">Tu carta see mandó correctamente</p>';
 				}else{
@@ -64,42 +69,36 @@
 			<hr>
 			<div class="alert"><?php echo isset($alert) ? $alert : ''; ?></div>
 
-			<form action="" method="post">
-				<label for="nombre">Titulo</label>
-				<input type="text" name="titulo" id="titulo" placeholder="Nombre completo">
+			<form action="" method="post" enctype="multipart/form-data">
+				<label for="nombre">Titulo de tu Carta</label>
+				<input required  type="text" name="titulo" id="titulo" placeholder="Nombre completo">
 				<label for="correo">Categoria</label>
-				<input type="text" name="categoria" id="categoria" placeholder="Correo electrónico">
+				<input required  type="text" name="categoria" id="categoria" placeholder="Categoria">
                 <label for="usuario">Contenido</label>
-                <textarea name="contenido" id="contenido">Contenido</textarea>
-				<label for="tipo_usuario">Tipo Usuario</label>
-
-				<?php 
-
-					$query_tipo_usuario = mysqli_query($conection,"SELECT * FROM tipo_usuario");
-					mysqli_close($conection);
-					$result_tipo_usuario = mysqli_num_rows($query_tipo_usuario);
+                <textarea required  name="contenido" id="contenido"></textarea>
+				
+				<label for="nombre_imagen">Ingresa un titulo para tu foto</label>
+				<input type="text" name="nombre_imagen" id="nombre_imagen">
+				<label for="imagen">Selecciona una foto</label>
+				<input type="file" name="imagen" id="imagen">
 					
-
-				 ?>
-
-				<select disabled name="tipo_usuario" id="tipo_usuario" > <!--select desabilitado, no podra escoger un tipo de usuario porque es un niño-->
-					<?php 
-						if($result_tipo_usuario > 0)
-						{
-							while ($tipo_usuario = mysqli_fetch_array($query_tipo_usuario)) {
-					?>
-							<option value="<?php echo $tipo_usuario["id_tipousuario"]; ?>"><?php echo $tipo_usuario["tipo_usuario"] ?></option>
-					<?php 
-								# code...
-							}
-							
-						}
-					 ?>
-				</select>
+				
+						
 				<input type="submit" value="Mandar Carta" class="btn_save">
 
 			</form>
 
+			<?php
+        include '../conexion.php';
+			$query = mysqli_query($conection,"SELECT * FROM carta ");
+			
+        while($result = mysqli_fetch_array($query)){
+            echo $result["nombre_imagen"]."<br><br>";
+			echo '<img src= " '.$result["imagen"].' " width="300" heigth="300">  
+				  <br>
+				  <br>';//mostramos imagenes en una lista,s como un plus
+        }
+        ?>
 
 		</div>
 
