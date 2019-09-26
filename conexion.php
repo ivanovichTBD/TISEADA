@@ -12,9 +12,5 @@
 	if(!$conection){
 		echo "Error en la conexión";
 	}
-//comentarios...
-//otros comentarios.......................
-// commit.........................
-// dddddddddddddd
-//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    //comentarios
 ?>
