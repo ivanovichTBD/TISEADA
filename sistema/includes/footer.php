@@ -1,4 +1,4 @@
-<footer>
+<div class="posicion"><footer>
     <div class="footer-top"> 
        <div class="container">
          <div class="col-lg-2 col-xs-12 text-center">
@@ -51,12 +51,10 @@
 </footer>
 
 
-<div class="copyright">
-   <div class="container">
-   
-     <div class="row text-center">
-     	<p>Copyright © 2019</p>
-     </div>
-     
+
+<div id="sticky-footer" class=" bg-dark text-white-50 ">
+    <div class="container text-center">
+      <small>Copyright &copy; CONTROL Z</small>
     </div>
+</div>
 </div>
