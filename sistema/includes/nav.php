@@ -20,6 +20,7 @@
 					<ul>
 						<li><a href="crear_carta.php">Nueva Carta</a></li>
 						<li><a href="#">Lista e Historial de Cartas</a></li>
+						<li><a href="mostrar_plantilla.php">Plantillas</a></li>
 					</ul>
 				</li>
 				<li class="principal">
