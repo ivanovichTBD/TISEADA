@@ -15,6 +15,9 @@
 					</ul>
 				</li>
 			<?php } ?>
+
+			<?php if($_SESSION['tipo_usuario'] == 4){
+			  ?>
 				<li class="principal">
 					<a href="#">Escribir Carta</a>
 					<ul>
@@ -23,19 +26,13 @@
 						<li><a href="mostrar_plantilla.php">Plantillas</a></li>
 					</ul>
 				</li>
+			<?php } ?>
 				<li class="principal">
 					<a href="#">Publicaciones</a>
 					<ul>
 						<li><a href="#">Nuevo Publicación</a></li>
 						<li><a href="#">Lista e Historial de Publicaciones</a></li>
 					</ul>
-				</li>
-				<li class="principal">
-					<a href="#">Destacados???</a>
-					<ul>
-						<li><a href="#">Nuevo Producto</a></li>
-						<li><a href="#">Lista de Productos</a></li>
-				</ul>
 				</li>
 				</li>
 				<li class="principal">

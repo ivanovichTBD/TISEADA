@@ -5,6 +5,10 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+.Titulo{
+margin-left: 40%;	
+
+}
 body{
 	
 	background: linear-gradient(90deg, rgba(202,201,207,0.9615196420365021) 0%, rgba(11,208,195,1) 53%, rgba(31,110,135,1) 100%);
@@ -56,15 +60,15 @@ header{
 .header{
 	color: #FFF;
 	background: #0a4661;
-	height: 50px;
+	height: 70px;
 	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
 	display: -o-flex;
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
 	padding: 10px;
+	
 }
 .optionsBar{
     display: -webkit-flex;
@@ -72,8 +76,11 @@ header{
     display: -ms-flex;
     display: -o-flex;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-end;
+	align-items: center;
+	min-width: 100px;
+	margin-left: 30%;
+margin-right:30px; ;
 }
 .optionsBar span {
     color: #FFF;
@@ -99,8 +106,10 @@ header{
     display: flex;
     margin-left: 30px;
 }
+
 nav ul{
-	background: #058167;
+	background-color:#0a4661;
+
 	/*background: #05817d;*/
 	list-style: none;
 	display: -webkit-flex;
@@ -111,16 +120,23 @@ nav ul{
 	justify-content: left;
 	align-items: center;
 }
+nav ul li{
+	background-color: #0ca4ce;
+	border-radius: 5px;
+    border:4px solid;
+    border-color: #FFF;
+    padding: 0px;
+}
 nav ul > li a{
 	position: relative;
-	
+	background-color: #1faac8;
 }
 nav a{
 	color: #FFF;
 	display: block;
 	font-size: 10pt;
 	font-family: 'GothamBook';
-	padding: 15px 30px;
+	padding: 6px 30px;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	transition: background .5s;
@@ -159,18 +175,32 @@ nav li ul a{
 }
 nav li ul a:hover{
 	/*background: #2c9595;*/
-	background: #147556;
+	background: black;
+	color: white;
 	
 }
 nav li ul li:last-child{
 	border-radius: 10px 10px 10px 10px;
 	overflow: hidden;
 }
+ul{
+	margin-bottom: 0px;
+}
 #container{
-	padding: 90px 15px 15px;
+	padding-top: 125px;
 }
 /*****************************************************************/
-
+.fecha{
+	text-align: end;
+	margin-bottom: 0;
+	padding-right: 3%;
+	 background-color: #b0e4ea;
+ 
+ }
+ 
+/*
+fecag
+*/
 .form_register{
 	width: 450px;
 	margin: auto;
@@ -373,14 +403,14 @@ body{
   footer{
 	
 	  background-color:#02939e;
-	  padding: 60px 0px;
+	  padding-top: 15px;
   }
   
   footer ul{
 	  list-style:none;
 	  margin:0 auto;
 	  display:inline-block;
-	  padding-top:50px;
+	  padding-top:10px;
   }
   
   footer ul li{
@@ -398,7 +428,7 @@ body{
   }
   
   .footer-top{
-	  padding-bottom:50px;
+	  padding-bottom:10px;
   }
   
   .footer-top .fa{
@@ -423,5 +453,15 @@ body{
   .copyright p{
 	  font-size:12px;
 	  padding:15px 0 10px 0;
+
+  }
+  .posicion{
+
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 116px;
+	padding-bottom: 2.5rem;
+	padding-top: 1.5rem;
   }
   /*FIN FOOTER*/
