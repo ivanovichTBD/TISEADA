@@ -1,12 +1,13 @@
 @import url(../fonts/GothamBook.css);
 @import url(../fonts/GothamBold.css);
 *{
-	margin: 0;
+	margin: 0px;
 	padding: 0;
 	box-sizing: border-box;
 }
 body{
-	background: #ffebee;
+	
+	background: linear-gradient(90deg, rgba(202,201,207,0.9615196420365021) 0%, rgba(11,208,195,1) 53%, rgba(31,110,135,1) 100%);
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: 'arial';
@@ -357,3 +358,70 @@ table td{
 	cursor: pointer;
 	margin-left: 10px;
 }
+
+
+
+
+
+
+
+/*PARA EL FOOTER*/
+body{
+	font-family: 'Raleway', sans-serif;
+  }
+  
+  footer{
+	
+	  background-color:#02939e;
+	  padding: 60px 0px;
+  }
+  
+  footer ul{
+	  list-style:none;
+	  margin:0 auto;
+	  display:inline-block;
+	  padding-top:50px;
+  }
+  
+  footer ul li{
+	  float:left;
+  }
+  
+  footer ul li a{
+	  color:white;
+	  padding:20px;
+  }
+  
+  footer ul li a:hover{
+	  color:black;
+	  text-decoration:none;
+  }
+  
+  .footer-top{
+	  padding-bottom:50px;
+  }
+  
+  .footer-top .fa{
+	  font-size:18px;
+	  color: #FFF;
+	  padding-right:10px;
+  }
+  
+  .footer-top a{
+	  color:#FFF;
+	  text-decoration:none;
+  }
+  
+  .footer-top .col-lg-2:hover .fa , .footer-top .col-lg-2:hover a{
+	  color:black;
+  }
+  
+  .copyright{
+	  background-color:#f0f0f0;
+  }
+  
+  .copyright p{
+	  font-size:12px;
+	  padding:15px 0 10px 0;
+  }
+  /*FIN FOOTER*/

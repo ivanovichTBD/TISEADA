@@ -13,7 +13,7 @@
 	<?php include "includes/header.php"; ?>
 	<section id="container">
 		<h1>Bienvenido a la Pagina Principal</h1>
-
+		
 
 	</section>
 	<?php include "includes/footer.php"; ?>
