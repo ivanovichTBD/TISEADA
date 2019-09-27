@@ -1,0 +1,16 @@
+body{
+    background-image: url("../img/niño.png")
+}
+.card{
+    height: 330px;
+    margin-top: 10%;
+    margin-left: 46%;
+    margin-bottom: auto;
+    width: 312px;
+    background-color: rgba(9, 41, 112, 0.5) !important;
+    
+}
+-.crecu{
+    background-color: rgba(6, 104, 43, 0.5) !important;
+}
+
