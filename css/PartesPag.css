@@ -1,0 +1,316 @@
+*{
+    margin:0px;
+}
+.fondoP{
+   
+    background-image: radial-gradient(ellipse farthest-corner at 50% -60% , rgb(233, 185, 27) 0%, rgba(0, 0, 255, 0) 50%, rgb(91, 91, 238) 95%);
+    background-attachment:fixed;
+}
+/*Header---------------------------------------------------------------------*/
+
+
+.header{
+	color: #FFF;
+	background: #0a4661;
+	height: 71px;
+    padding: 21px;
+   display: flex;  
+     
+}
+.Titulo{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+}
+/*Buscador--------------------------------------------------------------------------*/
+.form_search{
+    width: 30%;
+    display: flex;
+    justify-content:flex-end;
+    margin-right: 0%;
+}
+.search {
+  width: 100%;
+ /* position:relative;*/
+  display: flex;
+  justify-content: flex-end;
+}
+
+.searchTerm {
+  width: 250px;
+  min-width: 117px;
+  
+  border: 3px solid #00B4CC;
+  border-right: none;
+  padding: 5px;
+  
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.searchTerm:focus{
+  color:black;
+}
+
+.searchButton {
+  max-width: 60px;
+  height: 36px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+  min-width: 30px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  max-width: 100%;
+  width: 100%;
+ 
+}
+.posBus{
+    width: 100%;
+    height: 100%;
+}
+/*nav-----------------------------------------------------------------------------*/
+nav{
+    background-color:#0a4661; 
+    display: block;
+}
+.botonNav{
+    background-color: #00B4CC;
+    border-radius: 5px;
+    border:4px solid;
+    border-color: #FFF;
+    font-weight: bold;
+    font-size: 15px; 
+    padding-left: 4px;
+}
+.mid,.derecha{
+    
+    display: inline-flex;
+    
+}
+.mid{
+    width: 40%;
+    
+  padding-left: 5%;
+}
+.derecha{
+    width: 52%;
+    justify-content:flex-end;
+}
+/* fecha-------------------------------------------------------------*/
+.fecha{
+   text-align: end;
+   margin-bottom: 0;
+   padding-right: 3%;
+    background-color: #b0e4ea;
+
+}
+/*footer-----------------------------------------------------------------------------*/
+.posicion{
+
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  padding-bottom: 2.5rem;
+  padding-top: 1.5rem;
+}
+/*Contenido---------------------------------------------------------------------------------------*/
+.contenido{
+    display: flex;
+    justify-content: space-between;
+}
+/*submenu*/
+.submenu{
+    width: 254px;
+    padding-top: 80px;
+    height: 400px;
+   
+
+}
+.anexos{
+    width: 400px;
+    height: 430px;
+    margin-top: 80px;
+    background-color: rgb(175, 223, 241);
+}
+.headerAside{
+    text-align: center;
+
+}
+/*calendario------------------------------------------------------------------------------------------------*/
+.ubicCal{
+    width: 300px;
+    
+    margin-left: 15%;
+}
+#calendar {
+    font-family:Arial;
+    font-size:12px;
+  }
+  #calendar caption {
+    text-align:left;
+    padding:5px 10px;
+    background-color:#003366;
+    color:#fff;
+    font-weight:bold;
+    font-size:medium;
+  }
+  #calendar caption div:nth-child(1) {float:left;}
+  #calendar caption div:nth-child(2) {float:right;}
+  #calendar caption div:nth-child(2) a {cursor:pointer;}
+  #calendar th {
+    background-color:#006699;
+    color:#fff;
+    width:40px;
+  }
+  #calendar td {
+    text-align:right;
+    padding:2px 5px;
+    background-color:silver;
+  }
+  #calendar .hoy {
+    background-color:#FFF;
+  }
+
+/*Contenido----------------------------------------------------------------------------------------*/
+.infoVis{
+    display: none;
+    justify-content: center;
+
+}
+.vision,.mision{
+    width: 360px;
+    height: auto;
+}
+.mision{
+    background-color: #FFF;
+}
+.vision{
+    background-color:#e6d684;
+}
+
+.cuerpo{
+    width:56%;
+    height: 400px;
+    background-color: rgb(204, 130, 19);
+
+}
+/*Ingreso de Usuario----------------------------------------------------------------------------*/
+
+.modalDialog {
+	position: fixed;
+	font-family: Arial, Helvetica, sans-serif;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 99999;
+	opacity:0;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	pointer-events: none;
+}
+.final{
+  justify-content: center;
+  background-color: #151414;
+  font-size: 33px;
+  color: #b3ec7a;
+  border-radius: 16px;
+}
+.modalDialog:target {
+	opacity:1;
+	pointer-events: auto;
+}
+.modalDialog > div {
+  text-align: center;
+	width: 400px;
+	position: relative;
+	margin: 10% auto;
+	padding: 5px 20px 13px 20px;
+	border-radius: 10px;
+	background: #fff;
+	background: -moz-linear-gradient(#fff, #999);
+	background: -webkit-linear-gradient(#fff, #999);
+	background: -o-linear-gradient(#fff, #999);
+  -webkit-transition: opacity 400ms ease-in;
+-moz-transition: opacity 400ms ease-in;
+transition: opacity 400ms ease-in;
+}
+.close {
+	background: #606061;
+	color: #FFFFFF;
+	line-height: 25px;
+	position: absolute;
+	right: -12px;
+	text-align: center;
+	top: -10px;
+	width: 24px;
+	text-decoration: none;
+	font-weight: bold;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
+	box-shadow: 1px 1px 3px #000;
+}
+.close:hover { background: #00d9ff; }
+/*Login-----------------------------------------------------------------------------------*/
+#container{
+	background: #5d6d7e;
+	width: 100%;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#container form{
+	background: #FFF;
+	width: 400px;
+	padding: 10px;
+}
+
+#container form img{
+	margin: 15px auto;
+	text-align: center;
+	display: block;
+}
+#container form input{
+	width: 90%;
+	padding: 5px;
+	font-size: 16pt;
+	display: block;
+	margin: 25px auto;
+	border-radius: 5px;
+	border: 1px solid  #85929e;
+	text-align: center;
+	background: #d81b60;
+}
+
+#container form input[type="submit"]{
+	background:  #d81b60;
+	padding: 10px;
+	color: #FFF;
+	letter-spacing: 1px;
+	border: 0;
+	cursor: pointer;
+}
+.alert{
+	font-family: 'Arial';
+	font-size: 16px;
+	text-align: center;
+}
