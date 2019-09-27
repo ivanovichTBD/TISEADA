@@ -15,7 +15,7 @@
 	height: 71px;
     padding: 21px;
    display: flex;  
-     
+         
 }
 .Titulo{
     width: 70%;
@@ -200,8 +200,10 @@ nav{
 .cuerpo{
     width:56%;
     height: 400px;
-    background-color: rgb(204, 130, 19);
-
+    display: flex;
+    text-align: center;
+    padding-top: 20px;
+    
 }
 /*Ingreso de Usuario----------------------------------------------------------------------------*/
 
