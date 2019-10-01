@@ -137,7 +137,8 @@ nav{
 }
 .anexos{
     width: 400px;
-    height: 476px;
+    height: auto;
+    padding-bottom: 8px;
     margin-top: 80px;
     background-color: rgb(175, 223, 241);
 }

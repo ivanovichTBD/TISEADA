@@ -12,10 +12,12 @@
 <body>
 	<?php include "includes/header.php"; ?>
 	<section id="container">
-		<h1>Bienvenido a la Pagina de Inicio</h1>
+		<h1 class="bienvenida">Bienvenido a la Pagina de Inicio</h1>
 		
 
 	</section>
+	<iframe id="iframe" > </iframe>
 	<?php include "includes/footer.php"; ?>
 </body>
+
 </html>

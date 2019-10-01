@@ -21,3 +21,4 @@
 		<?php include "nav.php"; ?>
 		<p class="fecha">Bolivia, <?php echo fechaC(); ?></p>
 	</header>
+	

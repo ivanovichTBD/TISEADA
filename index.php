@@ -74,7 +74,8 @@
 		<a href="#close" title="Close" class="close">X</a>
 		<?php include "ComponentesPagPrincipal/Login.php"?>
 
-	</section>
+    </section>
+    
 </div>
 </body>
 <script src="bootstrap-4.3.1/dist/js/bootstrap.min.js"></script>
