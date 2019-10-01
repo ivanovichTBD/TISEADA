@@ -1,9 +1,11 @@
 <?php 
-	session_start();
-	if($_SESSION['tipo_usuario'] != 1)
-	{
-		header("location: ./");
-	}
+	
+	// session_start();
+	//if($_SESSION['tipo_usuario'] != 1)
+//	{
+//		header("location: ./");
+//	}
+	
 	
 	include "../conexion.php";
 
@@ -52,13 +54,15 @@
 <html lang="es">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<?php include "includes/scripts.php"; ?>
+		<?php  include "includes/scripts.php";?>
 	<title>Registro Usuario</title>
 	
 </head>
 <body>
-
-	<?php include "includes/header.php"; ?>
+	
+	<?php  //include "includes/header.php"; ?>
+	<button onclick="salir()">Cerrar</button>	
+		
 	<section id="container">
 		
 		<div class="form_register">
@@ -109,6 +113,16 @@
 
 
 	</section>
-	<?php include "includes/footer.php"; ?>
+	<script>
+	function salir(){
+		var varia=window.location.href;
+		var comp="http://localhost:88/TISEADA/sistema/registro_usuario.php";
+		console.log(varia);
+		if(varia==comp){
+			return location.href="./"
+		}
+	}
+	</script>
+	<?php //include "includes/footer.php"; ?>
 </body>
 </html>
