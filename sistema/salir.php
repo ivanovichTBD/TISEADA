@@ -3,6 +3,6 @@
 	session_start();
 	session_destroy();
 
-	header('location: ../Principal.php');
+	header('location: ../index.php');
 
  ?>

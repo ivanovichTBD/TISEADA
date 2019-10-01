@@ -19,8 +19,13 @@
                 <button class="botonNav">Ultimos Boletines</button>
                  <button onclick="MostrarMisionVision()" class="botonNav">Mision y Vision</button>  
 </div>
-               <div class="derecha"><button class="botonNav">Suscribirse</button>
-               <a href="#openModal" > <button class="botonNav">Ingresar</button></a></div> 
+               <div class="derecha">
+               <button class="botonNav">Suscribirse</button>
+               <a href="#openModal" > <button class="botonNav">Ingresar</button></a>
+               <!--Boton que va a la pagina registrar usuario-->
+               <a href="sistema/registro_usuario.php"> <button class="botonNav">Registrarse</button> </a>
+               </div>
+
                 
         </nav>
         <p class="fecha">Bolivia, <?php echo fechaC(); ?></p>
