@@ -19,6 +19,7 @@
 </head>
 <body>
 	<?php include "includes/header.php"; ?>
+	
 	<section id="container">
 		<?php 
 
@@ -31,7 +32,7 @@
 
 
 		 ?>
-		
+
 		<h1>Lista de usuarios</h1>
 		<a href="registro_usuario.php" class="btn_new">Crear usuario</a>
 		

@@ -73,6 +73,16 @@
 </head>
 <body>
 	<?php include "includes/header.php"; ?>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	
 	<section id="container">
 		<div class="data_delete">
 			<h2>¿Está seguro de eliminar el siguiente registro?</h2>
