@@ -12,7 +12,7 @@
 <body>
 	<?php include "includes/header.php"; ?>
 	<section id="container">
-		<h1>Bienvenido a la Pagina Principal</h1>
+		<h1>Bienvenido a la Pagina de Inicio</h1>
 		
 
 	</section>

@@ -8,7 +8,7 @@ h3{
 	font-size: 25pt;
 	letter-spacing: 1px;
 	width: 100%;
-	background: #2980b9;
+	background: rgb(23, 160, 146);
 	padding: 15px;
 	color: #FFF;
 	text-align: center;
@@ -46,11 +46,11 @@ h3{
 	border-radius: 5px;
 	border: 1px solid  #85929e;
 	text-align: center;
-	background: #d81b60;
+	background:white
 }
 
 #container form input[type="submit"]{
-	background:  #d81b60;
+	background: white;
 	padding: 10px;
 	color: #FFF;
 	letter-spacing: 1px;
