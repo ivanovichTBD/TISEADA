@@ -187,6 +187,7 @@ ul{
 	margin-bottom: 0px;
 }
 #container{
+	margin-bottom: 12%;
 	padding-top: 125px;
 }
 /*****************************************************************/
@@ -457,7 +458,7 @@ body{
   }
   .posicion{
 
-	position: absolute;
+	position: fixed;
 	bottom: 0;
 	width: 100%;
 	height: 116px;

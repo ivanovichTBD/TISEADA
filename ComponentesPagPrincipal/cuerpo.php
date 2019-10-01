@@ -1,6 +1,7 @@
 <div class="cuerpo">
 
 <h1>PUBLICACIONES DEL MENSAJERO</h1>
+<div>
         <article class="infoVis" id="vision">
                 <Section class="mision">
                     <h3 class="headerAside">Mision</h3>
@@ -19,6 +20,6 @@
 
         </article>
 
-
+        </div>
 
 </div>
