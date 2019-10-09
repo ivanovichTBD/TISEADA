@@ -88,18 +88,6 @@
 
 			</form>
 
-			<?php
-        include '../conexion.php';
-			$query = mysqli_query($conection,"SELECT * FROM carta ");
-			
-        while($result = mysqli_fetch_array($query)){
-            echo $result["nombre_imagen"]."<br><br>";
-			echo '<img src= " '.$result["imagen"].' " width="300" heigth="300">  
-				  <br>
-				  <br>';//mostramos imagenes en una lista,s como un plus
-        }
-        ?>
-
 		</div>
 
 
