@@ -1,10 +1,11 @@
 <?php 
 	
-	// session_start();
-	//if($_SESSION['tipo_usuario'] != 1)
-//	{
-//		header("location: ./");
-//	}
+	 session_start();
+	/*if($_SESSION['tipo_usuario'] >= 1)
+	{
+		header("location: ./");
+	}
+	*/
 	
 	
 	include "../conexion.php";
@@ -60,17 +61,13 @@
 </head>
 <body>
 	
-	<?php  //include "includes/header.php"; ?>
-	<button onclick="salir()">Cerrar</button>	
+	
 		
-	<section id="container">
-		
-		<div class="form_register">
+		<div class="marco">
 			<h1>Registro Usuario</h1>
-			<hr>
-			<div class="alert"><?php echo isset($alert) ? $alert : ''; ?></div>
+			<div class="alerta"><?php echo isset($alert) ? $alert : ''; ?></div>
 
-			<form action="" method="post">
+			<form class="formulario" action="" method="post">
 				<label for="nombre">Nombre</label>
 				<input type="text" name="nombre" id="nombre" placeholder="Nombre completo">
 				<label for="correo">Correo electrónico</label>
@@ -104,6 +101,9 @@
 						}
 					 ?>
 				</select>
+				<br>
+				<p>¿Eres administrador, quieres crear un nuevo tipo de Usuario?</p>
+				<a align="center" href="nuevo_tipousuario.php">Click Aquí</a>
 				<input type="submit" value="Crear usuario" class="btn_save">
 
 			</form>
@@ -112,7 +112,7 @@
 		</div>
 
 
-	</section>
+	
 	<script>
 	function salir(){
 		var varia=window.location.href;
@@ -126,3 +126,25 @@
 	
 </body>
 </html>
+
+<style>
+	body{
+		size:100%;
+	}
+.marco{
+	size:100%;
+	padding: 20px;
+
+}
+.formulario{
+	height:900px;
+	border-radius:7px;
+}
+.alerta{
+	width: 800px;
+	
+	background: #66e07d66;
+	border-radius: 6px;
+	margin: 20px auto;
+}
+</style>

@@ -58,7 +58,7 @@
 			$desde = ($pagina-1) * $por_pagina;
 			$total_paginas = ceil($total_registro / $por_pagina);
 
-			$query = mysqli_query($conection,"SELECT u.idusuario, u.nombre, u.correo, u.usuario, r.tipo_usuario FROM usuario u INNER JOIN tipo_usuario r ON u.tipo_usuario = r.id_tipousuario WHERE estatus = 1 ORDER BY u.idusuario ASC LIMIT $desde,$por_pagina 
+			$query = mysqli_query($conection,"SELECT u.idusuario, u.nombre, u.correo, u.usuario, r.tipo_usuario FROM usuario u INNER JOIN tipo_usuario r ON u.tipo_usuario = r.id_tipousuario WHERE estatus = 1 ORDER BY u.idusuario DESC LIMIT $desde,$por_pagina 
 				");
 
 			mysqli_close($conection);
