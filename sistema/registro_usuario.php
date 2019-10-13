@@ -1,84 +1,124 @@
-<?php 
-	
-	 session_start();
-	/*if($_SESSION['tipo_usuario'] >= 1)
-	{
-		header("location: ./");
-	}
-	*/
-	
-	
-	include "../conexion.php";
-
-	if(!empty($_POST))
-	{
-		$alert='';
-		if(empty($_POST['nombre']) || empty($_POST['correo']) || empty($_POST['usuario']) || empty($_POST['clave']) || empty($_POST['tipo_usuario']))
-		{
-			$alert='<p class="msg_error">Todos los campos son obligatorios.</p>';
-		}else{
-
-			$nombre = $_POST['nombre'];
-			$email  = $_POST['correo'];
-			$user   = $_POST['usuario'];
-			$clave  = md5($_POST['clave']);
-			$tipo_usuario  = $_POST['tipo_usuario'];
+<?php
+session_start();
+/*if($_SESSION['tipo_usuario'] >= 1)
+{
+    header("location: ./");
+}
+*/
 
 
-			$query = mysqli_query($conection,"SELECT * FROM usuario WHERE usuario = '$user' OR correo = '$email' ");
-			$result = mysqli_fetch_array($query);
+include "../conexion.php";
 
-			if($result > 0){
-				$alert='<p class="msg_error">El correo o el usuario ya existe.</p>';
-			}else{
+if(!empty($_POST))
+{
+    $alert='';
+    if(empty($_POST['nombre']) || empty($_POST['edad']) || empty($_POST['correo']) || empty($_POST['usuario']) || empty($_POST['clave']) || empty($_POST['tipo_usuario']))
+    {
+        $alert='<p class="msg_error">Todos los campos son obligatorios.</p>';
+    }else{
 
-				$query_insert = mysqli_query($conection,"INSERT INTO usuario(nombre,correo,usuario,clave,tipo_usuario)
-																	VALUES('$nombre','$email','$user','$clave','$tipo_usuario')");
-				if($query_insert){
-					$alert='<p class="msg_save">Usuario creado correctamente.</p>';
-				}else{
-					$alert='<p class="msg_error">Error al crear el usuario.</p>';
-				}
-
-			}
-
-
-		}
-
-	}
+        $nombre = $_POST['nombre'];
+        $edad = $_POST['edad'];
+        $telefono = $_POST['telefono'];
+        $email  = $_POST['correo'];
+        $user   = $_POST['usuario'];
+        $clave  = md5($_POST['clave']);
+        $tipo_usuario  = $_POST['tipo_usuario'];
 
 
+        $query = mysqli_query($conection,"SELECT * FROM usuario WHERE usuario = '$user' OR correo = '$email' ");
+        $result = mysqli_fetch_array($query);
 
- ?>
+        if($result > 0){
+            $alert='<p class="msg_error">El correo o el usuario ya existe.</p>';
+        }else{
+
+            $query_insert = mysqli_query($conection,"INSERT INTO usuario(nombre,edad,telefono,correo,usuario,clave,tipo_usuario)
+                                                                VALUES('$nombre','$edad','$telefono','$email','$user','$clave','$tipo_usuario')");
+            if($query_insert){
+                $alert='<p class="msg_save">Usuario creado correctamente.</p>';
+            }else{
+                $alert='<p class="msg_error">Error al crear el usuario.<br>
+                                  Ingresa solo valores válidos</p>';
+            }
+
+        }
+
+
+    }
+
+}
+?>
 
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-		<?php  include "includes/scripts.php";?>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8 width=device-width, initial-scale=1.0" name="viewport" content="width=device-width, initial-scale=1"/>
+		
 	<title>Registro Usuario</title>
 	
 </head>
 <body>
-	
-	
-		
-		<div class="marco">
-			<h1>Registro Usuario</h1>
-			<div class="alerta"><?php echo isset($alert) ? $alert : ''; ?></div>
 
-			<form class="formulario" action="" method="post">
-				<label for="nombre">Nombre</label>
-				<input type="text" name="nombre" id="nombre" placeholder="Nombre completo">
-				<label for="correo">Correo electrónico</label>
-				<input type="email" name="correo" id="correo" placeholder="Correo electrónico">
-				<label for="usuario">Usuario</label>
-				<input type="text" name="usuario" id="usuario" placeholder="Usuario">
-				<label for="clave">Contraseña</label>
-				<input type="password" name="clave" id="clave" placeholder="Clave de acceso">
-				<label for="tipo_usuario">Tipo Usuario</label>
-
-				<?php 
+<h1> <center>Registro de Usuarios</center></h1>
+<div class="alert"><center><?php echo isset($alert) ? $alert : ''; ?></center></div>
+<br>
+<div class="container">
+  <form action="" method="POST">
+    <div class="row">
+      <div class="col-25">
+        <label for="nombre">Nombre Completo</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="nombre" name="nombre" placeholder="Nombre Completo">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="edad">Edad</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="edad" name="edad" placeholder="Edad">
+      </div>
+    </div>
+	<div class="row">
+      <div class="col-25">
+        <label for="edad">Teléfono</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="telefono" name="telefono" placeholder="Teléfono o Celular">
+      </div>
+    </div>
+	<div class="row">
+      <div class="col-25">
+        <label for="correo">Corréo Electronico</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="correo" name="correo" placeholder="Correo Electronico">
+      </div>
+    </div>
+	<div class="row">
+      <div class="col-25">
+        <label for="usuario">Usuario</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="usuario" name="usuario" placeholder="Usuario o Apodo">
+      </div>
+    </div>
+	<div class="row">
+      <div class="col-25">
+        <label for="clave">Contraseña</label>
+      </div>
+      <div class="col-75">
+        <input type="password" id="clave" name="clave" placeholder="Clave de Acceso">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="tipo_usuario">Tipo de Usuario</label>
+      </div>
+      <div class="col-75">
+	  <?php 
 
 					$query_tipo_usuario = mysqli_query($conection,"SELECT * FROM tipo_usuario");
 					mysqli_close($conection);
@@ -101,15 +141,19 @@
 						}
 					 ?>
 				</select>
-				<br>
-				<p>¿Eres administrador, quieres crear un nuevo tipo de Usuario?</p>
-				<a align="center" href="nuevo_tipousuario.php">Click Aquí</a>
-				<input type="submit" value="Crear usuario" class="btn_save">
+      </div>
+    </div>
+	<div class="row">
+	<p>¿Eres administrador, quieres crear un nuevo tipo de Usuario? | 
+	<a align="center" href="nuevo_tipousuario.php">Click Aquí</a></p>
+	</div>
+    
+    <div class="row">
+      <input type="submit" value="Crear Usuario">
+    </div>
+  </form>
+</div>
 
-			</form>
-
-
-		</div>
 
 
 	
@@ -128,23 +172,91 @@
 </html>
 
 <style>
-	body{
-		size:100%;
+	*{
+		font-family: 'Raleway', sans-serif;	
 	}
-.marco{
-	size:100%;
-	padding: 20px;
+	body{
+		background: url(img/cover4.jpg) no-repeat 0px 0px;
+		
+	}
+	h1, p, label{
+		color:white;
+	}
+	
+	
+	a{
+		color:#00BCD4;
+	}
+	/* Style inputs, select elements and textareas */
+input[type=text], [type=password], select, textarea{
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+/* Style the label to display next to the inputs */
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+/* Style the submit button */
+input[type=submit] {
+  background-color: #00BCD4;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
 
 }
-.formulario{
-	height:900px;
-	border-radius:7px;
+
+/* Style the container */
+.container {
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.4117647058823529);
+  padding: 20px;
+  
 }
-.alerta{
-	width: 800px;
-	
-	background: #66e07d66;
-	border-radius: 6px;
-	margin: 20px auto;
+
+/* Floating column for labels: 25% width */
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+/* Floating column for inputs: 75% width */
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+/* alerta */
+.alert{
+	background-color: #00BCD4;
+	margin-top:20px;
+	height:30px;
+	border-radius:5px;
 }
 </style>
