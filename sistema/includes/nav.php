@@ -25,6 +25,7 @@
 						<li><a href="lista_cartas.php">Lista de Cartas</a></li>
 						<li><a href="mostrar_plantilla.php">Plantillas</a></li>
 					</ul>
+
 				</li>
 			<?php } ?>
 				<li class="principal">

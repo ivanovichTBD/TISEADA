@@ -6,7 +6,7 @@
 	}
 	
 	include "../conexion.php";
-
+	
 	if(!empty($_POST))
 	{
 		$alert='';
@@ -14,20 +14,23 @@
 		{
 			$alert='<p class="msg_error">Escribe tu carta, No dejes los campos vacios</p>';
 		}else{
-			
+					
 			$titulo = $_POST['titulo'];
 			$categoria  = $_POST['categoria'];
-			$contenido   = $_POST['contenido'];
-
+			$contenido   = $_POST['contenido'];		
 			$nombre_imagen = $_REQUEST['nombre_imagen'];
 			$imagen = $_FILES['imagen']['name'];
 			$ruta   = $_FILES['imagen']['tmp_name']; //ruta 
 			$destino = "repo_imagenes/".$imagen;  //destino donde se almacenara y le adjuntamos el nombre de la imagen
 			copy($ruta, $destino);   //para copiar el archivo al repositorio
-            
 			$query = mysqli_query($conection,"SELECT * FROM carta WHERE titulo = '$titulo' OR contenido = '$contenido' ");
 			$result = mysqli_fetch_array($query);
-
+			
+			include "CategoriaCarta.php";
+				
+			echo Categoria($contenido);
+			
+			
 			if($result > 0){
 				$alert='<p class="msg_error">El titulo o contenido ya existen, prueba escribiendo otro</p>';
 			}else{
@@ -50,7 +53,14 @@
 
 
  ?>
+<?php
 
+	
+	
+	
+//	echo "$Deporte[1]";
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
