@@ -22,19 +22,24 @@
 					<a href="#">Escribir Carta</a>
 					<ul>
 						<li><a href="crear_carta.php">Nueva Carta</a></li>
-						<li><a href="lista_cartas.php">Lista de Cartas</a></li>
 						<li><a href="mostrar_plantilla.php">Plantillas</a></li>
 					</ul>
 
 				</li>
 			<?php } ?>
+
+			
+			<?php if($_SESSION['tipo_usuario'] == 2){
+			  ?>
 				<li class="principal">
-					<a href="#">Publicaciones</a>
+					<a href="#">Cartas y Publicaciones</a>
 					<ul>
-						<li><a href="#">Nuevo Publicación</a></li>
-						<li><a href="#">Lista e Historial de Publicaciones</a></li>
+						<li><a href="lista_cartas.php">Lista de Cartas</a></li>
+						<li><a href="#">Historial de Publicaciones</a></li>
 					</ul>
 				</li>
+				<?php } ?>	
+				
 				</li>
 				<li class="principal">
 					<a href="#">Ayuda</a>
