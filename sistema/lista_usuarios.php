@@ -42,7 +42,7 @@
 			//Paginador
 			$sql_codificacion=mysqli_query($conection, "SET nombre utf8");
 			//$sql_codificacion=mysqli_query($conection, "SET tipo_usuario utf8");
-			$sql_registe = mysqli_query($conection,"SELECT COUNT(*) as total_registro FROM usuario WHERE estatus = 1");
+			$sql_registe = mysqli_query($conection,"SELECT COUNT(*) as total_registro FROM usuario WHERE ESTATUS = 1");
 			$result_register = mysqli_fetch_array($sql_registe);
 			$total_registro = $result_register['total_registro'];
 
@@ -58,7 +58,7 @@
 			$desde = ($pagina-1) * $por_pagina;
 			$total_paginas = ceil($total_registro / $por_pagina);
 
-			$query = mysqli_query($conection,"SELECT u.idusuario, u.nombre, u.correo, u.usuario, r.tipo_usuario FROM usuario u INNER JOIN tipo_usuario r ON u.tipo_usuario = r.id_tipousuario WHERE estatus = 1 ORDER BY u.idusuario DESC LIMIT $desde,$por_pagina 
+			$query = mysqli_query($conection,"SELECT u.IDUSUARIO, u.NOMBRE, u.CORREO, u.USUARIO, r.ID_TIPOUSUARIO FROM usuario u INNER JOIN tipo_usuario r ON u.ID_TIPOUSUARIO = r.ID_TIPOUSUARIO WHERE ESTATUS = 1 ORDER BY u.IDUSUARIO DESC LIMIT $desde,$por_pagina 
 				");
 
 			mysqli_close($conection);
@@ -70,17 +70,17 @@
 					
 			?>
 				<tr>
-					<td><?php echo $data["idusuario"]; ?></td>
-					<td><?php echo $data["nombre"]; ?></td>
-					<td><?php echo $data["correo"]; ?></td>
-					<td><?php echo $data["usuario"]; ?></td>
-					<td><?php echo $data['tipo_usuario'] ?></td>
+					<td><?php echo $data["IDUSUARIO"]; ?></td>
+					<td><?php echo $data["NOMBRE"]; ?></td>
+					<td><?php echo $data["CORREO"]; ?></td>
+					<td><?php echo $data["USUARIO"]; ?></td>
+					<td><?php echo $data['ID_TIPOUSUARIO'] ?></td>
 					<td>
-						<a class="link_edit" href="editar_usuario.php?id=<?php echo $data["idusuario"]; ?>">Editar</a>
+						<a class="link_edit" href="editar_usuario.php?id=<?php echo $data["IDUSUARIO"]; ?>">Editar</a>
 
-					<?php if($data["idusuario"] != 1){ ?>
+					<?php if($data["IDUSUARIO"] != 1){ ?>
 						|
-						<a class="link_delete" href="eliminar_confirmar_usuario.php?id=<?php echo $data["idusuario"]; ?>">Eliminar</a>
+						<a class="link_delete" href="eliminar_confirmar_usuario.php?id=<?php echo $data["IDUSUARIO"]; ?>">Eliminar</a>
 					<?php } ?>
 						
 					</td>

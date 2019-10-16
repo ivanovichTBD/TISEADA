@@ -38,11 +38,11 @@
                 {
                     $data = mysqli_fetch_array($query);
                     $_SESSION['active'] = true;
-                    $_SESSION['idUser'] = $data['idusuario'];
-                    $_SESSION['nombre'] = $data['nombre'];
-                    $_SESSION['email']  = $data['email'];
-                    $_SESSION['user']   = $data['usuario'];
-                    $_SESSION['tipo_usuario']    = $data['tipo_usuario'];
+                    $_SESSION['idUser'] = $data['IDUSUARIO'];
+                    $_SESSION['nombre'] = $data['NOMBRE'];
+                    $_SESSION['email']  = $data['EMAIL'];
+                    $_SESSION['user']   = $data['USUARIO'];
+                    $_SESSION['tipo_usuario']    = $data['ID_TIPOUSUARIO'];
     
                     header('location: sistema/');
                 }else{
@@ -56,6 +56,7 @@
         }
     }
      ?>   
+   
 </head>
 <body class="fondoP">
 <?php include "sistema/includes/functions.php"?>

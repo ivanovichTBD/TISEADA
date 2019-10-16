@@ -42,15 +42,15 @@
 			<tr class="table-light">
 			<?php while ($result = mysqli_fetch_array($query)) {?>
 
-			<td class="table-light"><strong><?php echo $result["id_carta"]; ?></strong></td>
-			<td class="table-light"><?php echo $result["titulo"]; ?></td>
-			<td class="table-light"><?php echo $result["categoria"]; ?></td>
-			<td class="table-light"><?php echo $result["contenido"]; ?></td>
-			<td class="table-light"><?php echo $result["nombre_imagen"] ?></td>
+			<td class="table-light"><strong><?php echo $result["ID_CARTA"]; ?></strong></td>
+			<td class="table-light"><?php echo $result["TITULO"]; ?></td>
+			<td class="table-light"><?php echo $result["ID_CATEGORIA"]; ?></td>
+			<td class="table-light"><?php echo $result["CONTENIDO"]; ?></td>
+			<td class="table-light"><?php echo $result["NOMBRE_IMAGEN"] ?></td>
 		
 	
-			<?php echo $result["nombre_imagen"] ?>
-			<img src=" <?php echo $result["imagen"] ?> "  >	
+			<?php echo $result["NOMBRE_IMAGEN"] ?>
+			<img src=" <?php echo $result["IMAGEN"] ?> "  >	
 				
 			</tr>
 				

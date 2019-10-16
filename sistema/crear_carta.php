@@ -6,17 +6,19 @@
 	}
 	
 	include "../conexion.php";
-	
+				
+			
 	if(!empty($_POST))
-	{
+	{	
 		$alert='';
-		if(empty($_POST['titulo']) || empty($_POST['categoria']) || empty($_POST['contenido']) )
+		if(empty($_POST['titulo']) || empty($_POST['asunto']) || empty($_POST['contenido']) )
 		{
 			$alert='<p class="msg_error">Escribe tu carta, No dejes los campos vacios</p>';
 		}else{
-					
+			$user=$_SESSION['idUser'];
+			//echo $user;				
 			$titulo = $_POST['titulo'];
-			$categoria  = $_POST['categoria'];
+			$asunto  = $_POST['asunto'];
 			$contenido   = $_POST['contenido'];		
 			$nombre_imagen = $_REQUEST['nombre_imagen'];
 			$imagen = $_FILES['imagen']['name'];
@@ -28,39 +30,60 @@
 			
 			include "CategoriaCarta.php";
 				
-			echo Categoria($contenido);
-			
-			
+			$categoria=Categoria($contenido);
+			function prioridad($categoria){
+				if($categoria==1){
+					return 1;
+				}
+				elseif ($categoria==0) {
+					return 3;
+				}
+				else{
+					return 2;
+				}
+			}
+			$prioridad=prioridad($categoria);
+				
 			if($result > 0){
 				$alert='<p class="msg_error">El titulo o contenido ya existen, prueba escribiendo otro</p>';
 			}else{
-
-				$query_insert = mysqli_query($conection,"INSERT INTO carta(titulo, categoria, contenido, nombre_imagen, imagen)
-																	VALUES('$titulo','$categoria','$contenido', '$nombre_imagen','$destino')");
+				if($prioridad==2 || $prioridad==1){
+				$query_insert = mysqli_query($conection,"INSERT INTO carta(TITULO, ASUNTO, CONTENIDO, NOMBRE_IMAGEN, IMAGEN,ID_CATEGORIA,ID_PRIORIDAD,ID_TIPO_CARTA)
+																	VALUES('$titulo','$asunto','$contenido', '$nombre_imagen','$destino','$categoria','$prioridad','1')");
+			$query = mysqli_query($conection,"SELECT ID_CARTA FROM carta WHERE titulo = '$titulo' And contenido = '$contenido' ");
+			$result = mysqli_fetch_array($query);
+			$carta=$result['ID_CARTA'];				
+			$query_insert1 = mysqli_query($conection,"INSERT INTO usuario_carta(ID_CARTA,IDUSUARIO) VALUES('$carta','$user')");
+			$query_insert2 = mysqli_query($conection,"INSERT INTO usuario_carta(ID_CARTA,IDUSUARIO) VALUES('$carta','3')");
+					
+				
 				if($query_insert){
 					$alert='<p class="msg_save">Tu carta see mandó correctamente</p>';
-				}else{
-					$alert='<p class="msg_error">Error al mandar la carta</p>';
+					
 				}
-
+				else{
+						$alert='<p class="msg_error">Error al mandar la carta</p>';
+					
+				}
 			}
-
-
+				else{
+					$alert='<p class="msg_save">Tu carta see mandó correctamente</p>';
+				}
+				}
+			
+			
+			
+			
+			
+			}
+			
 		}
 
-	}
+	
 
 
 
  ?>
-<?php
-
-	
-	
-	
-//	echo "$Deporte[1]";
-
-?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -84,8 +107,8 @@
                 </div>
 
                 <div id="reply">
-                    <label for="categoria">Categoria</label>
-                    <input required type="text" id="categoria" name="categoria" placeholder="Categoria de la carta">
+                    <label for="categoria">Asunto</label>
+                    <input required type="text" id="categoria" name="asunto" placeholder="Categoria de la carta">
                 </div>
                 <div id="reply2">
                     <label for="nombre_imagen">Titulo para tu foto</label>

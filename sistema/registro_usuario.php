@@ -33,8 +33,8 @@ if(!empty($_POST))
             $alert='<p class="msg_error">El correo o el usuario ya existe.</p>';
         }else{
 
-            $query_insert = mysqli_query($conection,"INSERT INTO usuario(nombre,edad,telefono,correo,usuario,clave,tipo_usuario)
-                                                                VALUES('$nombre','$edad','$telefono','$email','$user','$clave','$tipo_usuario')");
+            $query_insert = mysqli_query($conection,"INSERT INTO usuario(NOMBRE,EDAD,TELEFONO,CORREO,USUARIO,CLAVE,ID_TIPOUSUARIO,ESTATUS)
+                                                                VALUES('$nombre','$edad','$telefono','$email','$user','$clave','$tipo_usuario','1')");
             if($query_insert){
                 $alert='<p class="msg_save">Usuario creado correctamente.</p>';
             }else{
@@ -133,7 +133,7 @@ if(!empty($_POST))
 						{
 							while ($tipo_usuario = mysqli_fetch_array($query_tipo_usuario)) {
 					?>
-							<option value="<?php echo $tipo_usuario["id_tipousuario"]; ?>"><?php echo $tipo_usuario["tipo_usuario"] ?></option>
+							<option value="<?php echo $tipo_usuario["ID_TIPOUSUARIO"]; ?>"><?php echo $tipo_usuario["TIPO_USUARIO"] ?></option>
 					<?php 
 								# code...
 							}
