@@ -21,7 +21,7 @@
 </div>
                <div class="derecha">
                <button class="botonNav">Suscribirse</button>
-               <a href="#openModal" > <button class="botonNav">Ingresar</button></a>
+               <a href="ComponentesPagPrincipal/Login.php"> <button class="botonNav">Ingresar</button></a>
                <!--Boton que va a la pagina registrar usuario-->
                <a href="sistema/registro_usuario.php"> <button class="botonNav">Registrarse</button> </a>
                </div>
