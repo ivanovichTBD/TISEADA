@@ -16,7 +16,7 @@
 		$idusuario = $_POST['idusuario'];
 
 		//$query_delete = mysqli_query($conection,"DELETE FROM usuario WHERE idusuario =$idusuario ");
-		$query_delete = mysqli_query($conection,"UPDATE usuario SET estatus = 0 WHERE idusuario = $idusuario ");
+		$query_delete = mysqli_query($conection,"UPDATE usuario SET ESTATUS = 0 WHERE IDUSUARIO = $idusuario ");
 		mysqli_close($conection);
 		if($query_delete){
 			header("location: lista_usuarios.php");
@@ -37,12 +37,12 @@
 
 		$idusuario = $_REQUEST['id'];
 
-		$query = mysqli_query($conection,"SELECT u.nombre,u.usuario,r.tipo_usuario
+		$query = mysqli_query($conection,"SELECT u.NOMBRE,u.USUARIO,r.ID_TIPOUSUARIO
 												FROM usuario u
 												INNER JOIN
 												tipo_usuario r
-												ON u.tipo_usuario = r.id_tipousuario
-												WHERE u.idusuario = $idusuario ");
+												ON u.ID_TIPOUSUARIO = r.ID_TIPOUSUARIO
+												WHERE u.IDUSUARIO = $idusuario ");
 		
 		mysqli_close($conection);
 		$result = mysqli_num_rows($query);
@@ -50,9 +50,9 @@
 		if($result > 0){
 			while ($data = mysqli_fetch_array($query)) {
 				# code...
-				$nombre = $data['nombre'];
-				$usuario = $data['usuario'];
-				$tipo_usuario = $data['tipo_usuario'];
+				$nombre = $data['NOMBRE'];
+				$usuario = $data['USUARIO'];
+				$tipo_usuario = $data['ID_TIPOUSUARIO'];
 			}
 		}else{
 			header("location: lista_usuarios.php");

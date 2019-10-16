@@ -1,12 +1,14 @@
-<?php function Categoria($contenido){
+<?php function Categoria($cont){
 			//echo "$contenido";
-					$Importante=['Suicidio','muerte','triste','abusaron','golpearon','enojado'];
-				$Psicologia=['Alma','Espiritu','conducta','negativo','positivo','alegria','enojo'];	
-				$Ciencia=['televisor','radio','celular','computadora','tablets','juegos'];
-				$Biologia=['perro','gato','gallina','conejo','loro','pato','plantas','mundo','mar', 'agua'];
-				$Arte=['dibujo','pintar','cantar','bailar'];
-				$Sociales=['planeta','tierra','sol','luna','estrella'];
-				$Deporte=['futbol','nadar', 'correr','caminata','basquet', 'manejar bici'];
+	$contenido=strtoupper($cont);
+	//echo $contenido;
+				$Importante=['SUICIDIO','MUERTE','TRISTE','ABUSARON','GOLPEARON','ENOJADO'];
+				$Psicologia=['ALMA','ESPIRITU','CONDUCTA','NEGATIVO','POSITIVO','ALEGRIA','ENOJO'];	
+				$Ciencia=['TELEVISOR','RADIO','CELULAR','COMPUTADORA','TABLETS','JUEGOS'];
+				$Biologia=['PERRO','GATO','GALLINA','CONEJO','LORO','PATO','PLANTAS','MUNDO','MAR', 'AGUA'];
+				$Arte=['DIBUJO','PINTAR','CANTAR','BAILAR'];
+				$Sociales=['PLANETA','TIERRA','SOL','LUNA','ESTRELLA'];
+				$Deporte=['FUTBOL','NADAR', 'CORRER','CAMINATA','BASQUET', 'MANEJAR BICI'];
 				
 				$palabras= str_word_count($contenido,1);
 				$tam=count($palabras);
@@ -89,30 +91,34 @@
 				}	
 			}
 			if ($Imp>$Psi && $Imp>$Cie && $Imp>$Bio && $Imp>$Art && $Imp>$Soc && $Imp>$Dep) {
-				return "Importante";
+				return 1;
 			}
+			elseif ($Cie>$Psi && $Cie>$Imp && $Cie>$Bio && $Cie>$Art && $Cie>$Soc && $Cie>$Dep) {
+				return 2;
+			}			
 			elseif ($Psi>$Imp && $Psi>$Cie && $Psi>$Bio && $Psi>$Art && $Psi>$Soc && $Psi>$Dep) {
-				return "Psicologia";
+				return 3;
 			}
 			elseif ($Bio>$Imp && $Bio>$Cie && $Bio>$Psi && $Bio>$Art && $Bio>$Soc && $Bio>$Dep) {
-				return "Biologia";
+				return 4;
 			}
 			elseif ($Art>$Imp && $Art>$Cie && $Art>$Psi && $Art>$Bio && $Art>$Soc && $Art>$Dep) {
-				return "Arte";
+				return 5;
 				
 			}
 			elseif ($Soc>$Imp && $Soc>$Cie && $Soc>$Psi && $Soc>$Bio && $Soc>$Art && $Soc>$Dep) {
-				return "Sociales";
+				return 6;
 			}
 			
 			elseif ($Dep>$Imp && $Dep>$Cie && $Dep>$Psi && $Dep>$Bio && $Dep>$Art && $Dep>$Soc) {
-				return "Deporte";
+				return 7;
 			}
 			else{
-				return "No se encontro coincidencias";
+				return 0;
 			}
 			
 			//return $Imp.$Psi.$Cie.$Bio.$Art.$Soc.$Dep;
-
 			}
+
+
 			?>

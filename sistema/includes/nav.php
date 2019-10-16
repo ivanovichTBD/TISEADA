@@ -29,7 +29,7 @@
 			<?php } ?>
 
 			
-			<?php if($_SESSION['tipo_usuario'] == 2){
+			<?php if($_SESSION['tipo_usuario'] == 3 || $_SESSION['tipo_usuario'] == 4){
 			  ?>
 				<li class="principal">
 					<a href="#">Cartas y Publicaciones</a>
