@@ -115,18 +115,48 @@ if(!empty($_POST))
     </div>
     <div class="row">
       <div class="col-25">
+        <label for="tipo_usuario">Area de Investigacion</label>
+      </div>
+      <div class="col-75">
+	  <?php 
+
+					$query_area = mysqli_query($conection,"SELECT * FROM area_usuario");
+					//mysqli_close($conection);
+					$result_area = mysqli_num_rows($query_area);
+					
+
+				 ?>
+      
+				<select name="tipo_usuario" id="tipo_usuario">
+					<?php 
+						if($result_area > 0)
+						{
+							while ($area = mysqli_fetch_array($query_area)) {
+					?>
+							<option value="<?php echo $area["ID_AREA"]; ?>"><?php echo $area["NOMBRE_AREA"] ?></option>
+					<?php 
+
+							}
+							
+						}
+					 ?>
+				</select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
         <label for="tipo_usuario">Tipo de Usuario</label>
       </div>
       <div class="col-75">
 	  <?php 
 
 					$query_tipo_usuario = mysqli_query($conection,"SELECT * FROM tipo_usuario");
-					mysqli_close($conection);
+mysqli_close($conection);
 					$result_tipo_usuario = mysqli_num_rows($query_tipo_usuario);
 					
 
 				 ?>
-
+      
 				<select name="tipo_usuario" id="tipo_usuario">
 					<?php 
 						if($result_tipo_usuario > 0)

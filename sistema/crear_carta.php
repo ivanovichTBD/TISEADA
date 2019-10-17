@@ -49,13 +49,23 @@
 			}else{
 				if($prioridad==2 || $prioridad==1){
 				$query_insert = mysqli_query($conection,"INSERT INTO carta(TITULO, ASUNTO, CONTENIDO, NOMBRE_IMAGEN, IMAGEN,ID_CATEGORIA,ID_PRIORIDAD,ID_TIPO_CARTA)
-																	VALUES('$titulo','$asunto','$contenido', '$nombre_imagen','$destino','$categoria','$prioridad','1')");
+							                        VALUES('$titulo','$asunto','$contenido', '$nombre_imagen','$destino','$categoria','$prioridad','1')");
 			$query = mysqli_query($conection,"SELECT ID_CARTA FROM carta WHERE titulo = '$titulo' And contenido = '$contenido' ");
 			$result = mysqli_fetch_array($query);
-			$carta=$result['ID_CARTA'];				
+      $carta=$result['ID_CARTA'];				
+      echo $carta;
 			$query_insert1 = mysqli_query($conection,"INSERT INTO usuario_carta(ID_CARTA,IDUSUARIO) VALUES('$carta','$user')");
 			$query_insert2 = mysqli_query($conection,"INSERT INTO usuario_carta(ID_CARTA,IDUSUARIO) VALUES('$carta','3')");
-					
+					function Distruibuir(){
+            $query = mysqli_query($conection,"SELECT ID_CATEGORIA FROM carta WHERE ID_CARTA='$carta' ");
+            $result = mysqli_fetch_array($query);
+            $categoria=$result['ID_CATEGORIA'];
+            $consultaTipo = mysqli_query($conection,"SELECT * FROM usuario WHERE ID_TIPOUSUARIO='3'");
+            $result = mysqli_fetch_array($query);
+            $categoria=$result['ID_CATEGORIA'];
+            
+            echo $categoria;
+          }
 				
 				if($query_insert){
 					$alert='<p class="msg_save">Tu carta see mandó correctamente</p>';
