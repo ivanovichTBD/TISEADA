@@ -47,8 +47,8 @@
 			<td class="table-light"><?php echo $result["ID_CATEGORIA"]; ?></td>
 			<td class="table-light"><?php echo $result["CONTENIDO"]; ?></td>
 			<td class="table-light"><?php echo $result["NOMBRE_IMAGEN"] ?></td>
-		
 	
+				
 			<?php echo $result["NOMBRE_IMAGEN"] ?>
 			<img src=" <?php echo $result["IMAGEN"] ?> "  >	
 				
@@ -59,14 +59,7 @@
 		</tbody>
 </table>
 
-<!--para las fotos-->
-<?php while ($result = mysqli_fetch_array($query)) {?>
 
-<?php  } ?>
-
-
-    
-    
 
 </body>
 </html>

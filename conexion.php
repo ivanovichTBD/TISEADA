@@ -3,7 +3,7 @@
 	$host = 'localhost';
 	$usuario = 'root';
 	$contraseña = '';
-	$db = 'mensajero';
+	$db = 'mensajero2';
 	$conection = @mysqli_connect($host,$usuario,$contraseña,$db);
 	
 	//mysqli_close($conection);
