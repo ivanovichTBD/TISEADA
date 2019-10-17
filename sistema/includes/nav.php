@@ -29,8 +29,7 @@
 			<?php } ?>
 
 			
-			<?php if($_SESSION['tipo_usuario'] == 3 || $_SESSION['tipo_usuario'] == 4){
-			  ?>
+			<?php if($_SESSION['tipo_usuario'] == 3 || $_SESSION['tipo_usuario'] == 4){ ?>
 				<li class="principal">
 					<a href="#">Cartas y Publicaciones</a>
 					<ul>
@@ -40,6 +39,16 @@
 				</li>
 				<?php } ?>	
 				
+			<?php if($_SESSION['tipo_usuario'] == 3){ ?>
+				</li>
+				<li class="principal">
+					<a href="#">Redactar</a>
+					<ul>
+					<li><a href="redactar_carta.php">Redactar Carta</a></li>	
+					</ul>
+				</li>
+			<?php } ?>
+
 				</li>
 				<li class="principal">
 					<a href="#">Ayuda</a>
