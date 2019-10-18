@@ -12,6 +12,8 @@
 	
     $alert = '';
     session_start();
+    require_once "./conexion.php";
+   
     if(!empty($_SESSION['active']))
     {
         header('location: sistema/');
@@ -63,21 +65,14 @@
     <?php include "ComponentesPagPrincipal/HeaderPrincipal.php"?>
     
     <?php include "ComponentesPagPrincipal/Footer.php"?>
-    <div class="contenido">
+    <div class="contenido" id="contenido">
     <?php include "ComponentesPagPrincipal/subMenus.php"?>
     <?php include "ComponentesPagPrincipal/cuerpo.php"?>
 
     <?php include "ComponentesPagPrincipal/anexo.php"?>
-    
+   
 </div>
-<div id="openModal" class="modalDialog">
-	<div>
-		<a href="#close" title="Close" class="close">X</a>
-		<?php include "ComponentesPagPrincipal/Login.php"?>
-
-    </section>
-    
-</div>
+<?php include "ComponentesPagPrincipal/Login.php"; ?>
 </body>
 <script src="bootstrap-4.3.1/dist/js/bootstrap.min.js"></script>
 <script src="fontawesome-free-5.11.2-web/fontawesome.min.js"></script>
