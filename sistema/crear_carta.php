@@ -19,7 +19,7 @@
 			//echo $user;				
 			$titulo = $_POST['titulo'];
 			$asunto  = $_POST['asunto'];
-			$contenido   = $_POST['contenido'];		
+			$contenido   = $_POST['contenido'];		https://github.com/ivanovichTBD/TISEADA/pull/11/conflict?name=sistema%252Fcrear_carta.php&ancestor_oid=e4475aff10c78ea6a032dcfb577146ba240044a1&base_oid=8be4400ee8bb1f5c9db4035684effbb2de061389&head_oid=e022e0db02fb60304137412b957febbcbae69089
 			$nombre_imagen = $_REQUEST['nombre_imagen'];
 			$imagen = $_FILES['imagen']['name'];
 			$ruta   = $_FILES['imagen']['tmp_name']; //ruta 
@@ -132,7 +132,7 @@
                 
                 <div class="button">
                     <button type="submit">Envia tu carta</button>
-                </div>
+
                 </form>
 
 	
