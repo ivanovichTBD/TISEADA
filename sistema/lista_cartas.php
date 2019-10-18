@@ -5,7 +5,7 @@
 	}*/
 	session_start();
 		$idusuario=$_SESSION['idUser'];
-		echo $idusuario;
+		
 		include '../conexion.php';
 			$query = mysqli_query($conection,"select C.* from carta C, usuario_carta UC ,usuario U WHERE UC.IDUSUARIO=U.IDUSUARIO and UC.ID_CARTA=C.ID_CARTA and UC.IDUSUARIO='$idusuario'") ;
 			

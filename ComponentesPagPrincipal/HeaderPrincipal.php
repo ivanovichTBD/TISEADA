@@ -15,7 +15,7 @@
         </div>
         </header>
         <nav>
-                <div class="mid"><button class="botonNav">Inicio</button>
+                <div class="mid"><a href="./"><button class="botonNav">Inicio</button></a>
                 <button class="botonNav">Ultimos Boletines</button>
                  <button onclick="MostrarMisionVision()" class="botonNav">Mision y Vision</button>  
 </div>

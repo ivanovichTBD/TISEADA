@@ -29,22 +29,32 @@
 			<?php } ?>
 
 			
-			<?php if($_SESSION['tipo_usuario'] == 3 || $_SESSION['tipo_usuario'] == 4){ ?>
+			<?php if( $_SESSION['tipo_usuario'] == 4){ ?>
 				<li class="principal">
-					<a href="#">Cartas y Publicaciones</a>
+					<a href="#">Cartas</a>
 					<ul>
+					
 						<li><a href="lista_cartas.php">Lista de Cartas</a></li>
-						<li><a href="#">Historial de Publicaciones</a></li>
+				<!--		<li><a href="#">Historial de Publicaciones</a></li>		-->
 					</ul>
 				</li>
 				<?php } ?>	
 				
 			<?php if($_SESSION['tipo_usuario'] == 3){ ?>
+				<li class="principal">
+					<a href="#">Sobre las Cartas</a>
+					<ul>
+					
+						<li><a href="lista_cartas.php">Lista de Cartas</a></li>
+					<li><a href="anadirPalabrasEnCarta.php">Informacion sobre las Cartas</a></li>		
+					</ul>
 				</li>
 				<li class="principal">
 					<a href="#">Redactar</a>
 					<ul>
-					<li><a href="redactar_carta.php">Redactar Carta</a></li>	
+					
+					<li><a href="redactar_carta.php">CREAR REDACCION</a></li>
+						
 					</ul>
 				</li>
 			<?php } ?>
