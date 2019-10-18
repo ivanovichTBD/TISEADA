@@ -1,0 +1,38 @@
+
+body{
+    background-color: rgb(206, 241, 230);
+}
+.table1{
+   background-color: aliceblue;
+   border-collapse: collapse;
+   width: 70%;
+
+}
+td
+{
+    border: 2px solid black;
+}
+.h1_ayuda{
+    font-size: xx-large;
+    text-align: center;
+    
+}
+.h2_ayuda{
+    font-size: x-large;
+    text-align: center;
+}
+.h3_ayuda{
+    font-size: x-large;
+}
+.h4_ayuda{
+    font-size: x-large;
+}
+
+.colocar_columnas{
+    column-count: 2;
+    text-align: justify;
+    
+}
+#containerayuda{
+	padding-top: 120px;
+}
