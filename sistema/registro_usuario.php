@@ -12,6 +12,7 @@ include "../conexion.php";
 if(!empty($_POST))
 {
     $alert='';
+    echo $_POST['area_usuario'];
     if(empty($_POST['nombre']) || empty($_POST['edad']) || empty($_POST['correo']) || empty($_POST['usuario']) || empty($_POST['clave']) || empty($_POST['tipo_usuario']))
     {
         $alert='<p class="msg_error">Todos los campos son obligatorios.</p>';
@@ -24,8 +25,8 @@ if(!empty($_POST))
         $user   = $_POST['usuario'];
         $clave  = md5($_POST['clave']);
         $tipo_usuario  = $_POST['tipo_usuario'];
-
-
+        $area_usuario = $_POST['area_usuario'];
+echo $area_usuario;
         $query = mysqli_query($conection,"SELECT * FROM usuario WHERE usuario = '$user' OR correo = '$email' ");
         $result = mysqli_fetch_array($query);
 
@@ -33,8 +34,8 @@ if(!empty($_POST))
             $alert='<p class="msg_error">El correo o el usuario ya existe.</p>';
         }else{
 
-            $query_insert = mysqli_query($conection,"INSERT INTO usuario(NOMBRE,EDAD,TELEFONO,CORREO,USUARIO,CLAVE,ID_TIPOUSUARIO,ESTATUS)
-                                                                VALUES('$nombre','$edad','$telefono','$email','$user','$clave','$tipo_usuario','1')");
+            $query_insert = mysqli_query($conection,"INSERT INTO usuario(NOMBRE,EDAD,TELEFONO,CORREO,USUARIO,CLAVE,ID_TIPOUSUARIO,ESTATUS,ID_AREA,DISTRIUCION)
+                                                                VALUES('$nombre','$edad','$telefono','$email','$user','$clave','$tipo_usuario','1','$area_usuario','0')");
             if($query_insert){
                 $alert='<p class="msg_save">Usuario creado correctamente.</p>';
             }else{
@@ -127,7 +128,7 @@ if(!empty($_POST))
 
 				 ?>
       
-				<select name="tipo_usuario" id="tipo_usuario">
+				<select name="area_usuario" id="tipo_usuario">
 					<?php 
 						if($result_area > 0)
 						{

@@ -25,12 +25,13 @@
 			$ruta   = $_FILES['imagen']['tmp_name']; //ruta 
 			$destino = "repo_imagenes/".$imagen;  //destino donde se almacenara y le adjuntamos el nombre de la imagen
 			copy($ruta, $destino);   //para copiar el archivo al repositorio
-			$query = mysqli_query($conection,"SELECT * FROM carta WHERE titulo = '$titulo' OR contenido = '$contenido' ");
-			$result = mysqli_fetch_array($query);
+	$query = mysqli_query($conection,"SELECT * FROM carta WHERE titulo = '$titulo' OR contenido = '$contenido' ");
+		$result = mysqli_fetch_array($query);
 			
 			include "CategoriaCarta.php";
 				
-			$categoria=Categoria($contenido);
+      $categoria=Categoria($contenido);
+      
 			function prioridad($categoria){
 				if($categoria==1){
 					return 1;
@@ -52,23 +53,19 @@
 							                        VALUES('$titulo','$asunto','$contenido', '$nombre_imagen','$destino','$categoria','$prioridad','1')");
 			$query = mysqli_query($conection,"SELECT ID_CARTA FROM carta WHERE titulo = '$titulo' And contenido = '$contenido' ");
 			$result = mysqli_fetch_array($query);
-      $carta=$result['ID_CARTA'];				
-      echo $carta;
-			$query_insert1 = mysqli_query($conection,"INSERT INTO usuario_carta(ID_CARTA,IDUSUARIO) VALUES('$carta','$user')");
-			$query_insert2 = mysqli_query($conection,"INSERT INTO usuario_carta(ID_CARTA,IDUSUARIO) VALUES('$carta','3')");
-					function Distruibuir(){
-            $query = mysqli_query($conection,"SELECT ID_CATEGORIA FROM carta WHERE ID_CARTA='$carta' ");
-            $result = mysqli_fetch_array($query);
-            $categoria=$result['ID_CATEGORIA'];
-            $consultaTipo = mysqli_query($conection,"SELECT * FROM usuario WHERE ID_TIPOUSUARIO='3'");
-            $result = mysqli_fetch_array($query);
-            $categoria=$result['ID_CATEGORIA'];
-            
-            echo $categoria;
-          }
-				
+      /* Variables para distribuir carta  */
+      $carta=$result['ID_CARTA'];
+      $tipoUsuario=3;
+     
+      //echo $carta;
+			$query_insert1 = mysqli_query($conection,"INSERT INTO usuario_carta(ID_CARTA,IDUSUARIO) VALUES('$carta','$user')"); 
+      /*-------------------------------------------DISTRIBUIR---------------------------- */
+     
+           
+           include "EnviarCartaParaRedactor.php";
+			$solucion=	Distruibuir($carta,$tipoUsuario,$conection);
 				if($query_insert){
-					$alert='<p class="msg_save">Tu carta see mandó correctamente</p>';
+					$alert="<p class='msg_save'>$solucion</p>";
 					
 				}
 				else{
