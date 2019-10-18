@@ -25,7 +25,7 @@
             </div>
             <button class="botoningreso"type="submit">INGRESAR</button>
         </form>
-        <p class=" w3l-register-p">No tienes cuenta?<a href="#" class="register"> Registrarse</a></p>
+        <p class=" w3l-register-p">No tienes cuenta?<a href="./sistema/registro_usuario.php" class="register"> Registrarse</a></p>
     </div>
 </div>
 
