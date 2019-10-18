@@ -1,4 +1,6 @@
 <?php
+
+
 if(!empty($_POST['NuevaPalabra'])){
 $PalabraNueva=strtoupper($_POST['NuevaPalabra']);
 
@@ -10,7 +12,9 @@ $ConsultaUser=mysqli_query($conection,"SELECT ID_AREA FROM usuario WHERE IDUSUAR
 $resultadoConsulta=mysqli_fetch_array($ConsultaUser);
 $jsonString = file_get_contents('js/PalabrasTipo.json'); 
 $data = json_decode($jsonString, true);
+
 /* Distribucion de la lista de CARTAS ----------------------------------------------------------- */
+
 function vistaCarta($resultadoConsulta,$data){
     if($resultadoConsulta==3){
        $resultado = array_merge( $data[0]['Palabras'][0],$data[0]['Palabras'][1]);
@@ -29,15 +33,21 @@ for ($i=0; $i < $mostrarLista ; $i++) {
     echo "<p>".vistaCarta($resultadoConsulta[0],$data)[$i]."</p>";
 }
 
-//array_push($data[0]['Palabras'][1],"HERMOSO");
+if($resultadoConsulta[0]==3){
+    
+array_push($data[0]['Palabras'][1],"$PalabraNueva");
+}elseif ($resultadoConsulta[0]==2) {
+    array_push($data[0]['Palabras'][2],"$PalabraNueva");
+}
+else{
+    array_push($data[0]['Palabras'][$resultadoConsulta[0]-1],"$PalabraNueva");    
+}
 
-$CantPal=count($data[0]['Palabras'][1]);
-array_push($data[0]['Palabras'][$resultadoConsulta-1],$PalabraNueva);
+//$CantPal=count($data[0]['Palabras'][1]);
+//array_push($data[0]['Palabras'][$resultadoConsulta-1],$PalabraNueva);
 $newJsonString = json_encode($data); 
-
-//file_put_contents('js/PalabrasTipo.json', $newJsonString);
-
-
+//MODIFICAR EL ARCHIVO JSON PARA QUE OTROS LO USEN 
+file_put_contents('js/PalabrasTipo.json', $newJsonString);
 
 //for ($i=0; $i <$CantPal ; $i++){ 
  //  echo $data[0]['Palabras'][1][$i]."<br>";

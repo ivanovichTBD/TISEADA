@@ -1,14 +1,25 @@
 <?php 
-$Importante=['SUICIDIO','MUERTE','TRISTE','ABUSARON','GOLPEARON','ENOJADO'];
-$Psicologia=['ALMA','ESPIRITU','CONDUCTA','NEGATIVO','POSITIVO','ALEGRIA','ENOJO'];	
-$Ciencia=['TELEVISOR','RADIO','CELULAR','COMPUTADORA','TABLETS','JUEGOS'];
-$Biologia=['PERRO','GATO','GALLINA','CONEJO','LORO','PATO','PLANTAS','MUNDO','MAR', 'AGUA'];
-$Arte=['DIBUJO','PINTAR','CANTAR','BAILAR'];
-$Sociales=['PLANETA','TIERRA','SOL','LUNA','ESTRELLA'];
-$Deporte=['FUTBOL','NADAR', 'CORRER','CAMINATA','BASQUET', 'MANEJAR BICI'];
 
 function Categoria($cont){
-			//echo "$contenido";
+	$jsonString = file_get_contents('js/PalabrasTipo.json'); 
+	$data = json_decode($jsonString, true);
+	$Importante=$data[0]['Palabras'][0];
+	$Psicologia=$data[0]['Palabras'][1];
+	$Ciencia   =$data[0]['Palabras'][2];
+	$Biologia  =$data[0]['Palabras'][3];
+	$Arte      =$data[0]['Palabras'][4];
+	$Sociales  =$data[0]['Palabras'][5];
+	$Deporte   =$data[0]['Palabras'][6];
+	/*
+	$Importante=['SUICIDIO','MUERTE','TRISTE','ABUSARON','GOLPEARON','ENOJADO'];
+	$Psicologia=['ALMA','ESPIRITU','CONDUCTA','NEGATIVO','POSITIVO','ALEGRIA','ENOJO'];	
+	$Ciencia   =['TELEVISOR','RADIO','CELULAR','COMPUTADORA','TABLETS','JUEGOS'];
+	$Biologia  =['PERRO','GATO','GALLINA','CONEJO','LORO','PATO','PLANTAS','MUNDO','MAR', 'AGUA'];
+	$Arte      =['DIBUJO','PINTAR','CANTAR','BAILAR'];
+	$Sociales  =['PLANETA','TIERRA','SOL','LUNA','ESTRELLA'];
+	$Deporte   =['FUTBOL','NADAR', 'CORRER','CAMINATA','BASQUET', 'MANEJAR BICI'];
+	 */
+	//echo "$contenido";
 	$contenido=strtoupper($cont);
 	//echo $contenido;
 					$palabras= str_word_count($contenido,1);
