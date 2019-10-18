@@ -1,16 +1,17 @@
-<?php function Categoria($cont){
+<?php 
+$Importante=['SUICIDIO','MUERTE','TRISTE','ABUSARON','GOLPEARON','ENOJADO'];
+$Psicologia=['ALMA','ESPIRITU','CONDUCTA','NEGATIVO','POSITIVO','ALEGRIA','ENOJO'];	
+$Ciencia=['TELEVISOR','RADIO','CELULAR','COMPUTADORA','TABLETS','JUEGOS'];
+$Biologia=['PERRO','GATO','GALLINA','CONEJO','LORO','PATO','PLANTAS','MUNDO','MAR', 'AGUA'];
+$Arte=['DIBUJO','PINTAR','CANTAR','BAILAR'];
+$Sociales=['PLANETA','TIERRA','SOL','LUNA','ESTRELLA'];
+$Deporte=['FUTBOL','NADAR', 'CORRER','CAMINATA','BASQUET', 'MANEJAR BICI'];
+
+function Categoria($cont){
 			//echo "$contenido";
 	$contenido=strtoupper($cont);
 	//echo $contenido;
-				$Importante=['SUICIDIO','MUERTE','TRISTE','ABUSARON','GOLPEARON','ENOJADO'];
-				$Psicologia=['ALMA','ESPIRITU','CONDUCTA','NEGATIVO','POSITIVO','ALEGRIA','ENOJO'];	
-				$Ciencia=['TELEVISOR','RADIO','CELULAR','COMPUTADORA','TABLETS','JUEGOS'];
-				$Biologia=['PERRO','GATO','GALLINA','CONEJO','LORO','PATO','PLANTAS','MUNDO','MAR', 'AGUA'];
-				$Arte=['DIBUJO','PINTAR','CANTAR','BAILAR'];
-				$Sociales=['PLANETA','TIERRA','SOL','LUNA','ESTRELLA'];
-				$Deporte=['FUTBOL','NADAR', 'CORRER','CAMINATA','BASQUET', 'MANEJAR BICI'];
-				
-				$palabras= str_word_count($contenido,1);
+					$palabras= str_word_count($contenido,1);
 				$tam=count($palabras);
 				//echo $palabras[count($palabras)-1];
 				
@@ -122,3 +123,6 @@
 
 
 			?>
+
+
+
