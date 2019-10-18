@@ -124,6 +124,7 @@
                 </div>
                 
                 <div class="button">
+                    <button type="submit">Envia tu carta</button>
                     </div>
                 </form>
 
