@@ -46,7 +46,7 @@
 					<ul>
 					
 						<li><a href="lista_cartas.php">Lista de Cartas</a></li>
-					<li><a href="anadirPalabrasEnCarta.php">Informacion sobre las Cartas</a></li>		
+					<li><a href="#anadirPalabrasEnCarta.php" onclick="ViewAnadirPalabra()">Informacion sobre las Cartas</a></li>		
 					</ul>
 				</li>
 				<li class="principal">
@@ -61,7 +61,7 @@
 
 				</li>
 				<li class="principal">
-					<a href="#">Ayuda</a>
+					<a href="ayuda.php">Ayuda</a>
 				</li>
 				
 			</ul>

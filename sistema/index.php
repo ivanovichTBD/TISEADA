@@ -11,11 +11,7 @@
 </head>
 <body>
 	<?php include "includes/header.php"; ?>
-	<section id="container">
-	
-		
-
-	</section>
+	<?php include "anadirPalabrasEnCarta.php"; ?>
 	<iframe id="iframe" > </iframe>
 	<?php include "includes/footer.php"; ?>
 </body>
