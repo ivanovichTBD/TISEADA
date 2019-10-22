@@ -84,7 +84,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <label>APODO:</label>
                 <div class="group">
                     <i class="fas fa-user"></i>
-                    <input name="usuario" type="text" class="form-control" placeholder="Apodo" required="required" />
+                    <input name="usuario" type="text" class="form-control" placeholder="Apodo" required="required" pattern="[a-z]{3,40}"/>
                 </div>
             </div>
             <div class="w3l-form-group">
