@@ -63,10 +63,10 @@
    
 </head>
 <body class="fondoP">
-<?php include "sistema/includes/functions.php"?>
+    <?php include "sistema/includes/functions.php"?>
     <?php include "ComponentesPagPrincipal/HeaderPrincipal.php"?>
     
-    <?php include "ComponentesPagPrincipal/Footer.php"?>
+    
     <div class="contenido" id="contenido">
     <?php include "ComponentesPagPrincipal/subMenus.php"?>
     <?php include "ComponentesPagPrincipal/cuerpo.php"?>
@@ -75,6 +75,9 @@
    
 </div>
 <?php include "ComponentesPagPrincipal/Login.php"; ?>
+<footer>
+    <?php include "ComponentesPagPrincipal/Footer.php"?>
+</footer>
 
 <script src="https://code.jquery.com/jquery-latest.js" ></script>
 <script src="js/menu.js">
