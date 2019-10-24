@@ -19,18 +19,19 @@
 			//echo $user;				
 			$titulo = $_POST['titulo'];
 			$asunto  = $_POST['asunto'];
-			$contenido   = $_POST['contenido'];		
+			$contenido   = $_POST['contenido'];		https://github.com/ivanovichTBD/TISEADA/pull/11/conflict?name=sistema%252Fcrear_carta.php&ancestor_oid=e4475aff10c78ea6a032dcfb577146ba240044a1&base_oid=8be4400ee8bb1f5c9db4035684effbb2de061389&head_oid=e022e0db02fb60304137412b957febbcbae69089
 			$nombre_imagen = $_REQUEST['nombre_imagen'];
 			$imagen = $_FILES['imagen']['name'];
 			$ruta   = $_FILES['imagen']['tmp_name']; //ruta 
 			$destino = "repo_imagenes/".$imagen;  //destino donde se almacenara y le adjuntamos el nombre de la imagen
 			copy($ruta, $destino);   //para copiar el archivo al repositorio
-			$query = mysqli_query($conection,"SELECT * FROM carta WHERE titulo = '$titulo' OR contenido = '$contenido' ");
-			$result = mysqli_fetch_array($query);
+	$query = mysqli_query($conection,"SELECT * FROM carta WHERE titulo = '$titulo' OR contenido = '$contenido' ");
+		$result = mysqli_fetch_array($query);
 			
 			include "CategoriaCarta.php";
 				
-			$categoria=Categoria($contenido);
+      $categoria=Categoria($contenido);
+      
 			function prioridad($categoria){
 				if($categoria==1){
 					return 1;
@@ -49,16 +50,22 @@
 			}else{
 				if($prioridad==2 || $prioridad==1){
 				$query_insert = mysqli_query($conection,"INSERT INTO carta(TITULO, ASUNTO, CONTENIDO, NOMBRE_IMAGEN, IMAGEN,ID_CATEGORIA,ID_PRIORIDAD,ID_TIPO_CARTA)
-																	VALUES('$titulo','$asunto','$contenido', '$nombre_imagen','$destino','$categoria','$prioridad','1')");
+							                        VALUES('$titulo','$asunto','$contenido', '$nombre_imagen','$destino','$categoria','$prioridad','1')");
 			$query = mysqli_query($conection,"SELECT ID_CARTA FROM carta WHERE titulo = '$titulo' And contenido = '$contenido' ");
 			$result = mysqli_fetch_array($query);
-			$carta=$result['ID_CARTA'];				
-			$query_insert1 = mysqli_query($conection,"INSERT INTO usuario_carta(ID_CARTA,IDUSUARIO) VALUES('$carta','$user')");
-			$query_insert2 = mysqli_query($conection,"INSERT INTO usuario_carta(ID_CARTA,IDUSUARIO) VALUES('$carta','3')");
-					
-				
+      /* Variables para distribuir carta  */
+      $carta=$result['ID_CARTA'];
+      $tipoUsuario=3;
+     
+      //echo $carta;
+			$query_insert1 = mysqli_query($conection,"INSERT INTO usuario_carta(ID_CARTA,IDUSUARIO) VALUES('$carta','$user')"); 
+      /*-------------------------------------------DISTRIBUIR---------------------------- */
+     
+           
+           include "EnviarCartaParaRedactor.php";
+			$solucion=	Distruibuir($carta,$tipoUsuario,$conection);
 				if($query_insert){
-					$alert='<p class="msg_save">Tu carta see mandó correctamente</p>';
+					$alert="<p class='msg_save'>$solucion</p>";
 					
 				}
 				else{
@@ -125,7 +132,7 @@
                 
                 <div class="button">
                     <button type="submit">Envia tu carta</button>
-                </div>
+
                 </form>
 
 	

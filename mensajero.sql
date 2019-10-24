@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-10-2019 a las 20:25:37
--- Versión del servidor: 10.1.28-MariaDB
--- Versión de PHP: 7.1.11
+-- Tiempo de generación: 17-10-2019 a las 21:03:12
+-- Versión del servidor: 10.1.19-MariaDB
+-- Versión de PHP: 5.6.24
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -19,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `mensajero`
+-- Base de datos: `mensajero2`
 --
 
 -- --------------------------------------------------------
@@ -39,6 +37,28 @@ CREATE TABLE `area_usuario` (
 
 INSERT INTO `area_usuario` (`ID_AREA`, `NOMBRE_AREA`) VALUES
 (1, '');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `articulo`
+--
+
+CREATE TABLE `articulo` (
+  `id_articulo` int(11) NOT NULL,
+  `titulo` varchar(100) NOT NULL,
+  `contenido` longtext NOT NULL,
+  `nombre_imagen` varchar(100) NOT NULL,
+  `imagen` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `articulo`
+--
+
+INSERT INTO `articulo` (`id_articulo`, `titulo`, `contenido`, `nombre_imagen`, `imagen`) VALUES
+(1, 'ewrqew', 'ewgaqweg', 'aagere', 'repo_imagenes_del_editor/gixxer.jpg'),
+(2, 'pooo', 'pooo', 'pooo', 'repo_imagenes_del_editor/Pagina Inicio.jpg');
 
 -- --------------------------------------------------------
 
@@ -69,7 +89,8 @@ INSERT INTO `carta` (`ID_CARTA`, `ID_CATEGORIA`, `ID_TIPO_CARTA`, `ID_PRIORIDAD`
 (2, NULL, NULL, NULL, 'el camino malo', 'el asdkasbjbdasdas', 'el triste perro', 'repo_imagenes/e3d426ea-fe19-466c-94ca-6ed45bedd1e8_200x200.png', NULL, 'carta a mi perro', NULL),
 (11, 3, 1, 2, 'te quiero', 'el alma es el mejor amigo', 'el triste perro', 'repo_imagenes/e3d426ea-fe19-466c-94ca-6ed45bedd1e8_200x200.png', NULL, 'mi vida en ruinas', NULL),
 (12, 3, 1, 2, 'te quiero qui', 'caminando hacia el alma', 'rata', 'repo_imagenes/Sin tÃ­tulo.png', NULL, 'como cmainar ', NULL),
-(13, 6, 1, 2, 'te quiero conmigo', 'hola que tal el mundo es un planeta muy bonito', 'gg', 'repo_imagenes/Sin tÃ­tulo.png', NULL, 'el cuento del gato', NULL);
+(13, 6, 1, 2, 'te quiero conmigo', 'hola que tal el mundo es un planeta muy bonito', 'gg', 'repo_imagenes/Sin tÃ­tulo.png', NULL, 'el cuento del gato', NULL),
+(14, 1, 1, 1, 'EFQEWFQ', 'SUICIDIO', 'YTWEY', 'repo_imagenes/gixxer.jpg', NULL, 'UYETR', NULL);
 
 -- --------------------------------------------------------
 
@@ -186,7 +207,9 @@ INSERT INTO `usuario` (`IDUSUARIO`, `ID_AREA`, `ID_TIPOUSUARIO`, `NOMBRE`, `CORR
 (3, NULL, 3, 'nao', 'hola', 'tuto', 'b2218117085d7b3886e312b35b7f42fa', 0, 24, 7568369),
 (4, NULL, 3, 'nio', 'ratu@gmail.com', 'nio', 'd0a5fd04b4b48be7ee56c1eb538d78cb', 1, 23, 65321456),
 (5, NULL, 3, 'melina', 'mel@gmail.com', 'mel', '0ef174fc614c8d61e2d63329ef7f46c0', NULL, 26, 7568369),
-(6, NULL, 2, 'Ivanovic', 'hola@hola', 'kidd', '202cb962ac59075b964b07152d234b70', NULL, 26, 756326456);
+(6, NULL, 2, 'Ivanovic', 'hola@hola', 'kidd', '202cb962ac59075b964b07152d234b70', NULL, 26, 756326456),
+(7, NULL, 3, 'car', 'car@gmail.com', 'car', 'e6d96502596d7e7887b76646c5f615d9', 1, 0, 6666666),
+(8, NULL, 3, 'dag', 'dag@gmail.com', 'dag', 'b4683fef34f6bb7234f2603699bd0ded', 1, 22, 76767676);
 
 -- --------------------------------------------------------
 
@@ -209,7 +232,9 @@ INSERT INTO `usuario_carta` (`ID_CARTA`, `IDUSUARIO`) VALUES
 (12, 2),
 (12, 3),
 (13, 2),
-(13, 3);
+(13, 3),
+(14, 2),
+(14, 3);
 
 --
 -- Índices para tablas volcadas
@@ -220,6 +245,12 @@ INSERT INTO `usuario_carta` (`ID_CARTA`, `IDUSUARIO`) VALUES
 --
 ALTER TABLE `area_usuario`
   ADD PRIMARY KEY (`ID_AREA`);
+
+--
+-- Indices de la tabla `articulo`
+--
+ALTER TABLE `articulo`
+  ADD PRIMARY KEY (`id_articulo`);
 
 --
 -- Indices de la tabla `carta`
@@ -278,43 +309,41 @@ ALTER TABLE `usuario_carta`
 --
 ALTER TABLE `area_usuario`
   MODIFY `ID_AREA` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
+--
+-- AUTO_INCREMENT de la tabla `articulo`
+--
+ALTER TABLE `articulo`
+  MODIFY `id_articulo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT de la tabla `carta`
 --
 ALTER TABLE `carta`
-  MODIFY `ID_CARTA` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
-
+  MODIFY `ID_CARTA` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT de la tabla `categoria_carta`
 --
 ALTER TABLE `categoria_carta`
   MODIFY `ID_CATEGORIA` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
 --
 -- AUTO_INCREMENT de la tabla `prioridad`
 --
 ALTER TABLE `prioridad`
   MODIFY `ID_PRIORIDAD` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
 -- AUTO_INCREMENT de la tabla `tipo_carta`
 --
 ALTER TABLE `tipo_carta`
   MODIFY `ID_TIPO_CARTA` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
 -- AUTO_INCREMENT de la tabla `tipo_usuario`
 --
 ALTER TABLE `tipo_usuario`
   MODIFY `ID_TIPOUSUARIO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `IDUSUARIO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
+  MODIFY `IDUSUARIO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- Restricciones para tablas volcadas
 --
@@ -340,7 +369,6 @@ ALTER TABLE `usuario`
 ALTER TABLE `usuario_carta`
   ADD CONSTRAINT `FK_RELATIONSHIP_3` FOREIGN KEY (`ID_CARTA`) REFERENCES `carta` (`ID_CARTA`),
   ADD CONSTRAINT `FK_RELATIONSHIP_4` FOREIGN KEY (`IDUSUARIO`) REFERENCES `usuario` (`IDUSUARIO`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

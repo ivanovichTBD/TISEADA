@@ -1,318 +1,554 @@
+/*estilo paginaPrincipal*/
 *{
-    margin:0px;
+  margin:0px;
+  padding:0;
 }
 .fondoP{
-   
-    background-image: radial-gradient(ellipse farthest-corner at 50% -60% , rgb(233, 185, 27) 0%, rgba(0, 0, 255, 0) 50%, rgb(91, 91, 238) 95%);
-    background-attachment:fixed;
+background-image: radial-gradient(ellipse farthest-corner at 50% -60% , #e8ff00 0%,#00d5ffb7 50%, #090979b7 95%);
+background-attachment:fixed;
 }
 /*Header---------------------------------------------------------------------*/
+header {
+width:100%;
 
-
+}
 .header{
-	color: #FFF;
-	background: #0a4661;
-	height: 71px;
-    padding: 21px;
-   display: flex;  
-         
+color: #FFF;
+  background:#9fa0a19d;
+height: 100px;
+padding: 21px;
+display: flex;  
+  border-radius: 15px 15px 0px 0px;
+  margin: 5px 5px 0px 5px;
+       
 }
 .Titulo{
-    width: 70%;
-    display: flex;
-    justify-content: center;
+  width: 75%;
+  display: flex;
+  justify-content: center;
+    margin-right:auto;  
 }
 /*Buscador--------------------------------------------------------------------------*/
 .form_search{
-    width: 30%;
-    display: flex;
-    justify-content:flex-end;
-    margin-right: 0%;
+    width: 25%;
+  display: flex;
+  justify-content:flex-end;
+    margin-right: auto;
+    display: none;
 }
 .search {
-  width: 100%;
- /* position:relative;*/
-  display: flex;
-  justify-content: flex-end;
+width: 100%;
+/* position:relative;*/
+display: flex;
+justify-content: flex-end;
 }
 
 .searchTerm {
-  width: 250px;
-  min-width: 117px;
-  
-  border: 3px solid #00B4CC;
-  border-right: none;
-  padding: 5px;
-  
-  border-radius: 5px 0 0 5px;
-  outline: none;
-  color: #9DBFAF;
+width: 250px;
+min-width: 117px;
+  margin-top: 20px;
+  border: 8px solid #029AE5;
+border-right: none;
+padding: 5px;
+
+border-radius: 15px 0 0 15px;
+outline: none;
+color: rgb(199, 206, 203);
 }
 
 .searchTerm:focus{
-  color:black;
+color:black;
 }
 
 .searchButton {
-  max-width: 60px;
-  height: 36px;
-  border: 1px solid #00B4CC;
-  background: #00B4CC;
-  text-align: center;
-  color: #fff;
-  border-radius: 0 5px 5px 0;
-  cursor: pointer;
-  font-size: 20px;
-  min-width: 30px;
+max-width: 60px;
+  height: 50px;
+  border: 8px solid #029AE5;
+  background:  #029AE5;
+text-align: center;
+color: #fff;
+border-radius: 0 15px 15px 0;
+  margin-top: 20px;
+cursor: pointer;
+font-size: 20px;
+min-width: 30px;
 }
 
 /*Resize the wrap to see the search bar change!*/
 .wrap{
-  max-width: 100%;
-  width: 100%;
- 
+max-width: 100%;
+width: 100%;
+
 }
 .posBus{
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 /*nav-----------------------------------------------------------------------------*/
+
 nav{
-    background-color:#0a4661; 
-    display: block;
+display: block;
+  background:#9fa0a19d;
+  margin: 0px 5px 5px 5px;
+  
 }
 .botonNav{
-    background-color: #00B4CC;
-    border-radius: 5px;
-    border:4px solid;
-    border-color: #FFF;
-    font-weight: bold;
-    font-size: 15px; 
-    padding-left: 4px;
+  background-color: #00B4CC;
+  border-radius: 5px;
+  border:2px solid;
+  border-color: #FFF;
+  font-weight: bold;
+  font-size: 10px,; 
+  
+  padding-left: 4px;
+    margin: 10px 3px;
 }
 .mid,.derecha{
-    
-    display: inline-flex;
-    
+  
+  display: inline-flex;
+  
 }
 .mid{
-    width: 40%;
-    
-  padding-left: 5%;
+width: 40%;    
+padding-left: 5%;
 }
 .derecha{
-    width: 52%;
-    justify-content:flex-end;
+  width: 52%;
+  justify-content:flex-end;
+}
+/**********NAVEGADOR********************************/
+.buscar{
+display: none;
+}
+
+.menu_bar {
+display:none;
+}
+
+header nav ul  {
+overflow:hidden;
+list-style:none;
+}
+
+header nav ul li {
+float:left;
+}
+
+header nav ul li a {
+color:#fff;
+padding:20px;
+display:block;
+text-decoration:none;
+}
+
+header nav ul li span {
+margin-right:10px;
+}
+
+header nav ul li a:hover {
+background:#9fa0a191;
+color: rgb(255, 255, 255);
+}
+
+header nav ul li a:link{
+text-decoration:none;
+}
+
+section {
+  padding:15px;
 }
 /* fecha-------------------------------------------------------------*/
 .fecha{
-   text-align: end;
-   margin-bottom: 0;
-   padding-right: 3%;
-    background-color: #b0e4ea;
+ text-align: end;
+ margin-bottom: 0;
+ padding-right: 3%;
+  background-color: #b0e4ea;
 
 }
 /*footer-----------------------------------------------------------------------------*/
 .posicion{
 
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 40px;
-  padding-bottom: 2.5rem;
-  padding-top: 1.5rem;
+position: fixed;
+bottom: 0;
+width: 100%;
+height: 40px;
+padding-bottom: 2.5rem;
+padding-top: 1.5rem;
 }
 /*Contenido---------------------------------------------------------------------------------------*/
 .contenido{
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 /*submenu*/
 .submenu{
-    width: 254px;
-    padding-top: 80px;
-    height: 400px;
-   
+  width: 254px;
+  padding-top: 80px;
+  height: 400px;
+    display: none;
 
 }
 .anexos{
-    width: 400px;
-    height: auto;
-    padding-bottom: 8px;
-    margin-top: 80px;
-    background-color: rgb(175, 223, 241);
+  width: 400px;
+  height: auto;
+  padding-bottom: 8px;
+  margin-top: 80px;
+  background-color: rgb(175, 223, 241);
+    display: none;
 }
 .headerAside{
-    text-align: center;
+  text-align: center;
 
 }
 /*calendario------------------------------------------------------------------------------------------------*/
 .ubicCal{
-    width: 300px;
-    
-    margin-left: 15%;
+  width: 300px;
+  
+  margin-left: 15%;
 }
 #calendar {
-    font-family:Arial;
-    font-size:12px;
-  }
-  #calendar caption {
-    text-align:left;
-    padding:5px 10px;
-    background-color:#003366;
-    color:#fff;
-    font-weight:bold;
-    font-size:medium;
-  }
-  #calendar caption div:nth-child(1) {float:left;}
-  #calendar caption div:nth-child(2) {float:right;}
-  #calendar caption div:nth-child(2) a {cursor:pointer;}
-  #calendar th {
-    background-color:#006699;
-    color:#fff;
-    width:40px;
-  }
-  #calendar td {
-    text-align:right;
-    padding:2px 5px;
-    background-color:silver;
-  }
-  #calendar .hoy {
-    background-color:#FFF;
-  }
+  font-family:Arial;
+  font-size:12px;
+}
+#calendar caption {
+  text-align:left;
+  padding:5px 10px;
+  background-color:#003366;
+  color:#fff;
+  font-weight:bold;
+  font-size:medium;
+}
+#calendar caption div:nth-child(1) {float:left;}
+#calendar caption div:nth-child(2) {float:right;}
+#calendar caption div:nth-child(2) a {cursor:pointer;}
+#calendar th {
+  background-color:#006699;
+  color:#fff;
+  width:40px;
+}
+#calendar td {
+  text-align:right;
+  padding:2px 5px;
+  background-color:silver;
+}
+#calendar .hoy {
+  background-color:#FFF;
+}
 
 /*Contenido----------------------------------------------------------------------------------------*/
 .infoVis{
-    display: none;
-    justify-content: center;
+  display: none;
+  justify-content: center;
 
 }
 .vision,.mision{
-    width: 360px;
-    height: auto;
+  width: 360px;
+  height: auto;
 }
 .mision{
-    background-color: #FFF;
+  background-color: #FFF;
 }
 .vision{
-    background-color:#e6d684;
+  background-color:#e6d684;
 }
 
 .cuerpo{
-    width:56%;
-    height: 400px;
-    text-align: center;
-    padding-top: 20px;
-    
+  width:56%;
+  height: 400px;
+  text-align: center;
+  padding-top: 20px;
+  
 }
 /*Ingreso de Usuario----------------------------------------------------------------------------*/
 
 .modalDialog {
-	position: fixed;
-	font-family: Arial, Helvetica, sans-serif;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background: rgba(0,0,0,0.8);
-	z-index: 99999;
-	opacity:0;
-	-webkit-transition: opacity 400ms ease-in;
-	-moz-transition: opacity 400ms ease-in;
-	transition: opacity 400ms ease-in;
-	pointer-events: none;
+position: fixed;
+font-family: Arial, Helvetica, sans-serif;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+background: rgba(0,0,0,0.8);
+z-index: 99999;
+opacity:0;
+-webkit-transition: opacity 400ms ease-in;
+-moz-transition: opacity 400ms ease-in;
+transition: opacity 400ms ease-in;
+pointer-events: none;
 }
 .final{
-  justify-content: center;
-  background-color: #151414;
-  font-size: 33px;
-  color: #b3ec7a;
-  border-radius: 16px;
+justify-content: center;
+background-color: #151414;
+font-size: 33px;
+color: #b3ec7a;
+border-radius: 16px;
 }
 .modalDialog:target {
-	opacity:1;
-	pointer-events: auto;
+opacity:1;
+pointer-events: auto;
 }
 .modalDialog > div {
-  text-align: center;
-	width: 400px;
-	position: relative;
-	margin: 10% auto;
-	padding: 5px 20px 13px 20px;
-	border-radius: 10px;
-	background: #fff;
-	background: -moz-linear-gradient(#fff, #999);
-	background: -webkit-linear-gradient(#fff, #999);
-	background: -o-linear-gradient(#fff, #999);
-  -webkit-transition: opacity 400ms ease-in;
+text-align: center;
+width: 400px;
+position: relative;
+margin: 10% auto;
+padding: 5px 20px 13px 20px;
+border-radius: 10px;
+background: #fff;
+background: -moz-linear-gradient(#fff, #999);
+background: -webkit-linear-gradient(#fff, #999);
+background: -o-linear-gradient(#fff, #999);
+-webkit-transition: opacity 400ms ease-in;
 -moz-transition: opacity 400ms ease-in;
 transition: opacity 400ms ease-in;
 }
 .close {
-	background: #606061;
-	color: #FFFFFF;
-	line-height: 25px;
-	position: absolute;
-	right: -12px;
-	text-align: center;
-	top: -10px;
-	width: 24px;
-	text-decoration: none;
-	font-weight: bold;
-	-webkit-border-radius: 12px;
-	-moz-border-radius: 12px;
-	border-radius: 12px;
-	-moz-box-shadow: 1px 1px 3px #000;
-	-webkit-box-shadow: 1px 1px 3px #000;
-	box-shadow: 1px 1px 3px #000;
+background: #606061;
+color: #FFFFFF;
+line-height: 25px;
+position: absolute;
+right: -12px;
+text-align: center;
+top: -10px;
+width: 24px;
+text-decoration: none;
+font-weight: bold;
+-webkit-border-radius: 12px;
+-moz-border-radius: 12px;
+border-radius: 12px;
+-moz-box-shadow: 1px 1px 3px #000;
+-webkit-box-shadow: 1px 1px 3px #000;
+box-shadow: 1px 1px 3px #000;
 }
 .close:hover { background: #00d9ff; }
+
 /*Login-----------------------------------------------------------------------------------*/
 #container{
-	background: #5d6d7e;
-	width: 100%;
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+background: #116bc59d;
+width: 100%;
+display: -webkit-flex;
+display: -moz-flex;
+display: -ms-flex;
+display: -o-flex;
+display: flex;
+justify-content: center;
+align-items: center;
 }
 
 #container form{
-	background: #FFF;
-	width: 400px;
-	padding: 10px;
+background: #FFF;
+width: 400px;
+padding: 5px;
 }
 
 #container form img{
-	margin: 15px auto;
-	text-align: center;
-	display: block;
+margin: 15px auto;
+text-align: center;
+display: block;
 }
 #container form input{
-	width: 90%;
-	padding: 5px;
-	font-size: 16pt;
-	display: block;
-	margin: 25px auto;
-	border-radius: 5px;
-	border: 1px solid  #85929e;
-	text-align: center;
-	background: #d81b60;
+width: 90%;
+padding: 5px;
+font-size: 16pt;
+display: block;
+margin: 25px auto;
+border-radius: 5px;
+border: 1px solid  #85929e;
+text-align: center;
+background: #d81b60;
 }
 
 #container form input[type="submit"]{
-	background:  #d81b60;
-	padding: 10px;
-	color: #FFF;
-	letter-spacing: 1px;
-	border: 0;
-	cursor: pointer;
+background:  #d81b60;
+padding: 10px;
+color: #FFF;
+letter-spacing: 1px;
+border: 0;
+cursor: pointer;
 }
 .alert{
-	font-family: 'Arial';
-	font-size: 16px;
-	text-align: center;
+font-family: 'Arial';
+font-size: 16px;
+text-align: center;
+}
+
+/*******************************************************LoginUser**/
+.IngresoUser {
+margin: 0;
+padding: 0;
+background: url(../sistema/img/cover4.jpg) no-repeat 0px 0px;
+min-height: 100vh;
+background-size: cover;
+font-family: 'Raleway', sans-serif;
+}
+
+h2 {
+margin: 0;
+color: rgb(248, 252, 249);
+font-size: 25px;
+font-weight: 400;
+text-align: center;
+letter-spacing: 1px;
+padding-bottom: 30px;
+}
+
+p.w3l-register-p {
+color: #eee;
+font-size: 13px;
+text-align: center;
+margin-top: 2em;
+}
+
+.w3l-login-form {
+background: rgba(0, 0, 0, 0.4117647058823529);
+/*background: #6EB5FF;*/
+max-width: 500px;
+margin: 0 auto;
+padding: 3em;
+border-radius: 10px;
+box-sizing: border-box;
+margin-top: 5px;
+
+}
+
+.group {
+display: flex;
+padding: 15px 5px;
+background-color: #ffffff;
+}
+
+.group i {
+color: #00BCD4;
+font-size: 20px;
+padding: 0 10px;
+}
+
+.w3l-form-group {
+margin: 20px 0;
+}
+
+.w3l-form-group label {
+display: block;
+text-transform: uppercase;
+font-size: 13px;
+color: #d2d2d2;
+letter-spacing: 2px;
+margin-bottom: 10px;
+font-style: italic;
+}
+
+.inputTextPass {
+width: 100%;
+border: none;
+box-sizing: border-box;
+background: transparent;
+color: #000;
+}
+
+.inputTextPass:focus {
+outline: none;
+}
+
+.botoningreso {
+background-color: #00BCD4;
+color: #ffffff;
+font-size: 13px;
+text-transform: uppercase;
+letter-spacing: 1px;
+border: none;
+padding: 12px 60px;
+cursor: pointer;
+width: 100%;
+border-radius: 6px;
+}
+
+.botoningreso:hover {
+background-color: #00BCD4;
+transition-duration: 5s;
+}
+
+.forgot {
+display: flex;
+justify-content: space-between;
+margin: 20px 0;
+}
+
+.letras {
+color: #ffffff;
+font-size: 14px;
+text-decoration: none;
+}
+
+.forgot p {
+color: #ffffff;
+text-align: center;
+margin: 0px;
+font-size: 13px;
+}
+
+.register {
+color: #00BCD4;
+text-decoration: none;
+}
+
+/*****************************RESPONSIVE**************************/
+@media screen and (max-width:800px ) {
+/*navegador menu*/
+header nav {
+  width:80%;
+  height:100%;
+  left:-100%;
+  margin:0;
+  position: fixed;
+}
+
+header form button{
+  float:none;
+}
+
+header nav ul li {
+  display:block;
+  float:none;
+  border-bottom:1px solid rgba(255,255,255, .3);
+}
+
+.menu_bar{
+  display:block;
+  padding:20px;
+  background:#9fa0a19d;
+  color:#fff;
+  text-decoration:none;
+  font-weight: bold;
+  font-size:25px;
+  
+  border-radius: 15px;
+  margin: 5px 5px 5px 5px;
+
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+}
+.menu_bar span {
+  float:right;
+  font-size:40px;
+}
+/*contenido*/
+.cuerpo{
+  width:100%;
+}
+}
+
+@media screen and (min-width:800px ){
+/*buscador*/
+.form_search{
+  display: inline;
+}
+/*mostrar submenu*/
+.submenu{
+  display: inline;
+}
+/*mostrar pagina amiga*/
+.anexos {
+  display: inline;
+}
 }
