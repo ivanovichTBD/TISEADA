@@ -14,12 +14,12 @@ width:100%;
 }
 .header{
 color: #FFF;
-  background:#9fa0a19d;
+  background:#adb1b4;
 height: 100px;
 padding: 21px;
 display: flex;  
-  border-radius: 15px 15px 0px 0px;
-  margin: 5px 5px 0px 5px;
+border-radius: 15px 15px 0px 0px;
+  margin: 0px 5px 0px 5px;
        
 }
 .Titulo{
@@ -88,8 +88,10 @@ width: 100%;
 
 nav{
 display: block;
-  background:#9fa0a19d;
-  margin: 0px 5px 5px 5px;
+  background:#adb1b4;
+  margin: 1px 5px 1px 5px;
+  padding: 5px 0px 0px 15px;
+  border-radius: 0px 0px 15px 15px;
   
 }
 .botonNav{
@@ -103,7 +105,7 @@ display: block;
   padding-left: 4px;
     margin: 10px 3px;
 }
-.mid,.derecha{
+/*.mid,.derecha{
   
   display: inline-flex;
   
@@ -115,7 +117,7 @@ padding-left: 5%;
 .derecha{
   width: 52%;
   justify-content:flex-end;
-}
+}*/
 /**********NAVEGADOR********************************/
 .buscar{
 display: none;
@@ -146,12 +148,12 @@ margin-right:10px;
 }
 
 header nav ul li a:hover {
-background:#9fa0a191;
+/*background:#9fa0a191;*/
 color: rgb(255, 255, 255);
 }
 
 header nav ul li a:link{
-text-decoration:none;
+  text-decoration:none;
 }
 
 section {
@@ -176,6 +178,7 @@ color: white;
 }
 /*Contenido---------------------------------------------------------------------------------------*/
 .contenido{
+    margin: 210px 5px 0px 5px;
   display: flex;
   justify-content: space-between;
 }
@@ -202,7 +205,6 @@ color: white;
 /*calendario------------------------------------------------------------------------------------------------*/
 .ubicCal{
   width: 300px;
-  
   margin-left: 15%;
 }
 #calendar {
@@ -491,63 +493,68 @@ text-decoration: none;
 }
 
 /*****************************RESPONSIVE**************************/
-@media screen and (max-width:800px ) {
-/*navegador menu*/
-header nav {
-  width:80%;
-  height:100%;
-  left:-100%;
-  margin:0;
-  position: fixed;
+@media screen and (max-width:992px ) {
+  /*navegador menu*/
+  header nav {
+    width:80%;
+    height:100%;
+    left:-100%;
+    margin:0;
+    position: fixed;
+  }
+
+  header form button{
+    float:none;
+  }
+
+  header nav ul li {
+    display:block;
+    float:none;
+    border-bottom:1px solid rgba(255,255,255, .3);
+  }
+
+  .menu_bar{
+    display:block;
+    padding:20px;
+      background:#adb1b4;
+    color:#fff;
+    text-decoration:none;
+    font-weight: bold;
+    font-size:25px;
+    
+      margin: 1px 5px 0px 5px;
+      border-radius: 0px 0px 15px 15px;
+
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+  }
+
+  .menu_bar a{
+    color: white;
+  }
+
+  .menu_bar span {
+    float:right;
+    font-size:40px;
+  }
+  /*contenido*/
+  .cuerpo{
+    width:100%;
+  }
 }
 
-header form button{
-  float:none;
-}
-
-header nav ul li {
-  display:block;
-  float:none;
-  border-bottom:1px solid rgba(255,255,255, .3);
-}
-
-.menu_bar{
-  display:block;
-  padding:20px;
-  background:#9fa0a19d;
-  color:#fff;
-  text-decoration:none;
-  font-weight: bold;
-  font-size:25px;
-  
-  border-radius: 15px;
-  margin: 5px 5px 5px 5px;
-
-  -webkit-box-sizing:border-box;
-  -moz-box-sizing:border-box;
-  box-sizing:border-box;
-}
-.menu_bar span {
-  float:right;
-  font-size:40px;
-}
-/*contenido*/
-.cuerpo{
-  width:100%;
-}
-}
-
-@media screen and (min-width:800px ){
-/*buscador*/
-.form_search{
-  display: inline;
-}
-/*mostrar submenu*/
-.submenu{
-  display: inline;
-}
-/*mostrar pagina amiga*/
-.anexos {
-  display: inline;
-}
+@media screen and (min-width:992px ){
+  /*buscador*/
+  .form_search{
+    display: inline;
+  }
+  /*mostrar submenu*/
+  .submenu{
+    display: inline;
+  }
+  /*mostrar pagina amiga*/
+  .anexos {
+    display: inline;
+  }
 }
