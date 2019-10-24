@@ -263,6 +263,7 @@ color: white;
 /*Ingreso de Usuario----------------------------------------------------------------------------*/
 
 .modalDialog {
+
 position: fixed;
 font-family: Arial, Helvetica, sans-serif;
 top: 0;
@@ -375,7 +376,7 @@ text-align: center;
 
 /*******************************************************LoginUser**/
 .IngresoUser {
-margin: 0;
+  margin: 220px 0px 0px 0px;
 padding: 0;
 background: url(../sistema/img/cover4.jpg) no-repeat 0px 0px;
 min-height: 100vh;

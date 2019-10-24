@@ -31,7 +31,7 @@
         
         <ul class="navbar-nav mr-3">
           <li class="botonNav"> <a href="sistema/registro_usuario.php"><span class="icon-compose"></span>Suscribirse</a></li>
-          <li class="botonNav"> <a href="#openModal"><span class="icon-user"></span>Ingresar</a></li>
+          <li class="botonNav"> <a href="#" onclick="MostrarLogin()"><span class="icon-user"></span>Ingresar</a></li>
         </ul>
       </div>  
     </nav>
