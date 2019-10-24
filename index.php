@@ -7,7 +7,7 @@
     <title>Document</title>
     
     <link rel="stylesheet" href="css/PartesPag.css">
-    <link rel="Stylesheet" href="fonts/fonts.css">
+   
     <link rel="stylesheet" href="fontawesome-free-5.11.2-web/css/fontawesome.min.css">
     <link rel="stylesheet" href="bootstrap-4.3.1/dist/css/bootstrap.min.css">
     <?php 
@@ -80,7 +80,7 @@
 <script src="js/menu.js">
 
 <script src="bootstrap-4.3.1/dist/js/bootstrap.min.js"></script>
-<script src="fontawesome-free-5.11.2-web/fontawesome.min.js"></script>
+<script src="fontawesome-free-5.11.2-web/js/fontawesome.min.js"></script>
 <script src="js/Mostrar.js"></script>
 
 </body>

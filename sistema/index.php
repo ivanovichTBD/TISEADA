@@ -10,6 +10,7 @@
 	<title>Niño Mensajero</title>
 </head>
 <body>
+
 	<?php include "includes/header.php"; ?>
 	<?php include "anadirPalabrasEnCarta.php"; ?>
 	<iframe id="iframe" > </iframe>
