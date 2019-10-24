@@ -71,7 +71,7 @@ echo $area_usuario;
         <label for="nombre">Nombre Completo</label>
       </div>
       <div class="col-75">
-        <input type="text" id="nombre" name="nombre" placeholder="Nombre Completo">
+        <input type="name" id="nombre" name="nombre" required placeholder="Nombre Completo" pattern="[a-z]{3,40}"/>
       </div>
     </div>
     <div class="row">
@@ -79,15 +79,15 @@ echo $area_usuario;
         <label for="edad">Edad</label>
       </div>
       <div class="col-75">
-        <input type="text" id="edad" name="edad" placeholder="Edad">
+        <input type="number" id="edad" name="edad" placeholder="Edad" min="8" max="99" pattern="\d+" required>
       </div>
     </div>
 	<div class="row">
       <div class="col-25">
-        <label for="edad">Teléfono</label>
+        <label for="Telefono">Teléfono</label>
       </div>
       <div class="col-75">
-        <input type="text" id="telefono" name="telefono" placeholder="Teléfono o Celular">
+        <input type="text" id="telefono" name="telefono" pattern="[0-9]{7,8}" placeholder="Teléfono o Celular">
       </div>
     </div>
 	<div class="row">
@@ -95,7 +95,7 @@ echo $area_usuario;
         <label for="correo">Corréo Electronico</label>
       </div>
       <div class="col-75">
-        <input type="text" id="correo" name="correo" placeholder="Correo Electronico">
+        <input type="email" id="correo" name="email" placeholder="Correo Electronico" required>
       </div>
     </div>
 	<div class="row">
@@ -111,7 +111,7 @@ echo $area_usuario;
         <label for="clave">Contraseña</label>
       </div>
       <div class="col-75">
-        <input type="password" id="clave" name="clave" placeholder="Clave de Acceso">
+        <input type="password" id="clave" name="clave" placeholder="Clave de Acceso" minlength="8" required>
       </div>
     </div>
     <div class="row">
@@ -219,7 +219,7 @@ mysqli_close($conection);
 		color:#00BCD4;
 	}
 	/* Style inputs, select elements and textareas */
-input[type=text], [type=password], select, textarea{
+input[type=text], [type=password], [type=name], [type=email], [type=number], select, textarea{
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
