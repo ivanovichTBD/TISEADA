@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 /*if($_SESSION['tipo_usuario'] >= 1)
 {
     header("location: ./");
@@ -34,7 +34,7 @@ echo $area_usuario;
             $alert='<p class="msg_error">El correo o el usuario ya existe.</p>';
         }else{
 
-            $query_insert = mysqli_query($conection,"INSERT INTO usuario(NOMBRE,EDAD,TELEFONO,CORREO,USUARIO,CLAVE,ID_TIPOUSUARIO,ESTATUS,ID_AREA,DISTRIUCION)
+            $query_insert = mysqli_query($conection,"INSERT INTO usuario(NOMBRE,EDAD,TELEFONO,CORREO,USUARIO,CLAVE,ID_TIPOUSUARIO,ESTATUS,ID_AREA,DISTRIBUCION)
                                                                 VALUES('$nombre','$edad','$telefono','$email','$user','$clave','$tipo_usuario','1','$area_usuario','0')");
             if($query_insert){
                 $alert='<p class="msg_save">Usuario creado correctamente.</p>';

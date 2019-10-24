@@ -1,16 +1,19 @@
 <?php
-session_start();
+//session_start();
 include "../conexion.php";
 
 $usuario=$_SESSION['idUser'];
+
 $ConsultaUser=mysqli_query($conection,"SELECT ID_AREA FROM usuario WHERE IDUSUARIO='$usuario'");
 $resultadoConsulta=mysqli_fetch_array($ConsultaUser);
+
 $jsonString = file_get_contents('js/PalabrasTipo.json'); 
 $data = json_decode($jsonString, true);
 
 /* Distribucion de la lista de CARTAS ----------------------------------------------------------- */
 
 function vistaCarta($resultadoConsulta,$data){
+    $resultado=array();
     if($resultadoConsulta==3){
        $resultado = array_merge( $data[0]['Palabras'][0],$data[0]['Palabras'][1]);
         return $resultado;
@@ -23,63 +26,24 @@ function vistaCarta($resultadoConsulta,$data){
     }
 }
 
-
-if(!empty($_POST['NuevaPalabra'])){
-$PalabraNueva=strtoupper($_POST['NuevaPalabra']);
-
-
-
-if($resultadoConsulta[0]==3){
-    
-array_push($data[0]['Palabras'][1],"$PalabraNueva");
-//$lista = file_get_contents('js/PalabrasTipo.json'); 
-//$data1 = json_decode($lista, true);
-//$data=$data1;
-}elseif ($resultadoConsulta[0]==2) {
-    array_push($data[0]['Palabras'][2],"$PalabraNueva");
-  //  $lista = file_get_contents('js/PalabrasTipo.json'); 
-//$data1 = json_decode($jsonString, true);
-//$data=$data1;
-}
-else{
-    array_push($data[0]['Palabras'][$resultadoConsulta[0]-1],"$PalabraNueva");  
-  //  $lista = file_get_contents('js/PalabrasTipo.json'); 
-//$data1 = json_decode($jsonString, true);  
-//$data=$data1;
-}
-
-//$CantPal=count($data[0]['Palabras'][1]);
-//array_push($data[0]['Palabras'][$resultadoConsulta-1],$PalabraNueva);
-$newJsonString = json_encode($data); 
-//MODIFICAR EL ARCHIVO JSON PARA QUE OTROS LO USEN 
-file_put_contents('js/PalabrasTipo.json', $newJsonString);
-$lista = file_get_contents('js/PalabrasTipo.json'); 
-$data1 = json_decode($lista, true);
-$data=$data1;
-//for ($i=0; $i <$CantPal ; $i++){ 
- //  echo $data[0]['Palabras'][1][$i]."<br>";
-//}
-
-//var_dump($data[0]['Palabras'][1]);
-//}
-}
 ?>
 <div id="FormularioPalabras" style="display:none" class="FormularioPalabras">
 <div class="w3l-login-form" >
         <h2>INTRODUCIR UNA NUEVA PALABRA</h2>
-        <form action="#" method="POST">
+        <form action="#" method="post">
 
             <div class="w3l-form-group">
                 <div class="group">
-                    <input type="text" name="NuevaPalabra" class="form-control" placeholder="Introducir nueva palabra" required="required" />
+                    <input id="palabra" type="text" name="NuevaPalabra" class="form-control" placeholder="Introducir nueva palabra" required="required" />
                 </div>
             </div>
-            <button class="botoningreso" type="submit">INTRODUCIR</button>
+            <button onclick="listaTiempoReal()" id="introducioPal" class="botoningreso" type="submit">INTRODUCIR</button>
         </form>
     </div>
 <h2 class="subtitulo">
 Palabras del Area por Defecto
 </h2>
+<div id="listaPalabras">
 <?php
 $mostrarLista=count(vistaCarta($resultadoConsulta[0],$data));
 for ($i=0; $i < $mostrarLista ; $i++) { 
@@ -87,13 +51,18 @@ for ($i=0; $i < $mostrarLista ; $i++) {
 }
 
 ?>
+
 </div>
+
+</div>
+
+
 <style>
 .FormularioPalabras{
     
     margin: 0;
     padding: 0;
-    background: url(../images/) no-repeat 0px 0px;
+    /*background: url(../images/) no-repeat 0px 0px;*/
     min-height: 100vh;
     background-size: cover;
     font-family: 'Raleway', sans-serif;
@@ -106,8 +75,9 @@ for ($i=0; $i < $mostrarLista ; $i++) {
 
 }
 .ListPal{
-    width:121px;
+    /*width:121px;*/
     display:inline-block;
+    margin-left:15px;
 
 }
 
