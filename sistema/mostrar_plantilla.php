@@ -39,44 +39,34 @@
 
     <div class="m-4">
     <div class="card-deck">
-            <div class="card">
-                <a href="repo_plantillas/Screenshot_1.png"><img src="repo_plantillas/Screenshot_1.png" class="card-img-top" alt="..."></a>
+            <div class="card" >
+                <a href="repo_plantillas/Publicación1.jpg"><img src="repo_plantillas/Publicación1.jpg" class="card-img-top" alt="..."></a>
                 <div class="card-body">
                 <h5 class="card-title">COLORES</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural.</p>
-                
                 </div>
             </div>
             <div class="card">
-            <a href="repo_plantillas/Screenshot_1.png"><img src="repo_plantillas/Screenshot_1.png" class="card-img-top" alt="..."></a>
+            <a href="repo_plantillas/Publicación2.jpg"><img src="repo_plantillas/Publicación2.jpg" class="card-img-top" alt="..."></a>
                 <div class="card-body">
                 <h5 class="card-title">NATURALEZA</h5>
-                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                
                 </div>
             </div>
             <div class="card">
-            <a href="repo_plantillas/Screenshot_1.png"><img src="repo_plantillas/Screenshot_1.png" class="card-img-top" alt="..."></a>
+            <a href="repo_plantillas/Publicación3.jpg"><img src="repo_plantillas/Publicación3.jpg" class="card-img-top" alt="..."></a>
                 <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional.</p>
-               
+                <h5 class="card-title">UNIVERSO</h5>
                 </div>
             </div>
             <div class="card">
-            <a href="repo_plantillas/Screenshot_1.png"><img src="repo_plantillas/Screenshot_1.png" class="card-img-top" alt="..."></a>
+            <a href="repo_plantillas/Publicación4.jpg"><img src="repo_plantillas/Publicación4.jpg" class="card-img-top" alt="..."></a>
                 <div class="card-body">
                 <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-               
                 </div>
             </div>
             <div class="card">
-            <a href="repo_plantillas/Screenshot_1.png"><img src="repo_plantillas/Screenshot_1.png" class="card-img-top" alt="..."></a>
+            <a href="repo_plantillas/Publicación5.jpg"><img src="repo_plantillas/Publicación5.jpg" class="card-img-top" alt="..."></a>
                 <div class="card-body">
                 <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-               
                 </div>
             </div>
     </div>
@@ -86,43 +76,33 @@
 
     <div class="card-deck">
             <div class="card">
-                <a href="repo_plantillas/Screenshot_1.png"><img src="repo_plantillas/Screenshot_1.png" class="card-img-top" alt="..."></a>
+                <a href="repo_plantillas/Publicación6.jpg"><img src="repo_plantillas/Publicación6.jpg" class="card-img-top" alt="..."></a>
                 <div class="card-body">
                 <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural.</p>
-                
                 </div>
             </div>
             <div class="card">
-            <a href="repo_plantillas/Screenshot_1.png"><img src="repo_plantillas/Screenshot_1.png" class="card-img-top" alt="..."></a>
+            <a href="repo_plantillas/Publicación7.jpg"><img src="repo_plantillas/Publicación7.jpg" class="card-img-top" alt="..."></a>
                 <div class="card-body">
                 <h5 class="card-title">Card title</h5>
-                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                
                 </div>
             </div>
             <div class="card">
-            <a href="repo_plantillas/Screenshot_1.png"><img src="repo_plantillas/Screenshot_1.png" class="card-img-top" alt="..."></a>
+            <a href="repo_plantillas/Publicación8.png"><img src="repo_plantillas/Publicación8.png" class="card-img-top" alt="..."></a>
                 <div class="card-body">
                 <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional.</p>
-               
                 </div>
             </div>
             <div class="card">
-            <a href="repo_plantillas/Screenshot_1.png"><img src="repo_plantillas/Screenshot_1.png" class="card-img-top" alt="..."></a>
+            <a href="repo_plantillas/Publicación9.jpg"><img src="repo_plantillas/Publicación9.jpg" class="card-img-top" alt="..."></a>
                 <div class="card-body">
                 <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-               
                 </div>
             </div>
             <div class="card">
-            <a href="repo_plantillas/Screenshot_1.png"><img src="repo_plantillas/Screenshot_1.png" class="card-img-top" alt="..."></a>
+            <a href="repo_plantillas/Publicación10.jpg"><img src="repo_plantillas/Publicación10.jpg" class="card-img-top" alt="..."></a>
                 <div class="card-body">
                 <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional.</p>
-               
                 </div>
             </div>
     </div>
@@ -133,43 +113,33 @@
 
     <div class="card-deck">
             <div class="card">
-                <a href="repo_plantillas/Screenshot_1.png"><img src="repo_plantillas/Screenshot_1.png" class="card-img-top" alt="..."></a>
+                <a href="repo_plantillas/Publicación11.jpg"><img src="repo_plantillas/Publicación11.jpg" class="card-img-top" alt="..."></a>
                 <div class="card-body">
                 <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural.</p>
-                
                 </div>
             </div>
             <div class="card">
-            <a href="repo_plantillas/Screenshot_1.png"><img src="repo_plantillas/Screenshot_1.png" class="card-img-top" alt="..."></a>
+            <a href="repo_plantillas/Publicación12.jpg"><img src="repo_plantillas/Publicación12.jpg" class="card-img-top" alt="..."></a>
                 <div class="card-body">
                 <h5 class="card-title">Card title</h5>
-                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                
                 </div>
             </div>
             <div class="card">
-            <a href="repo_plantillas/Screenshot_1.png"><img src="repo_plantillas/Screenshot_1.png" class="card-img-top" alt="..."></a>
+            <a href="repo_plantillas/Publicación13.jpg"><img src="repo_plantillas/Publicación13.jpg" class="card-img-top" alt="..."></a>
                 <div class="card-body">
                 <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional.</p>
-               
                 </div>
             </div>
             <div class="card">
-            <a href="repo_plantillas/Screenshot_1.png"><img src="repo_plantillas/Screenshot_1.png" class="card-img-top" alt="..."></a>
+            <a href="repo_plantillas/Publicación14.jpg"><img src="repo_plantillas/Publicación14.jpg" class="card-img-top" alt="..."></a>
                 <div class="card-body">
                 <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-               
                 </div>
             </div>
             <div class="card">
-            <a href="repo_plantillas/Screenshot_1.png"><img src="repo_plantillas/Screenshot_1.png" class="card-img-top" alt="..."></a>
+            <a href="repo_plantillas/Publicación15.jpg"><img src="repo_plantillas/Publicación15.jpg" class="card-img-top" alt="..."></a>
                 <div class="card-body">
                 <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural</p>
-               
                 </div>
             </div>
     </div>
