@@ -66,18 +66,18 @@
     <?php include "sistema/includes/functions.php"?>
     <?php include "ComponentesPagPrincipal/HeaderPrincipal.php"?>
     
-    
+    <main style="height: 100vh;">
     <div class="contenido" id="contenido">
-    <?php include "ComponentesPagPrincipal/subMenus.php"?>
-    <?php include "ComponentesPagPrincipal/cuerpo.php"?>
+        <?php include "ComponentesPagPrincipal/subMenus.php"?>
+        <?php include "ComponentesPagPrincipal/cuerpo.php"?>
+        <?php include "ComponentesPagPrincipal/anexo.php"?>
+    </div>
+    <?php include "ComponentesPagPrincipal/Login.php"; ?>
+    </main>
 
-    <?php include "ComponentesPagPrincipal/anexo.php"?>
-   
-</div>
-<?php include "ComponentesPagPrincipal/Login.php"; ?>
-<footer>
-    <?php include "ComponentesPagPrincipal/Footer.php"?>
-</footer>
+    <footer>
+        <?php include "ComponentesPagPrincipal/Footer.php"?>
+    </footer>
 
 <script src="https://code.jquery.com/jquery-latest.js" ></script>
 <script src="js/menu.js">
