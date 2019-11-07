@@ -3,7 +3,8 @@
 <article class="pl-3 pr-3">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa assumenda laudantium dicta adipisci ratione consequuntur temporibus. Libero, aut sint at doloribus fuga, voluptate sapiente, officia deleniti similique unde ea veniam!
 </article>
-<h3 class="headerAside">Calendario </h3>
+<div class="cal">
+<h3 class="headerAside cali">Calendario </h3>
 <div class="ubicCal">
 <table id="calendar">
             <caption></caption>
@@ -16,6 +17,7 @@
             </tbody>
           </table>
           </div>
+</div>
 </aside>
 <script>
       var actual=new Date();

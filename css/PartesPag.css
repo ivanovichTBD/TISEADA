@@ -26,7 +26,7 @@ border-radius: 15px 15px 0px 0px;
   width: 75%;
   display: flex;
   justify-content: center;
-    margin-right:auto;  
+    margin-right:auto; 
 }
 /*Buscador--------------------------------------------------------------------------*/
 .form_search{
@@ -87,7 +87,8 @@ width: 100%;
 /*nav-----------------------------------------------------------------------------*/
 
 nav{
-display: block;
+    /*width:100%;*/
+  display: block;
   background:#adb1b4;
   margin: 1px 5px 1px 5px;
   padding: 5px 0px 0px 15px;
@@ -118,6 +119,7 @@ padding-left: 5%;
   width: 52%;
   justify-content:flex-end;
 }*/
+
 /**********NAVEGADOR********************************/
 .buscar{
 display: none;
@@ -128,17 +130,22 @@ display:none;
 }
 
 header nav ul  {
-overflow:hidden;
+/*overflow:hidden;*/
 list-style:none;
 }
 
 header nav ul li {
-float:left;
+  display:inline-block;
+	position: relative;
+}
+
+header nav ul li:hover {
+	background:#4EBBED;
 }
 
 header nav ul li a {
 color:#fff;
-padding:20px;
+padding:15px;
 display:block;
 text-decoration:none;
 }
@@ -154,6 +161,46 @@ color: rgb(255, 255, 255);
 
 header nav ul li a:link{
   text-decoration:none;
+}
+
+/*submenu*/
+header nav ul li:hover .children {
+	display:block;
+}
+ 
+header nav ul li .children {
+	display: none;
+	background:#016CA0;
+  position: absolute;
+  border-radius: 15px 15px 15px 15px;
+  border: 2px solid white;
+	width: 150%;
+	z-index:1000;
+}
+ 
+header nav ul li .children li {
+	display:block;
+	overflow: hidden;
+	border-bottom: 1px solid rgba(255,255,255,.5);
+}
+ 
+header nav ul li .children li a {
+	display: block;
+}
+ 
+header nav ul li .children li a span {
+	float: right;
+	position: relative;
+	top:3px;
+	margin-right:0;
+	margin-left:10px;
+}
+ 
+header nav ul li .caret {
+	position: relative;
+	top:3px;
+	margin-left:10px;
+	margin-right:0px;
 }
 
 section {
@@ -184,28 +231,40 @@ color: white;
 }
 /*submenu*/
 .submenu{
-  width: 254px;
-  padding-top: 80px;
+  width: 200px;
+  padding-top: 16%;
   height: 400px;
     display: none;
-
 }
+
 .anexos{
-  width: 400px;
+  width: 210px;
   height: auto;
   padding-bottom: 8px;
-  margin-top: 80px;
-  background-color: rgb(175, 223, 241);
+  margin-top: 15px;
+  background-color: rgba(175, 223, 241, 0.699);
     display: none;
+    border: 4px outset white;
+    border-radius: 15px;
 }
 .headerAside{
   text-align: center;
 
 }
+.cal{
+  margin-top: 30px;
+  color:rgb(0, 58, 87);
+  border-top:4px solid white;
+}
+.cali{
+  margin-top: 30px;
+ 
+
+}
 /*calendario------------------------------------------------------------------------------------------------*/
 .ubicCal{
-  width: 300px;
-  margin-left: 15%;
+  width: 180px;
+  margin-left: 5%;
 }
 #calendar {
   font-family:Arial;
@@ -495,13 +554,41 @@ text-decoration: none;
 
 /*****************************RESPONSIVE**************************/
 @media screen and (max-width:992px ) {
+  
+  /*estilo de los botones*/
+  .botonNav{
+    background:none;
+    border-radius: 5px;
+    border:none;
+    font-weight: bold;
+    font-size: 10px,; 
+    
+    padding-left: 0px;
+      margin: 0px;
+  }
+    header nav ul li .children {
+      display: none;
+      background:rgb(75, 75, 75);
+      position: absolute;
+      border-radius: 0px;
+      border: none;
+      width: 150%;
+      z-index:1000;
+    }
+
+    header nav ul li:hover {
+      background:rgb(0, 0, 0);
+    }
+
   /*navegador menu*/
   header nav {
-    width:80%;
-    height:100%;
-    left:-100%;
-    margin:0;
+    width:35%;
+    height: calc(50% - 80px);
+    right: 100%;
+    margin:1px 0px 0px 5px;
+    border-radius: 15px 0px;
     position: fixed;
+    overflow: scroll;
   }
 
   header form button{
@@ -510,13 +597,13 @@ text-decoration: none;
 
   header nav ul li {
     display:block;
-    float:none;
+    /*float:none;*/
     border-bottom:1px solid rgba(255,255,255, .3);
   }
 
   .menu_bar{
     display:block;
-    padding:20px;
+    padding:auto;
       background:#adb1b4;
     color:#fff;
     text-decoration:none;
@@ -531,6 +618,16 @@ text-decoration: none;
     box-sizing:border-box;
   }
 
+  .menu_bar .bt-menu {
+		display: block;
+		padding: 20px;
+		color: #fff;
+		overflow: hidden;
+		font-size: 25px;
+		font-weight: bold;
+		text-decoration: none;
+  }
+  
   .menu_bar a{
     color: white;
   }
@@ -539,6 +636,32 @@ text-decoration: none;
     float:right;
     font-size:40px;
   }
+
+   /*estilo botones*/
+   header nav ul li a {
+		display: block;
+	}
+ 
+	header nav ul li:hover .children {
+		display: none;
+	}
+ 
+	header nav ul li .children {
+		width: 100%;
+		position: relative;
+	}
+ 
+	header nav ul li .children li a {
+		margin-left:20px;
+	}
+ 
+	header nav ul li .caret {
+		float: right;
+    }
+    .texto{
+        padding-left: 30px;
+    }
+
   /*contenido*/
   .cuerpo{
     width:100%;
