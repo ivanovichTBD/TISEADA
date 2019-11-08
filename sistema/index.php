@@ -11,6 +11,7 @@
 </head>
 
 <body>
+
 	<!-- cambio de estilo cabecera segun tipo de usuario-->	
 	<?php if($_SESSION['tipo_usuario'] !=4){?>
 		<div class="fixed-top trabajadores">
@@ -29,6 +30,7 @@
 		<?php include "anadirPalabrasEnCarta.php"; ?>
 	
 	</main
+
 	<iframe id="iframe" > </iframe>
 	
 	<footer>

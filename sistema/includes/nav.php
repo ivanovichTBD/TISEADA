@@ -54,8 +54,14 @@
 				<li class="principal">
 					<a href="#">Redactar</a>
 					<ul>
+						<li><a href="redactar_carta.php">CREAR REDACCION</a></li>
+					</ul>
+				</li>
+				<li class="principal">
+					<a href="#">Colaborar </a>
+					<ul>
 					
-					<li><a href="redactar_carta.php">CREAR REDACCION</a></li>
+					<li><a href="chat_con_websocket/index.php">Colaboración entre redactores</a></li>
 						
 					</ul>
 				</li>
