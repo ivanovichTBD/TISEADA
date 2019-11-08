@@ -5,20 +5,24 @@
 		header('location: ../');  //Direcciona a la pagina principal
 	}
  ?>
-	<header>
-		<div class="header">
-			
+<header>
+		<div class=" navbar navbar-dark justify-content-between header">
 			<h1 class="Titulo" >MENSAJERO</h1>
-			<div class="optionsBar">
-				</p>
-				
-				<span class="user"><?php echo $_SESSION['user'].'-'.$_SESSION['nombre']; ?></span>
-				<img class="photouser" src="img/user.png" alt="Usuario">
-				<a href="salir.php"><img class="close" src="img/salir.png" alt="Salir del sistema" title="Salir"></a>
-			</div>
-		
+			<form class="form-inline my-1 avatarUsu">
+				<div class="md-form form-sm my-0 optionsBar">
+					
+					<span class="user"><?php echo $_SESSION['user'].'-'.$_SESSION['nombre']; ?></span>
+					<img class="photouser" src="img/user.png" alt="Usuario">
+					<a href="salir.php"><img class="close" src="img/salir.png" alt="Salir del sistema" title="Salir"></a>
+				</div>
+			</form>
 		</div>
-		<?php include "nav.php"; ?>
+	
+		<!-- navegador -->
+		
+			<?php include "nav.php"; ?>
+		
+		<!-- FIN navegador -->
 		<p class="fecha">Bolivia, <?php echo fechaC(); ?></p>
-	</header>
+</header>
 	

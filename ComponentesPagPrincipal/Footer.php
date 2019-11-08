@@ -60,7 +60,7 @@
 <!-- Footer Elements -->
 
 <!-- Copyright -->
-<div class="footer-copyright text-center pt-0 py-0">© 2019 Copyright:
+<div class="footer-copyright text-center pt-0 py-0 pie">© 2019 Copyright:
   <a href="#">CONTROL Z.com</a>
 </div>
 <!-- Copyright -->

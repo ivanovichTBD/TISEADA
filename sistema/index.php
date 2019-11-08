@@ -7,13 +7,45 @@
 <head>
 	<meta charset="UTF-8">
 	<?php include "includes/scripts.php"; ?>
-	<title>Niño Mensajero</title>
+	<title>	MENSAJERO</title>
 </head>
+
 <body>
-	<?php include "includes/header.php"; ?>
-	<?php include "anadirPalabrasEnCarta.php"; ?>
+	<!-- cambio de estilo cabecera segun tipo de usuario-->	
+	<?php if($_SESSION['tipo_usuario'] !=4){?>
+		<div class="fixed-top trabajadores">
+			<?php include "includes/header.php"; ?>
+		</div>
+	<?php } ?>
+
+	<?php if($_SESSION['tipo_usuario'] == 4){?>
+		<div class="fixed-top usuarioNiño">
+			<?php include "includes/header.php"; ?>
+		</div>
+	<?php } ?>
+	<!-- FIN cambio de estilo cabecera segun tipo de usuario-->	
+	
+	<main style="height: 100vh;">
+		<?php include "anadirPalabrasEnCarta.php"; ?>
+	
+	</main
 	<iframe id="iframe" > </iframe>
-	<?php include "includes/footer.php"; ?>
+	
+	<footer>
+		<!-- cambio de estilo cabecera segun tipo de usuario-->	
+		<?php if($_SESSION['tipo_usuario'] !=4){?>
+				<div class="Footertrabajadores">
+					<?php include "../ComponentesPagPrincipal/Footer.php"; ?>
+				</div>
+			<?php } ?>
+
+			<?php if($_SESSION['tipo_usuario'] == 4){?>
+				<div class="FooterNiño">
+					<?php include "../ComponentesPagPrincipal/Footer.php"; ?>
+				</div>
+			<?php } ?>
+			<!-- FIN cambio de estilo cabecera segun tipo de usuario-->	
+	</footer>
 </body>
 
 </html>
