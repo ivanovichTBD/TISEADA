@@ -24,7 +24,7 @@
     <nav class="navbar-expand-lg  scrolling-navbar" >
       <div class="navbar-collapse" >
         <ul class="navbar-nav mr-auto">
-          <li class="botonNav"> <a href="#"><span class="icon-home"></span>Inicio</a></li>
+          <li class="botonNav"> <a href="./"><span class="icon-home"></span>Inicio</a></li>
           <li class="submenum botonNav"> <a href="#"><span class="icon-newspaper"></span>Boletines<span class="caret icon-arrow-down6"></span></a>
               <ul class="children">
                   <li><a href="#">Categoria</a></li>

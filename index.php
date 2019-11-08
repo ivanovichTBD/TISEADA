@@ -66,7 +66,7 @@
     <?php include "sistema/includes/functions.php"?>
     <?php include "ComponentesPagPrincipal/HeaderPrincipal.php"?>
     
-    <main style="height: 100vh;">
+    <main style="height: 81vh;">
     <div class="contenido" id="contenido">
         <?php include "ComponentesPagPrincipal/subMenus.php"?>
         <?php include "ComponentesPagPrincipal/cuerpo.php"?>

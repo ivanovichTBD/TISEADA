@@ -439,10 +439,10 @@ text-align: center;
 
 /*******************************************************LoginUser**/
 .IngresoUser {
-  margin: 220px 0px 0px 0px;
+  margin: 210px 0px 0px 0px;
 padding: 0;
 background: url(../sistema/img/cover4.jpg) no-repeat 0px 0px;
-min-height: 100vh;
+min-height: 81vh;
 background-size: cover;
 font-family: 'Raleway', sans-serif;
 }
