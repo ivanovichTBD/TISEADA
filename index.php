@@ -70,6 +70,11 @@
     <div class="contenido" id="contenido">
         <?php include "ComponentesPagPrincipal/subMenus.php"?>
         <?php include "ComponentesPagPrincipal/cuerpo.php"?>
+       
+
+        
+
+
         <?php include "ComponentesPagPrincipal/anexo.php"?>
         <?php //include "sistema/registro_usuario.php"; ?>
     
