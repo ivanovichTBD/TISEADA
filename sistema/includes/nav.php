@@ -1,5 +1,7 @@
-	
-		<div class="topnav" id="myTopnav">
+<header>
+		<div class="menu_bar">
+			<a href="#" class="bt-menu"><span class="icon-view-list"></span>Menu</a>
+		</div>
 		<nav>
 			<ul>
 				<li><a href="index.php">Inicio</a></li>
@@ -72,7 +74,8 @@
 				
 			</ul>
 		</nav>
-		</div>
+<header>
+
 		<script>
 		function form(){
 			document.getElementById('iframe').src="registro_usuario.php";

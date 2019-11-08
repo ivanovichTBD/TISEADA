@@ -3,13 +3,16 @@
 *{
 	margin: 0px;
 	padding: 0;
-	box-sizing: border-box;
+	/*box-sizing: border-box;*/
 }
-.container{
+/*.container{
 	display: flex;
-}
+}*/
 .Titulo{
-margin-left: 40%;	
+	width: 75%;
+	display: flex;
+	justify-content: center;
+	  margin:auto;  
 
 }
 body{
@@ -22,7 +25,8 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: 1px;
 }
 h1{
-	font-size: 26px;
+	font-size: 35px;
+	letter-spacing: 2px;
 }
 h2{
 	font-size: 20px;
@@ -53,26 +57,38 @@ a{
 span {
     font-family: 'GothamBook';
     letter-spacing: 1px;
-    font-size: 14px;
+    	font-size: 20px;
     line-height: 20px;
 }
 header{
-/*	position: fixed;*/
+
+	/*position: fixed;*/
+
 	width: 100%;
 }
 .header{
 	color: #FFF;
-	background: #0a4661;
-	height: 70px;
+	/*background: #0a4661;*/
+	height: 50px;
 	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
 	display: -o-flex;
-	display: flex;
-	align-items: center;
-	padding: 10px;
-	
+	display: flex;	
 }
+
+/*cambio de estilo segun tipo de usuario*/
+.trabajadores{
+	background: #013E5C;
+}
+.usuarioNiño{
+	
+	background: #FFABAB;
+	border-radius: 15px 15px 0px 0px;
+  	margin: 0px 5px 0px 5px;
+}
+
+/*-----------avatar usuario---------------------*/
 .optionsBar{
     display: -webkit-flex;
     display: -moz-flex;
@@ -82,20 +98,21 @@ header{
     justify-content: flex-end;
 	align-items: center;
 	min-width: 100px;
-	margin-left: 30%;
-margin-right:30px; ;
+	margin-top:45px; 
+	margin-right: 25px;
 }
 .optionsBar span {
+	width: 50px;
     color: #FFF;
     font-size: 11pt;
     font-family: 'GothamBook';
     text-transform: uppercase;
-    margin-left: 30px;
+    margin-left: 2px;
 }
 .photouser {
-    margin-left: 30px;
-    width: 25px;
-    height: 25px;
+    margin-left: 10px;
+    width: 60px;
+	height: 60px;
 }
 .close{
 	width: 25px;
@@ -110,9 +127,16 @@ margin-right:30px; ;
     margin-left: 30px;
 }
 
-nav ul{
-	background-color:#0a4661;
+/*nav--------------------------------------------------------------------------*/
+header nav{
+	display: block;
+	/*background-color:#029AE5;*/
+	  margin: 1px 5px 1px 5px;
+	  padding: 5px 0px 0px 15px;
+	  border-radius: 0px 0px 15px 15px; 
+	}
 
+header nav ul{
 	/*background: #05817d;*/
 	list-style: none;
 	display: -webkit-flex;
@@ -122,13 +146,20 @@ nav ul{
 	display: flex;
 	justify-content: left;
 	align-items: center;
+
+		overflow:hidden;
+		list-style:none;
 }
+
 nav ul li{
 	background-color: #0ca4ce;
 	border-radius: 5px;
-    border:4px solid;
-    border-color: #FFF;
-    padding: 0px;
+   		border:2px solid;
+	border-color: #FFF;
+		font-weight: bold;
+		font-size: 10px,; 
+		padding: 4px;
+		margin: 10px 3px;
 }
 nav ul > li a{
 	position: relative;
@@ -162,8 +193,8 @@ nav ul li:hover ul{
 	
 }
 nav li ul{
-	/*background: #177470;*/
-	background: #2d9872;
+	background: #ffffffde;
+	/*background: #2d9872;*/
 	display: none;
 	flex-direction: column;
 	position: absolute;
@@ -201,6 +232,12 @@ ul{
 	height: 39em;
 	border-width: 0px;
 }
+
+/**********NAVEGADOR********************************/
+.menu_bar {
+	display:none;
+}
+
 /*****************************************************************/
 .fecha{
 	text-align: end;
@@ -401,79 +438,80 @@ table td{
 	margin-left: 10px;
 }
 
-
-
-
-
-
-
 /*PARA EL FOOTER*/
-body{
-	font-family: 'Raleway', sans-serif;
-  }
-  
-  footer{
-	
-	  background-color:#02939e;
-	  padding-top: 15px;
-  }
-  
-  footer ul{
-	  list-style:none;
-	  margin:0 auto;
-	  display:inline-block;
-	  padding-top:10px;
-  }
-  
-  footer ul li{
-	  float:left;
-  }
-  
-  footer ul li a{
-	  color:white;
-	  padding:20px;
-  }
-  
-  footer ul li a:hover{
-	  color:black;
-	  text-decoration:none;
-  }
-  
-  .footer-top{
-	  padding-bottom:10px;
-  }
-  
-  .footer-top .fa{
-	  font-size:18px;
-	  color: #FFF;
-	  padding-right:10px;
-  }
-  
-  .footer-top a{
-	  color:#FFF;
-	  text-decoration:none;
-  }
-  
-  .footer-top .col-lg-2:hover .fa , .footer-top .col-lg-2:hover a{
-	  color:black;
-  }
-  
-  .copyright{
-	  background-color:#f0f0f0;
-  }
-  
-  .copyright p{
-	  font-size:12px;
-	  padding:15px 0 10px 0;
-
-  }
-  .posicion{
-
+.posicion{
 	position: fixed;
+	position:relative;
 	bottom: 0;
 	width: 100%;
-	height: 116px;
-	padding-bottom: 2.5rem;
-	padding-top: 1.5rem;
+	color: white;
   }
+  footer .pie{
+	background: white;
+}
+  footer .Footertrabajadores{
+	background: #013E5C;
+  }
+  footer .FooterNiño{
+	background: rgb(253, 166, 166);
+  }
+
   /*FIN FOOTER*/
+
+  .avatarUsu{
+	background: none;
+	border: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+/*****************************RESPONSIVE**************************/
+@media screen and (max-width:992px ) {
+	/*navegador menu*/
+	header nav {
+	  width:80%;
+	  height:100%;
+	  left:-100%;
+	  margin:0;
+	  position: fixed;
+	}
+  
+	header form button{
+	  float:none;
+	}
+  
+	header nav ul li {
+	  display:block;
+	  float:none;
+	  border-bottom:1px solid rgba(255,255,255, .3);
+	}
+  
+	.menu_bar{
+	  display:block;
+	  padding:5px;
+	  border:3px solid;
+	  color:#fff;
+	  text-decoration:none;
+	  font-weight: bold;
+	  font-size:25px;
+	  margin-top: 60px;
+  
+	  -webkit-box-sizing:border-box;
+	  -moz-box-sizing:border-box;
+	  box-sizing:border-box;
+	}
+  
+	.menu_bar a{
+	  color: white;
+	}
+  
+	.menu_bar span {
+	  float:right;
+	  font-size:40px;
+	}
+	/*contenido*/
+	.cuerpo{
+	  width:100%;
+	}
+  }
+  
