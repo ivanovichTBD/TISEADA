@@ -1,7 +1,5 @@
-<header>
-		<div class="menu_bar">
-			<a href="#" class="bt-menu"><span class="icon-view-list"></span>Menu</a>
-		</div>
+	
+		<div class="topnav" id="myTopnav">
 		<nav>
 			<ul>
 				<li><a href="index.php">Inicio</a></li>
@@ -67,6 +65,17 @@
 				</li>
 			<?php } ?>
 
+			<?php if($_SESSION['tipo_usuario'] == 2){ ?>
+				<li class="principal">
+					<a href="#">Publicaciones </a>
+					<ul>
+					
+					<li><a href="publicar_boletin.php">Publicar Boletin</a></li>
+						
+					</ul>
+				</li>
+			<?php } ?>
+
 				</li>
 				<li class="principal">
 					<a href="ayuda.php">Ayuda</a>
@@ -74,8 +83,7 @@
 				
 			</ul>
 		</nav>
-<header>
-
+		</div>
 		<script>
 		function form(){
 			document.getElementById('iframe').src="registro_usuario.php";
