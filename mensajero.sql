@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-10-2019 a las 21:03:12
+-- Tiempo de generación: 08-11-2019 a las 06:43:14
 -- Versión del servidor: 10.1.19-MariaDB
 -- Versión de PHP: 5.6.24
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `mensajero2`
+-- Base de datos: `mensajero`
 --
 
 -- --------------------------------------------------------
@@ -36,7 +36,11 @@ CREATE TABLE `area_usuario` (
 --
 
 INSERT INTO `area_usuario` (`ID_AREA`, `NOMBRE_AREA`) VALUES
-(1, '');
+(2, 'Ciencia'),
+(3, 'Psicologia'),
+(4, 'Biologia'),
+(5, 'Arte'),
+(6, 'Sociales');
 
 -- --------------------------------------------------------
 
@@ -46,10 +50,10 @@ INSERT INTO `area_usuario` (`ID_AREA`, `NOMBRE_AREA`) VALUES
 
 CREATE TABLE `articulo` (
   `id_articulo` int(11) NOT NULL,
-  `titulo` varchar(100) NOT NULL,
-  `contenido` longtext NOT NULL,
-  `nombre_imagen` varchar(100) NOT NULL,
-  `imagen` varchar(100) NOT NULL
+  `titulo` varchar(50) NOT NULL,
+  `contenido` varchar(5000) NOT NULL,
+  `nombre_imagen` varchar(80) NOT NULL,
+  `imagen` varchar(80) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -57,8 +61,30 @@ CREATE TABLE `articulo` (
 --
 
 INSERT INTO `articulo` (`id_articulo`, `titulo`, `contenido`, `nombre_imagen`, `imagen`) VALUES
-(1, 'ewrqew', 'ewgaqweg', 'aagere', 'repo_imagenes_del_editor/gixxer.jpg'),
-(2, 'pooo', 'pooo', 'pooo', 'repo_imagenes_del_editor/Pagina Inicio.jpg');
+(1, 'test de articulo', 'prueba de los redactores a enviar a editor', 'puesta de sol', 'repo_imagenes_del_editor/gixxer blue.jpg'),
+(2, 'prueba 3 de una redaccion al editor', 'yo tengo una laptop', 'muestra de redaccion', 'repo_imagenes_del_editor/756444bb819791ce078d42ff0a76fe41.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `boletin`
+--
+
+CREATE TABLE `boletin` (
+  `id_boletin` int(11) NOT NULL,
+  `titulo` varchar(80) NOT NULL,
+  `contenido` varchar(80) NOT NULL,
+  `imagen` varchar(90) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `boletin`
+--
+
+INSERT INTO `boletin` (`id_boletin`, `titulo`, `contenido`, `imagen`) VALUES
+(1, 'prueba de un boletin 1', '', 'repo_imagenes_boletin/gixxer blue.jpg'),
+(2, 'prueba 2 de un boletin a subir', '', 'repo_imagenes_boletin/gixxer blue.jpg'),
+(3, 'muestra de redaccion', '', 'repo_imagenes_boletin/756444bb819791ce078d42ff0a76fe41.jpg');
 
 -- --------------------------------------------------------
 
@@ -85,12 +111,9 @@ CREATE TABLE `carta` (
 --
 
 INSERT INTO `carta` (`ID_CARTA`, `ID_CATEGORIA`, `ID_TIPO_CARTA`, `ID_PRIORIDAD`, `TITULO`, `CONTENIDO`, `NOMBRE_IMAGEN`, `IMAGEN`, `COMENTARIO`, `ASUNTO`, `LEIDO`) VALUES
-(1, 1, NULL, NULL, 'caminando', 'primera carta creada', 'hola', 'repo_imagenes/Sin tÃ­tulo.png', NULL, NULL, NULL),
-(2, NULL, NULL, NULL, 'el camino malo', 'el asdkasbjbdasdas', 'el triste perro', 'repo_imagenes/e3d426ea-fe19-466c-94ca-6ed45bedd1e8_200x200.png', NULL, 'carta a mi perro', NULL),
-(11, 3, 1, 2, 'te quiero', 'el alma es el mejor amigo', 'el triste perro', 'repo_imagenes/e3d426ea-fe19-466c-94ca-6ed45bedd1e8_200x200.png', NULL, 'mi vida en ruinas', NULL),
-(12, 3, 1, 2, 'te quiero qui', 'caminando hacia el alma', 'rata', 'repo_imagenes/Sin tÃ­tulo.png', NULL, 'como cmainar ', NULL),
-(13, 6, 1, 2, 'te quiero conmigo', 'hola que tal el mundo es un planeta muy bonito', 'gg', 'repo_imagenes/Sin tÃ­tulo.png', NULL, 'el cuento del gato', NULL),
-(14, 1, 1, 1, 'EFQEWFQ', 'SUICIDIO', 'YTWEY', 'repo_imagenes/gixxer.jpg', NULL, 'UYETR', NULL);
+(54, 5, 1, 2, 'me gusta bailar ', 'me gusta bailar ', 'me gusta bailar ', 'repo_imagenes/pp.jpg', 'me gusto mucho tu carta', 'me gusta bailar ', NULL),
+(55, 5, 1, 2, 'me gusta cantar', 'me gusta cantar', 'me gusta cantar', 'repo_imagenes/ac}.jpg', 'me gusto mucho tu carta', 'me gusta cantar', NULL),
+(56, 2, 1, 2, 'laptop', 'yo tengo una laptop', 'laptop', 'repo_imagenes/gixxer blue.jpg', NULL, 'tengo laptop', NULL);
 
 -- --------------------------------------------------------
 
@@ -119,6 +142,28 @@ INSERT INTO `categoria_carta` (`ID_CATEGORIA`, `CATEGORIA`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `permisos_usuario`
+--
+
+CREATE TABLE `permisos_usuario` (
+  `IDUSUARIO` int(11) NOT NULL,
+  `ID_PRIVILEGIOS` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `plantilla`
+--
+
+CREATE TABLE `plantilla` (
+  `ID_PLANTILLA` int(11) NOT NULL,
+  `PLANTILLA` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `prioridad`
 --
 
@@ -135,6 +180,30 @@ INSERT INTO `prioridad` (`ID_PRIORIDAD`, `DESCRIPCION`) VALUES
 (1, 'Alta'),
 (2, 'Aceptada'),
 (3, 'baja');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `privilegios`
+--
+
+CREATE TABLE `privilegios` (
+  `ID_PRIVILEGIOS` int(11) NOT NULL,
+  `NOMBRE_PRIVILEGIO` varchar(30) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `privilegios`
+--
+
+INSERT INTO `privilegios` (`ID_PRIVILEGIOS`, `NOMBRE_PRIVILEGIO`) VALUES
+(1, 'Ver Lista de Carta'),
+(2, 'Ver Lista de de Usuario'),
+(3, 'Crear nuevo Usuario'),
+(4, 'Crear Redaccion'),
+(5, 'Ver Informacion de Usuario'),
+(6, 'Ver Carta '),
+(7, 'Enviar Carta');
 
 -- --------------------------------------------------------
 
@@ -194,22 +263,24 @@ CREATE TABLE `usuario` (
   `CLAVE` varchar(100) DEFAULT NULL,
   `ESTATUS` int(11) DEFAULT NULL,
   `EDAD` int(11) DEFAULT NULL,
-  `TELEFONO` int(11) DEFAULT NULL
+  `TELEFONO` int(11) DEFAULT NULL,
+  `DISTRIBUCION` int(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`IDUSUARIO`, `ID_AREA`, `ID_TIPOUSUARIO`, `NOMBRE`, `CORREO`, `USUARIO`, `CLAVE`, `ESTATUS`, `EDAD`, `TELEFONO`) VALUES
-(1, NULL, 1, 'jose', 'raqui@gmail', 'admin', '202cb962ac59075b964b07152d234b70', 1, 22, 78999999),
-(2, NULL, 4, 'ivan', 'flores@gmail.com', 'kid', '7de007e43f108e4b54b079f66e4285d8', 1, 25, 65321456),
-(3, NULL, 3, 'nao', 'hola', 'tuto', 'b2218117085d7b3886e312b35b7f42fa', 0, 24, 7568369),
-(4, NULL, 3, 'nio', 'ratu@gmail.com', 'nio', 'd0a5fd04b4b48be7ee56c1eb538d78cb', 1, 23, 65321456),
-(5, NULL, 3, 'melina', 'mel@gmail.com', 'mel', '0ef174fc614c8d61e2d63329ef7f46c0', NULL, 26, 7568369),
-(6, NULL, 2, 'Ivanovic', 'hola@hola', 'kidd', '202cb962ac59075b964b07152d234b70', NULL, 26, 756326456),
-(7, NULL, 3, 'car', 'car@gmail.com', 'car', 'e6d96502596d7e7887b76646c5f615d9', 1, 0, 6666666),
-(8, NULL, 3, 'dag', 'dag@gmail.com', 'dag', 'b4683fef34f6bb7234f2603699bd0ded', 1, 22, 76767676);
+INSERT INTO `usuario` (`IDUSUARIO`, `ID_AREA`, `ID_TIPOUSUARIO`, `NOMBRE`, `CORREO`, `USUARIO`, `CLAVE`, `ESTATUS`, `EDAD`, `TELEFONO`, `DISTRIBUCION`) VALUES
+(1, NULL, 1, 'jose', 'raqui@gmail', 'admin', '202cb962ac59075b964b07152d234b70', 1, 22, 78999999, 0),
+(2, NULL, 4, 'ivan', 'flores@gmail.com', 'kid', '7de007e43f108e4b54b079f66e4285d8', 1, 25, 65321456, 0),
+(3, 2, 3, 'nao', 'hola', 'tuto', 'b2218117085d7b3886e312b35b7f42fa', 1, 24, 7568369, 0),
+(4, 2, 3, 'nio', 'ratu@gmail.com', 'nio', 'd0a5fd04b4b48be7ee56c1eb538d78cb', 1, 23, 65321456, 0),
+(5, 3, 3, 'melina', 'mel@gmail.com', 'mel', '0ef174fc614c8d61e2d63329ef7f46c0', 1, 26, 7568369, 1),
+(6, 2, 3, 'Ivanovic', 'hola@hola', 'kidd', '202cb962ac59075b964b07152d234b70', 1, 26, 756326456, 1),
+(11, 5, 3, 'jose campos', 'raqui@gmail,bo', 'raquitich', '6ebb02e482851804e964db5f50d36318', 1, 22, 65321456, 1),
+(12, 6, 3, 'Soria Rami', 'holowiwi@gmail.com', 'fanoem', 'f020ef7c6521c69ba5bd192c3472738c', 1, 23, 7568366, 0),
+(13, 2, 2, 'eliana', 'eliana@gmail.com', 'eliana', '4b5feade9732bab1148ea9e7a2c4fb66', 1, 28, 76985476, 1);
 
 -- --------------------------------------------------------
 
@@ -227,14 +298,12 @@ CREATE TABLE `usuario_carta` (
 --
 
 INSERT INTO `usuario_carta` (`ID_CARTA`, `IDUSUARIO`) VALUES
-(11, 2),
-(11, 3),
-(12, 2),
-(12, 3),
-(13, 2),
-(13, 3),
-(14, 2),
-(14, 3);
+(54, 2),
+(54, 11),
+(55, 2),
+(55, 11),
+(56, 2),
+(56, 6);
 
 --
 -- Índices para tablas volcadas
@@ -253,13 +322,19 @@ ALTER TABLE `articulo`
   ADD PRIMARY KEY (`id_articulo`);
 
 --
+-- Indices de la tabla `boletin`
+--
+ALTER TABLE `boletin`
+  ADD PRIMARY KEY (`id_boletin`);
+
+--
 -- Indices de la tabla `carta`
 --
 ALTER TABLE `carta`
   ADD PRIMARY KEY (`ID_CARTA`),
-  ADD KEY `FK_RELATIONSHIP_5` (`ID_CATEGORIA`),
-  ADD KEY `FK_RELATIONSHIP_6` (`ID_TIPO_CARTA`),
-  ADD KEY `FK_RELATIONSHIP_7` (`ID_PRIORIDAD`);
+  ADD KEY `FK_RELATIONSHIP_5` (`ID_CATEGORIA`) USING BTREE,
+  ADD KEY `FK_RELATIONSHIP_6` (`ID_TIPO_CARTA`) USING BTREE,
+  ADD KEY `FK_RELATIONSHIP_7` (`ID_PRIORIDAD`) USING BTREE;
 
 --
 -- Indices de la tabla `categoria_carta`
@@ -268,10 +343,29 @@ ALTER TABLE `categoria_carta`
   ADD PRIMARY KEY (`ID_CATEGORIA`);
 
 --
+-- Indices de la tabla `permisos_usuario`
+--
+ALTER TABLE `permisos_usuario`
+  ADD PRIMARY KEY (`IDUSUARIO`,`ID_PRIVILEGIOS`),
+  ADD KEY `FK_RELATIONSHIP_9` (`ID_PRIVILEGIOS`);
+
+--
+-- Indices de la tabla `plantilla`
+--
+ALTER TABLE `plantilla`
+  ADD PRIMARY KEY (`ID_PLANTILLA`);
+
+--
 -- Indices de la tabla `prioridad`
 --
 ALTER TABLE `prioridad`
   ADD PRIMARY KEY (`ID_PRIORIDAD`);
+
+--
+-- Indices de la tabla `privilegios`
+--
+ALTER TABLE `privilegios`
+  ADD PRIMARY KEY (`ID_PRIVILEGIOS`);
 
 --
 -- Indices de la tabla `tipo_carta`
@@ -290,15 +384,15 @@ ALTER TABLE `tipo_usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`IDUSUARIO`),
-  ADD KEY `FK_RELATIONSHIP_1` (`ID_TIPOUSUARIO`),
-  ADD KEY `FK_RELATIONSHIP_2` (`ID_AREA`);
+  ADD KEY `FK_RELATIONSHIP_1` (`ID_TIPOUSUARIO`) USING BTREE,
+  ADD KEY `FK_RELATIONSHIP_2` (`ID_AREA`) USING BTREE;
 
 --
 -- Indices de la tabla `usuario_carta`
 --
 ALTER TABLE `usuario_carta`
   ADD PRIMARY KEY (`ID_CARTA`,`IDUSUARIO`),
-  ADD KEY `FK_RELATIONSHIP_4` (`IDUSUARIO`);
+  ADD KEY `FK_RELATIONSHIP_4` (`IDUSUARIO`) USING BTREE;
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -308,27 +402,42 @@ ALTER TABLE `usuario_carta`
 -- AUTO_INCREMENT de la tabla `area_usuario`
 --
 ALTER TABLE `area_usuario`
-  MODIFY `ID_AREA` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID_AREA` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT de la tabla `articulo`
 --
 ALTER TABLE `articulo`
   MODIFY `id_articulo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
+-- AUTO_INCREMENT de la tabla `boletin`
+--
+ALTER TABLE `boletin`
+  MODIFY `id_boletin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
 -- AUTO_INCREMENT de la tabla `carta`
 --
 ALTER TABLE `carta`
-  MODIFY `ID_CARTA` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `ID_CARTA` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 --
 -- AUTO_INCREMENT de la tabla `categoria_carta`
 --
 ALTER TABLE `categoria_carta`
   MODIFY `ID_CATEGORIA` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
+-- AUTO_INCREMENT de la tabla `plantilla`
+--
+ALTER TABLE `plantilla`
+  MODIFY `ID_PLANTILLA` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT de la tabla `prioridad`
 --
 ALTER TABLE `prioridad`
   MODIFY `ID_PRIORIDAD` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT de la tabla `privilegios`
+--
+ALTER TABLE `privilegios`
+  MODIFY `ID_PRIVILEGIOS` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT de la tabla `tipo_carta`
 --
@@ -343,7 +452,7 @@ ALTER TABLE `tipo_usuario`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `IDUSUARIO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `IDUSUARIO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- Restricciones para tablas volcadas
 --
@@ -352,23 +461,30 @@ ALTER TABLE `usuario`
 -- Filtros para la tabla `carta`
 --
 ALTER TABLE `carta`
-  ADD CONSTRAINT `FK_RELATIONSHIP_5` FOREIGN KEY (`ID_CATEGORIA`) REFERENCES `categoria_carta` (`ID_CATEGORIA`),
-  ADD CONSTRAINT `FK_RELATIONSHIP_6` FOREIGN KEY (`ID_TIPO_CARTA`) REFERENCES `tipo_carta` (`ID_TIPO_CARTA`),
-  ADD CONSTRAINT `FK_RELATIONSHIP_7` FOREIGN KEY (`ID_PRIORIDAD`) REFERENCES `prioridad` (`ID_PRIORIDAD`);
+  ADD CONSTRAINT `carta_ibfk_1` FOREIGN KEY (`ID_CATEGORIA`) REFERENCES `categoria_carta` (`ID_CATEGORIA`),
+  ADD CONSTRAINT `carta_ibfk_2` FOREIGN KEY (`ID_TIPO_CARTA`) REFERENCES `tipo_carta` (`ID_TIPO_CARTA`),
+  ADD CONSTRAINT `carta_ibfk_3` FOREIGN KEY (`ID_PRIORIDAD`) REFERENCES `prioridad` (`ID_PRIORIDAD`);
+
+--
+-- Filtros para la tabla `permisos_usuario`
+--
+ALTER TABLE `permisos_usuario`
+  ADD CONSTRAINT `FK_RELATIONSHIP_8` FOREIGN KEY (`IDUSUARIO`) REFERENCES `usuario` (`IDUSUARIO`),
+  ADD CONSTRAINT `FK_RELATIONSHIP_9` FOREIGN KEY (`ID_PRIVILEGIOS`) REFERENCES `privilegios` (`ID_PRIVILEGIOS`);
 
 --
 -- Filtros para la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  ADD CONSTRAINT `FK_RELATIONSHIP_1` FOREIGN KEY (`ID_TIPOUSUARIO`) REFERENCES `tipo_usuario` (`ID_TIPOUSUARIO`),
-  ADD CONSTRAINT `FK_RELATIONSHIP_2` FOREIGN KEY (`ID_AREA`) REFERENCES `area_usuario` (`ID_AREA`);
+  ADD CONSTRAINT `usuario_ibfk_1` FOREIGN KEY (`ID_TIPOUSUARIO`) REFERENCES `tipo_usuario` (`ID_TIPOUSUARIO`),
+  ADD CONSTRAINT `usuario_ibfk_2` FOREIGN KEY (`ID_AREA`) REFERENCES `area_usuario` (`ID_AREA`);
 
 --
 -- Filtros para la tabla `usuario_carta`
 --
 ALTER TABLE `usuario_carta`
-  ADD CONSTRAINT `FK_RELATIONSHIP_3` FOREIGN KEY (`ID_CARTA`) REFERENCES `carta` (`ID_CARTA`),
-  ADD CONSTRAINT `FK_RELATIONSHIP_4` FOREIGN KEY (`IDUSUARIO`) REFERENCES `usuario` (`IDUSUARIO`);
+  ADD CONSTRAINT `usuario_carta_ibfk_1` FOREIGN KEY (`ID_CARTA`) REFERENCES `carta` (`ID_CARTA`),
+  ADD CONSTRAINT `usuario_carta_ibfk_2` FOREIGN KEY (`IDUSUARIO`) REFERENCES `usuario` (`IDUSUARIO`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

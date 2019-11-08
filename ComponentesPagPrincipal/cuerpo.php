@@ -1,6 +1,9 @@
 <div class="cuerpo">
 
 <h1>PUBLICACIONES DEL MENSAJERO</h1>
+<?php include "sistema/mostrar_boletin.php"; ?> 
+
+
 <div>
         <article class="infoVis" id="vision">
                 <Section class="mision">
