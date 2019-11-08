@@ -6,22 +6,22 @@
 }
 */
 
-
 include "../conexion.php";
-
 if(!empty($_POST))
 {
+//    include "../conexion.php";
     $alert='';
     echo $_POST['area_usuario'];
-    if(empty($_POST['nombre']) || empty($_POST['edad']) || empty($_POST['correo']) || empty($_POST['usuario']) || empty($_POST['clave']) || empty($_POST['tipo_usuario']))
+    if(empty($_POST['nombre']) || empty($_POST['edad']) || empty($_POST['email']) || empty($_POST['usuario']) || empty($_POST['clave']) || empty($_POST['tipo_usuario']))
     {
+        echo "hllj";
         $alert='<p class="msg_error">Todos los campos son obligatorios.</p>';
     }else{
 
         $nombre = $_POST['nombre'];
         $edad = $_POST['edad'];
         $telefono = $_POST['telefono'];
-        $email  = $_POST['correo'];
+        $email  = $_POST['email'];
         $user   = $_POST['usuario'];
         $clave  = md5($_POST['clave']);
         $tipo_usuario  = $_POST['tipo_usuario'];
@@ -36,7 +36,8 @@ echo $area_usuario;
 
             $query_insert = mysqli_query($conection,"INSERT INTO usuario(NOMBRE,EDAD,TELEFONO,CORREO,USUARIO,CLAVE,ID_TIPOUSUARIO,ESTATUS,ID_AREA,DISTRIBUCION)
                                                                 VALUES('$nombre','$edad','$telefono','$email','$user','$clave','$tipo_usuario','1','$area_usuario','0')");
-            if($query_insert){
+
+    if($query_insert){
                 $alert='<p class="msg_save">Usuario creado correctamente.</p>';
             }else{
                 $alert='<p class="msg_error">Error al crear el usuario.<br>
@@ -49,8 +50,8 @@ echo $area_usuario;
     }
 
 }
-?>
 
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -59,13 +60,13 @@ echo $area_usuario;
 	<title>Registro Usuario</title>
 	
 </head>
-<body>
+<div class="cur">
 
 <h1> <center>Registro de Usuarios</center></h1>
 <div class="alert"><center><?php echo isset($alert) ? $alert : ''; ?></center></div>
 <br>
 <div class="container">
-  <form action="" method="POST">
+  <form action="sistema/registrando.php" method="POST">
     <div class="row">
       <div class="col-25">
         <label for="nombre">Nombre Completo</label>
@@ -184,7 +185,7 @@ mysqli_close($conection);
     </div>
   </form>
 </div>
-
+</html>
 
 
 	
@@ -199,16 +200,14 @@ mysqli_close($conection);
 	}
 	</script>
 	
-</body>
-</html>
+</div>
+
 
 <style>
-	*{
-		font-family: 'Raleway', sans-serif;	
-	}
-	body{
+	
+	.cur{
 		background: url(img/cover4.jpg) no-repeat 0px 0px;
-		
+		font-family: 'Raleway', sans-serif;
 	}
 	h1, p, label{
 		color:white;
