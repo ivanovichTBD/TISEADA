@@ -94,15 +94,15 @@
 			$desde = ($pagina-1) * $por_pagina;
 			$total_paginas = ceil($total_registro / $por_pagina);
 
-			$query = mysqli_query($conection,"SELECT u.idusuario, u.nombre, u.correo, u.usuario, r.tipo_usuario FROM usuario u INNER JOIN tipo_usuario r ON u.tipo_usuario = r.id_tipousuario 
+			$query = mysqli_query($conection,"SELECT u.IDUSUARIO, u.NOMBRE, u.CORREO, u.USUARIO, r.TIPO_USUARIO FROM usuario u INNER JOIN tipo_usuario r ON u.ID_TIPOUSUARIO = r.ID_TIPOUSUARIO 
 										WHERE 
-										( u.idusuario LIKE '%$busqueda%' OR 
-											u.nombre LIKE '%$busqueda%' OR 
-											u.correo LIKE '%$busqueda%' OR 
-											u.usuario LIKE '%$busqueda%' OR 
-											r.tipo_usuario    LIKE  '%$busqueda%' ) 
+										( u.IDUSUARIO LIKE '%$busqueda%' OR 
+											u.NOMBRE LIKE '%$busqueda%' OR 
+											u.CORREO LIKE '%$busqueda%' OR 
+											u.USUARIO LIKE '%$busqueda%' OR 
+											r.TIPO_USUARIO    LIKE  '%$busqueda%' ) 
 										AND
-										estatus = 1 ORDER BY u.idusuario ASC LIMIT $desde,$por_pagina 
+										ESTATUS = 1 ORDER BY u.IDUSUARIO ASC LIMIT $desde,$por_pagina 
 				");
 			mysqli_close($conection);
 			$result = mysqli_num_rows($query);
@@ -112,17 +112,17 @@
 					
 			?>
 				<tr>
-					<td><?php echo $data["idusuario"]; ?></td>
-					<td><?php echo $data["nombre"]; ?></td>
-					<td><?php echo $data["correo"]; ?></td>
-					<td><?php echo $data["usuario"]; ?></td>
-					<td><?php echo $data['tipo_usuario'] ?></td>
+					<td><?php echo $data["IDUSUARIO"]; ?></td>
+					<td><?php echo $data["NOMBRE"]; ?></td>
+					<td><?php echo $data["CORREO"]; ?></td>
+					<td><?php echo $data["USUARIO"]; ?></td>
+					<td><?php echo $data['TIPO_USUARIO'] ?></td>
 					<td>
-						<a class="link_edit" href="editar_usuario.php?id=<?php echo $data["idusuario"]; ?>">Editar</a>
+						<a class="link_edit" href="editar_usuario.php?id=<?php echo $data["IDUSUARIO"]; ?>">Editar</a>
 
-					<?php if($data["idusuario"] != 1){ ?>
+					<?php if($data["IDUSUARIO"] != 1){ ?>
 						|
-						<a class="link_delete" href="eliminar_confirmar_usuario.php?id=<?php echo $data["idusuario"]; ?>">Eliminar</a>
+						<a class="link_delete" href="eliminar_confirmar_usuario.php?id=<?php echo $data["IDUSUARIO"]; ?>">Eliminar</a>
 					<?php } ?>
 						
 					</td>
