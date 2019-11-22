@@ -1,7 +1,7 @@
 <div class="cuerpo">
 
 <h1>PUBLICACIONES DEL MENSAJERO</h1>
-<?php include "sistema/mostrar_boletin.php"; ?> 
+
 
 
 <div>
@@ -24,5 +24,5 @@
         </article>
 
         </div>
-
+        <?php include "sistema/mostrar_boletin.php"; ?> 
 </div>

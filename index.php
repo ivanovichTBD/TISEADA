@@ -68,7 +68,7 @@
     
     <main style="height: 81vh;">
     <div class="contenido" id="contenido">
-        <?php include "ComponentesPagPrincipal/subMenus.php"?>
+        <?php // include "ComponentesPagPrincipal/subMenus.php"?>
         <?php include "ComponentesPagPrincipal/cuerpo.php"?>
        
 

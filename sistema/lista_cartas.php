@@ -31,45 +31,9 @@
  
 
 <h1><center>Fotos y lista de cartas</center></h1>
-<div>
-<center><div class="titulos" id="titulo">NOMBRE PERSONAJE</div><div id="cajaex">
-<table>
-<td>
-<div style="z-index:5;width:183px;height:200px;padding:5px;background:#FAFAFA;margin-left:15px;margin-top:15px;">
-  <div class="titulos"   style="width:170px ; font-size:16px; height:auto;"> COMENTARIOS :</div>
-  
-  <div style="z-index:5;width:170px;height:58px;padding:5px;background:#FAFAFA;overflow:auto;font-size:13px;font-family:calibri;">
-  
-  
-  </div>
-  <?php if($_SESSION['tipo_usuario'] == 3){?>
-  <div class="titulos"   style="width:170px ; font-size:16px; height:auto;"> COMENTARIOS :</div>
-  
-  <div style="z-index:5;width:170px;height:83px;padding:5px;background:#FAFAFA;overflow:auto;font-size:13px;font-family:calibri;">
-  <form action="" method="post">
-  <textarea name="comentario" id="comentario" class="comentario"></textarea>
-  <button onclick="comentar()" type="submit">dar Comentario</button>
-  </form>
-  </div>
-  <?php }?>
-  </td>
-  <td>
-  <div style="width:180px;height:230px;background:#000;border: 5px solid #0d0d0d;float:left;margin-top:15px;-moz-transform: rotate(-350deg);">
-  
- 
-  <div id="imagen">
-  <p class="nameImg" id="nombreImagen" ></p>
- </div>
-  </div>
-  </td></table>
-  <div style="z-index:5;width:400px;height:200px;padding:5px;background:#2d2d2d;margin-left:0px;margin-top:15px;">
-  <div  id="asunto" class="titulos" style="width:auto;font-size:14px;height:30px auto;-moz-transform: rotate(350deg);float:left;">¿Qué más hay de tí?</div>
-  <div id="contenido" style="z-index:5;width:370px;height:150px;padding:5px;background:#FAFAFA;overflow:auto;font-size:13px;font-family:calibri;text-align:justify;">
-  <br></div>¡Que la magia empieze!</div>
-</div></center>
+<center><div class="row">
 
-</div>
-<table  class="table table-hover ">
+<table  class="table table-hover col-6 ">
 		<thead class="table-dark">
 			<tr class="bg-dark">
 			<th scope="col">Numero</th>
@@ -128,7 +92,47 @@
 		</tbody>
 </table>
 
+<div class="col-6">
+<center><div class="titulos" id="titulo">NOMBRE PERSONAJE</div><div id="cajaex">
+<table>
+<td>
+<div style="z-index:5;width:183px;height:200px;padding:5px;background:#FAFAFA;margin-left:15px;margin-top:15px;">
+  <div class="titulos"   style="width:170px ; font-size:16px; height:auto;"> COMENTARIOS :</div>
+  
+  <div style="z-index:5;width:170px;height:58px;padding:5px;background:#FAFAFA;overflow:auto;font-size:13px;font-family:calibri;">
+  
+  
+  </div>
+  <?php if($_SESSION['tipo_usuario'] == 3){?>
+  <div class="titulos"   style="width:170px ; font-size:16px; height:auto;"> COMENTARIOS :</div>
+  
+  <div style="z-index:5;width:170px;height:83px;padding:5px;background:#FAFAFA;overflow:auto;font-size:13px;font-family:calibri;">
+  <form action="" method="post">
+  <textarea name="comentario" id="comentario" class="comentario"></textarea>
+  <button onclick="comentar()" type="submit">dar Comentario</button>
+  </form>
+  </div>
+  <?php }?>
+  </td>
+  <td>
+  <div style="width:180px;height:230px;background:#000;border: 5px solid #0d0d0d;float:left;margin-top:15px;-moz-transform: rotate(-350deg);">
+  
+ 
+  <div id="imagen">
+  <p class="nameImg" id="nombreImagen" ></p>
+ </div>
+  </div>
+  </td></table>
+  <div style="z-index:5;width:400px;height:200px;padding:5px;background:#2d2d2d;margin-left:0px;margin-top:15px;">
+  <div  id="asunto" class="titulos" style="width:auto;font-size:14px;height:30px auto;-moz-transform: rotate(350deg);float:left;">¿Qué más hay de tí?</div>
+  <div id="contenido" style="z-index:5;width:370px;height:150px;padding:5px;background:#FAFAFA;overflow:auto;font-size:13px;font-family:calibri;text-align:justify;">
+  <br></div>¡Que la magia empieze!</div>
+</div></center>
 
+</div>
+
+</div>
+</center>
 
 </body>
 </html>

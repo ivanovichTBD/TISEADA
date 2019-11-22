@@ -66,7 +66,7 @@ echo $area_usuario;
 <div class="alert"><center><?php echo isset($alert) ? $alert : ''; ?></center></div>
 <br>
 <div class="container">
-  <form action="sistema/registrando.php" method="POST">
+  <form action="#" method="POST">
     <div class="row">
       <div class="col-25">
         <label for="nombre">Nombre Completo</label>
