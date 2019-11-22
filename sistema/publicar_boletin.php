@@ -19,7 +19,7 @@ if(!empty($_POST))
         
         $imagen = $_FILES['imagen']['name'];
         $ruta   = $_FILES['imagen']['tmp_name'];
-        $destino = "repo_imagenes_boletin/".$imagen;
+        $destino = "sistema/repo_imagenes_boletin/".$imagen;
         copy($ruta, $destino);
     
         
