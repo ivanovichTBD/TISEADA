@@ -74,7 +74,7 @@ if(!empty($_POST))
 		<center><h1>Redactar y enviar artículo</h1></center><br>
 		<!--formulario para redactar y enviar-->		
 		
-          
+			<img src="img/portada_redactar_carta.jpg" alt="">
 			<center><form action="" method="POST" enctype="multipart/form-data">
                 
                 <div class="col-md-6" id="reply">
@@ -269,5 +269,10 @@ body{
   border-radius: 5px;
   width  : auto;
   height:35px;
+}
+img{
+	width: 100%;
+  height: auto;
+  opacity: 0.92;
 }
 </style>

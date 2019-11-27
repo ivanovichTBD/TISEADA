@@ -101,11 +101,14 @@
 </head>
 <body>
 
-      <div align="center">
 		
-			    <div class="alerta"><?php echo isset($alert) ? $alert : ''; ?></div>
-                    
-                <form action="" method="POST" enctype="multipart/form-data" >
+        
+     <center> <div class="responsivo">
+          <div class="alerta"><?php echo isset($alert) ? $alert : ''; ?></div>
+                <img src="img/portada_escribir_carta.jpg" alt="">
+        
+                <form  method="POST" enctype="multipart/form-data" >
+                
                 <h1><center>Escribe tu carta</center></h1>
 
                 <div id="from">
@@ -132,11 +135,11 @@
                 
                 <div class="button">
                     <button type="submit">Envia tu carta</button>
-
+                </div>
                 </form>
 
 	
-      </div>
+      </div> </center>
 	
 </body>
 </html>
@@ -160,24 +163,27 @@
 
 body {
   font  : 21px sans-serif;
-  padding : 2em;
-  margin  : 0;
-  background:linear-gradient(90deg, rgba(8,203,218,1) 0%, rgba(209,213,213,1) 53%, rgba(8,203,218,1) 100%);
+  background:rgb(33, 177, 175);
+  width:auto;
+  height:auto;
+
 }
 
 form {
   position: relative;
   width  : 770px;
-  height : 620px;
-  margin : 0 auto;
+  height : 550px;
+  margin : 0 ;
   border-radius:3px;
+  margin-top:-30px;
+  padding-top:-90px;
   background: #FFF url(img/fondodecrearcarta2.jpg);
 }
 
 h1 {
   position : absolute;
   left : 415px;
-  top  : 45px;
+  top  : 1px;
   font : 3em "typewriter", sans-serif;
 
 }
@@ -185,32 +191,31 @@ h1 {
 #from {
   position: absolute;
   left : 398px;
-  top  : 245px;
+  top  : 195px;
 }
 
 #reply {
   position: absolute;
   left : 390px;
-  top  : 295px;
+  top  : 245px;
 }
 #reply2 {
   position: absolute;
   left : 380px;
-  top  : 345px;
+  top  : 305px;
 }
 #reply3 {
   position: absolute;
   left : 390px;
-  top  : 425px;
+  top  : 385px;
   right: 200px;
-  
-  
+
 }
 
 #message {
   position: absolute;
   left : 20px;
-  top  : 70px;
+  top  : 28px;
 }
 
 
@@ -256,7 +261,7 @@ textarea {
 button {
   position     : absolute;
   left         : 440px;
-  top          : 520px;
+  top          : 480px;
   padding      : 5px;
   font : 1.3em "typewriter", sans-serif;
   border       : 2px solid #333;
@@ -285,5 +290,12 @@ button:focus {
   height:35px;
   
 }
-
+img{
+  width:770px;
+  height:220px;
+}
+.responsivo{
+  width: auto;
+  height:auto;
+}
 </style>

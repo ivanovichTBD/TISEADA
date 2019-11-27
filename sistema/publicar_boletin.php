@@ -69,9 +69,9 @@ if(!empty($_POST))
 	
 	<section id="container">
 		
-		<center><h1>Publicar Boletin</h1></center><br>
+		<center><h2>Publicar Boletin</h2></center>
 		<!--formulario para redactar y enviar-->		
-		
+				<center><img src="img/portada_publicar_boletin.jpg" alt=""></center><br>
           
 			<center><form action="" method="POST" enctype="multipart/form-data">
                 
@@ -206,7 +206,7 @@ if(!empty($_POST))
 </html>
 
 <style>
-	h1{
+	h2{
 		font-family:Verdana;
 		color:white;
 		font-size:45px;
@@ -269,4 +269,11 @@ body{
   width  : auto;
   height:35px;
 }
+img{
+	border-radius:4px;
+	width:550px;
+	height:165px;
+	
+}
+
 </style>
