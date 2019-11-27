@@ -22,7 +22,8 @@ $color_pick = array_rand($colors);
 				<div class="user-panel">
 				<input type="text" required name="name" id="name" placeholder="Tu nombre" maxlength="15" />
 				<input type="text" required name="message" id="message" placeholder="Escribe tu mensaje aqui..." maxlength="100" />
-				<button id="send-message" class="btn btn-primary btn-lg">Enviar</button>
+						<button id="send-message" class="btn btn-primary btn-lg">Enviar</button>
+					
 				</div>
 		</div>
 
@@ -111,21 +112,20 @@ h4{
 	color:white;
 }
 body{
-	background: blue;
+	background: #00a6bb;
 }
 .chat-wrapper {
 	font: bold 11px/normal 'lucida grande', tahoma, verdana, arial, sans-serif;
     background-color: #00a6bb;
-    padding: 20px;
-    margin: 20px auto;
+    padding: 10px 10px 10px 10px;
     box-shadow: 2px 2px 2px 0px #00000017;
-	max-width:800px;
-	min-width:600px;
+	
 	border-radius:3px;
 
 	position:absolute;
-	right:30px;
-	left:30px;
+
+	width: auto;
+ 	height: auto;
 	
 }
 .chat-image{
@@ -133,7 +133,7 @@ body{
     display: inline-block;
     box-shadow: inset 0px 0px 2px #00000017;
     overflow: auto;
-	margin-right:23px;
+	margin-right:26px;
 }
 #message-box {
     width: 97%;
@@ -155,7 +155,7 @@ input[type=text]{
 	height:33px;
 }
 input[type=text]#name{
-    width:20%;
+    width:17%;
 }
 input[type=text]#message{
     width:60%;
@@ -165,4 +165,5 @@ button#send-message {
     padding: 5px 15px;
     box-shadow: 2px 2px 2px #0000001c;
 }
+
 </style>
