@@ -48,6 +48,7 @@
 			<?php } ?>
 			<!-- FIN cambio de estilo cabecera segun tipo de usuario-->	
 	</footer>
+
 </body>
 
 </html>

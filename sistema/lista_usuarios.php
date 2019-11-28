@@ -18,16 +18,17 @@
 	<title>Lista de usuarios</title>
 </head>
 <body>
-	<?php include "includes/header.php"; ?>
-	<section id="container">
+	<section id="containerU">
 		
-		<h1>Lista de usuarios</h1>
-		<a href="registro_usuario.php" class="btn_new">Crear usuario</a>
-		
-		<form action="buscar_usuario.php" method="get" class="form_search">
-			<input type="text" name="busqueda" id="busqueda" placeholder="Buscar">
-			<input type="submit" value="Buscar" class="btn_search">
-		</form>
+		<div class= "listaUS">
+			<h1>Lista de usuarios</h1>
+			<a href="registro_usuario.php" class="btn_new">Crear usuario</a>
+			
+			<form action="buscar_usuario.php" method="get" class="form_search">
+				<input type="text" name="busqueda" id="busqueda" placeholder="Buscar">
+				<input type="submit" value="Buscar" class="btn_search">
+			</form>
+		</div>
 
 		<table>
 			<tr>
@@ -122,9 +123,6 @@
 			<?php } ?>
 			</ul>
 		</div>
-
-
 	</section>
-	<?php include "includes/footer.php"; ?>
 </body>
 </html>

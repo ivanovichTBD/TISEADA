@@ -5,9 +5,9 @@
 	padding: 0;
 	/*box-sizing: border-box;*/
 }
-/*.container{
+.containerU{
 	display: flex;
-}*/
+}
 .Titulo{
 	width: 75%;
 	display: flex;
@@ -127,7 +127,7 @@ header{
     margin-left: 30px;
 }
 
-/*nav--------------------------------------------------------------------------*/
+/*********************NAVEGADOR********************************/
 header nav{
 	display: block;
 	/*background-color:#029AE5;*/
@@ -165,6 +165,18 @@ nav ul > li a{
 	position: relative;
 	background-color: #1faac8;
 }
+header nav ul li span {
+	margin-right:10px;
+	}
+
+	header nav ul li a:hover {
+		/*background:#9fa0a191;*/
+		color: rgb(255, 255, 255);
+		}
+		
+		header nav ul li a:link{
+		  text-decoration:none;
+		}
 nav a{
 	color: #FFF;
 	display: block;
@@ -231,6 +243,49 @@ ul{
 	width: 100%;
 	height: 39em;
 	border-width: 0px;
+}
+
+/*submenu*/
+header nav ul li:hover .children {
+	display:block;
+}
+ 
+header nav ul li .children {
+	display: none;
+  position: absolute;
+  border-radius: 15px 15px 15px 15px;
+  border: 2px solid white;
+	width: 20%;
+	z-index:1000;
+}
+ 
+header nav ul li .children li {
+	display:block;
+	overflow: hidden;
+	border-bottom: 1px solid rgba(255,255,255,.5);
+}
+ 
+header nav ul li .children li a {
+	display: block;
+}
+ 
+header nav ul li .children li a span {
+	float: right;
+	position: relative;
+	top:3px;
+	margin-right:0;
+	margin-left:10px;
+}
+ 
+header nav ul li .caret {
+	position: relative;
+	top:3px;
+	margin-left:10px;
+	margin-right:0px;
+}
+
+section {
+  padding:15px;
 }
 
 /**********NAVEGADOR********************************/
@@ -317,52 +372,93 @@ input,select{
 }
 
 /*=============== LISTA USUARIO =============*/
-#container h1{
-	font-size: 35px;
+.listaUS{
+	margin: 20px;
+}
+
+#containerU h1{
+	font-size: 30px;
+	color: rgb(70, 92, 123);
+	font-style: italic;
 	display: inline-block;
+	letter-spacing: normal;
+	margin-right: 10px;
 }
 .btn_new{
 	display: inline-block;
-	background: #239baa;
+	background: #029AE5;
 	color: #FFF;
-	padding: 5px 25px;
+	padding: 10px 10px;
 	border-radius: 4px;
-	margin: 20px;
+	border: 1px solid white;
 }
 table{
 	border-collapse: collapse;
 	font-size: 12pt;
 	font-family: 'arial';
-	width: 100%;
+	width: 98%;
+	border: 1px solid white;
+	border-radius: 15px 15px 0px 0px;
+  	margin: 1%;
 }
 table th{
 	text-align: left;
 	padding: 10px;
-	background: #3d7ba8;
+	background: #226391;
 	color: #FFF;
 }
+
 table tr:nth-child(odd){
-	background: #FFF;
+	background: rgb(255, 255, 255);
 }
+table tr:nth-child(even){
+	background: #e4f6ff;
+}
+
 table td{
 	padding: 10px;
 }
 .link_edit{
-	color: #0ca4ce;
+	color: #00BE00;
+	font-weight: bold;
+	letter-spacing: normal;
 }
 .link_delete{
-	color: #f26b6b;
+	color: #f54444;
+	font-weight: bold;
+	letter-spacing: normal;
 }
 .data_delete{
 	text-align: center;
+	background: white;
+	width: 50%;
+	margin: 0% 25%;
+	border-radius: 15px;
 }
 .data_delete h2{
+	font-size: 15pt;
+	padding: 25px 10px 10px 10px;
+	font-weight: bold;
+	letter-spacing: normal;
+}
+.data_delete p{
+	font-weight: bold;
+	color: #00185a;
+	font-weight: bold;
 	font-size: 12pt;
+	letter-spacing: normal;
+	text-align: left;
+    width: 50%;
+	margin: 0.5% 25% 0% 25%;
+	border-radius: 5px;
+	padding: 5px;
+    border: 1px solid #00BCD4;
 }
 .data_delete span{
 	font-weight: bold;
-	color: #4f72d4;
+	color: #0036c9;
 	font-size: 12pt;
+	letter-spacing: normal;
 }
 .btn_cancel,.btn_ok{
 	width: 124px;
@@ -382,7 +478,7 @@ table td{
 
 	background: initial;
 	margin: auto;
-	padding: 20px 50px;
+	padding: 10px 50px;
 	border: 0;
 
 }
@@ -424,18 +520,19 @@ table td{
 	display: -o-flex;
 	display: flex;
 	float: right;
-	background: initial;
+	background: rgba(154, 215, 245, 0.527);
 	padding: 10px;
 	border-radius: 10px;
+	margin-top: 5px;
 }
 .form_search .btn_search{
-	background: #1faac8;
-	background: rgb(211, 208, 190);
+	background: #029AE5;
 	color: #FFF;
-	padding: 0 20px;
-	border: 0;
+	/*padding: 0 20px;*/
+	border: 1px solid white;
 	cursor: pointer;
 	margin-left: 10px;
+		width: 50%;
 }
 
 /*PARA EL FOOTER*/
@@ -467,13 +564,15 @@ table td{
 
 /*****************************RESPONSIVE**************************/
 @media screen and (max-width:992px ) {
+
 	/*navegador menu*/
 	header nav {
-	  width:80%;
-	  height:100%;
-	  left:-100%;
-	  margin:0;
+	 height: 8%;
+	  background: rgb(253, 166, 166);
+	  margin:5px 0px;
 	  position: fixed;
+	 	 border: 3px solid white;
+   		 padding: 0px 5px 0px 5px;
 	}
   
 	header form button{
