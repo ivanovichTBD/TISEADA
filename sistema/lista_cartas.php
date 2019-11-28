@@ -36,7 +36,7 @@
 <table  class="table table-hover col-6 ">
 		<thead class="table-dark">
 			<tr class="bg-dark">
-			<th scope="col">Numero</th>
+			<th scope="col">Nº</th>
 			<th scope="col">Titulo</th>
 			<th scope="col">Categoria</th>
 			<th scope="col">Contenido</th>
@@ -93,10 +93,10 @@
 </table>
 
 <div class="col-6">
-<center><div class="titulos" id="titulo">NOMBRE PERSONAJE</div><div id="cajaex">
+<center><div class="titulos" id="titulo">TITULO DE LA CARTA</div><div id="cajaex">
 <table>
 <td>
-<div style="z-index:5;width:183px;height:200px;padding:5px;background:#FAFAFA;margin-left:15px;margin-top:15px;">
+<div style="z-index:5;width:183px;height:200px;padding:5px;background:#fafafaa8;margin-left:0px;margin-top:0px;border-radius:5px">
   <div class="titulos"   style="width:170px ; font-size:16px; height:auto;"> COMENTARIOS :</div>
   
   <div style="z-index:5;width:170px;height:58px;padding:5px;background:#FAFAFA;overflow:auto;font-size:13px;font-family:calibri;">
@@ -104,7 +104,7 @@
   
   </div>
   <?php if($_SESSION['tipo_usuario'] == 3){?>
-  <div class="titulos"   style="width:170px ; font-size:16px; height:auto;"> COMENTARIOS :</div>
+  <div class="titulos"   style="width:170px ; font-size:16px; height:auto;"> COMENTARIOS:</div>
   
   <div style="z-index:5;width:170px;height:83px;padding:5px;background:#FAFAFA;overflow:auto;font-size:13px;font-family:calibri;">
   <form action="" method="post">
@@ -115,17 +115,17 @@
   <?php }?>
   </td>
   <td>
-  <div style="width:180px;height:230px;background:#000;border: 5px solid #0d0d0d;float:left;margin-top:15px;-moz-transform: rotate(-350deg);">
+  <div style="width:180px;height:230px;border: 5px solid #cecccc;float:left;margin-top:15px;-moz-transform: rotate(-350deg);">
   
  
   <div id="imagen">
-  <p class="nameImg" id="nombreImagen" ></p>
+  <p class="nameImg" id="nombreImagen" > IMAGEN</p>
  </div>
   </div>
   </td></table>
-  <div style="z-index:5;width:400px;height:200px;padding:5px;background:#2d2d2d;margin-left:0px;margin-top:15px;">
-  <div  id="asunto" class="titulos" style="width:auto;font-size:14px;height:30px auto;-moz-transform: rotate(350deg);float:left;">¿Qué más hay de tí?</div>
-  <div id="contenido" style="z-index:5;width:370px;height:150px;padding:5px;background:#FAFAFA;overflow:auto;font-size:13px;font-family:calibri;text-align:justify;">
+  <div style="z-index:5;width:400px;height:200px;padding:5px;margin-left:0px;margin-top:15px;border-radius:5px;background: #fafafaa8;">
+  <div  id="asunto" class="titulos" style="width:auto;font-size:14px;height:30px auto;-moz-transform: rotate(350deg);float:left;">CONTENIDO: </div>
+  <div id="contenido" style="z-index:5;width:380px;height:150px;padding-left:5px;overflow:auto;font-size:15px;font-family:calibri;text-align:justify;border: 1px solid #cbc8c8;border-radius: 5px;margin: 5px 0px 5px 0px;">
   <br></div>¡Que la magia empieze!</div>
 </div></center>
 
@@ -147,25 +147,30 @@
 	height:60%;
 }
 .titulos{
-  width:450px;
-  height:30px;
-  padding:5px;
-  background:#1d1d1d;
-  color:#eee;
-  text-align:center;
-  text-transform:uppercase;
-  letter-spacing:3px;
-  font-family:'Oswald';
-  font-size:20px;
+	width: 457px;
+    height: 40px;
+    padding: 5px;
+    background: white;
+    color: #2196F3;
+    /* text-align: center; */
+    text-transform: uppercase;
+    /* letter-spacing: 2px; */
+    font-family: 'Oswald';
+    font-size: 18px;
+    	border: 1px solid #c1c0c0;
+		border-radius: 8px;
+		margin-bottom: 5px;
 }
 
 #cajaex{
-  background:url('https://s-media-cache-ak0.pinimg.com/564x/42/55/ae/4255aee0b6604c1431e91e7102765dea.jpg') center;
+  background:url('https://image.freepik.com/foto-gratis/suave-nublado-es-degradado-pastel-fondo-cielo-abstracto-color-dulce_6529-1108.jpg');
   font-family:Calibri;
   font-size:10px;
   width:457px;
   height:500px;
-  border: solid 1px #000;
+  border: 1px solid #ffffff ;
+  	border-radius: 5px;
+    background-size: 457px 500px;
 }
 body{
 	
@@ -178,10 +183,11 @@ body{
 	height:100%;
 	}
  .nameImg{
-	color:white;
-	font-size:15px;
-	text-align: center;
-	font-weight:bold;
+	color: white;
+    background: #949494ba;
+    font-size: 15px;
+    text-align: center;
+    font-weight: bold;
  
  }
 </style>

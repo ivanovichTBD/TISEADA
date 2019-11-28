@@ -72,16 +72,6 @@
 	<title>Eliminar Usuario</title>
 </head>
 <body>
-	<?php include "includes/header.php"; ?>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
 	
 	<section id="container">
 		<div class="data_delete">
@@ -99,6 +89,5 @@
 
 
 	</section>
-	<?php include "includes/footer.php"; ?>
 </body>
 </html>

@@ -1,6 +1,9 @@
 	
+<div class="menu_bar">
+	  <a href="#" class="bt-menu"><span class="icon-view-list"></span>Menu</a>
+</div>
 		<div class="topnav" id="myTopnav">
-		<nav>
+		<nav class="navbar-expand-lg  scrolling-navbar">
 			<ul>
 				<li><a href="index.php">Inicio</a></li>
 			<?php 
@@ -8,8 +11,8 @@
 			 ?>
 				<li class="principal">
 
-					<a href="#">Usuarios</a>
-					<ul>
+					<a href="#">Usuarios<span class="caret icon-arrow-down6"></span></a>
+					<ul class="children">
 						<li><a href="#" onclick="return form()">Nuevo Usuario</a></li>
 						<li><a href="lista_usuarios.php">Lista de Usuarios</a></li>
 					</ul>
@@ -20,7 +23,7 @@
 			  ?>
 				<li class="principal">
 					<a href="#">Escribir Carta</a>
-					<ul>
+					<ul class="children">
 						<li><a href="crear_carta.php">Nueva Carta</a></li>
 						<li><a href="mostrar_plantilla.php">Plantillas</a></li>
 					</ul>

@@ -260,11 +260,8 @@ color: white;
 }
 .cali{
   margin-top: 5px;
-
-
- 
-
 }
+
 /*calendario------------------------------------------------------------------------------------------------*/
 .ubicCal{
   width: 180px;
@@ -566,7 +563,6 @@ text-decoration: none;
     border:none;
     font-weight: bold;
     font-size: 10px,; 
-    
     padding-left: 0px;
       margin: 0px;
   }
