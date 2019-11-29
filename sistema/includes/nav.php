@@ -74,6 +74,7 @@
 					<ul>
 					
 					<li><a href="publicar_boletin.php">Publicar Boletin</a></li>
+					<li><a href="subirpdf/index.php">Publicar Boletines pdfs</a></li>
 						
 					</ul>
 				</li>

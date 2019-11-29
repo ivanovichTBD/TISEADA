@@ -96,7 +96,7 @@ if(!empty($_POST))
 			
 		<!--fin formulario para redactar y enviar-->
 
-
+	
 
 
 
