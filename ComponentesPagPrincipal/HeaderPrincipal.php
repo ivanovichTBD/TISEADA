@@ -27,10 +27,10 @@
           <li class="botonNav"> <a href="./"><span class="icon-home"></span>Inicio</a></li>
           <li class="submenum botonNav"> <a href="#"><span class="icon-newspaper"></span>Boletines<span class="caret icon-arrow-down6"></span></a>
               <ul class="children">
-                  <li><a href="#">Categoria</a></li>
-                  <li><a href="#">Destacados</a></li>
-                  <li><a href="#">Tendemcia</a></li>
-                  <li><a href="#">Ultimos Boletines</a></li>
+                <!--lista de publicaciones pdf-->
+                  <li><a href="sistema/subirpdf/lista.php">Ultimos Boletines</a></li>
+
+                  
               </ul>         
           </li>
           <li class="botonNav"> <a href="#" onclick="MostrarMisionVision()"><span class="icon-book"></span>Mision y Vision</a> </li>
