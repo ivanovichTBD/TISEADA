@@ -29,8 +29,7 @@
               <ul class="children">
                 <!--lista de publicaciones pdf-->
                   <li><a href="sistema/subirpdf/lista.php">Ultimos Boletines</a></li>
-
-                  
+  
               </ul>         
           </li>
           <li class="botonNav"> <a href="#" onclick="MostrarMisionVision()"><span class="icon-book"></span>Mision y Vision</a> </li>

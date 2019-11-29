@@ -100,9 +100,9 @@ if(!empty($_POST))
 
 
 
-
+		<hr>
         <!--Lista de los articulos-->
-
+			<center><h2>Articulos de los redactores</h2></center>
 		<table class="table table-hover ">
             
 			<thead class="table-dark">
