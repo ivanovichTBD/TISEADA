@@ -72,10 +72,7 @@
         <?php // include "ComponentesPagPrincipal/subMenus.php"?>
         <?php include "ComponentesPagPrincipal/cuerpo.php"?>
        
-
-
-        
-
+<?php include "sistema/mostrar_boletin.php"; ?>
 
         <?php include "ComponentesPagPrincipal/anexo.php"?>
         <?php //include "sistema/registro_usuario.php"; ?>
