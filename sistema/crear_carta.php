@@ -1,10 +1,10 @@
 <?php 
-	session_start();
-	if($_SESSION['tipo_usuario'] != 4)
+//	session_start();
+	if($_SESSION['tipo_usuario'] == 4)
 	{
-		header("location: ./");
-	}
-	
+		//header("location: ./");
+	//}
+	/*
 	include "../conexion.php";
 				
 			
@@ -19,8 +19,8 @@
 			//echo $user;				
 			$titulo = $_POST['titulo'];
 			$asunto  = $_POST['asunto'];
-			$contenido   = $_POST['contenido'];		https://github.com/ivanovichTBD/TISEADA/pull/11/conflict?name=sistema%252Fcrear_carta.php&ancestor_oid=e4475aff10c78ea6a032dcfb577146ba240044a1&base_oid=8be4400ee8bb1f5c9db4035684effbb2de061389&head_oid=e022e0db02fb60304137412b957febbcbae69089
-			$nombre_imagen = $_REQUEST['nombre_imagen'];
+      $contenido   = $_POST['contenido'];	
+      		$nombre_imagen = $_REQUEST['nombre_imagen'];
 			$imagen = $_FILES['imagen']['name'];
 			$ruta   = $_FILES['imagen']['tmp_name']; //ruta 
 			$destino = "repo_imagenes/".$imagen;  //destino donde se almacenara y le adjuntamos el nombre de la imagen
@@ -53,15 +53,16 @@
 							                        VALUES('$titulo','$asunto','$contenido', '$nombre_imagen','$destino','$categoria','$prioridad','1')");
 			$query = mysqli_query($conection,"SELECT ID_CARTA FROM carta WHERE titulo = '$titulo' And contenido = '$contenido' ");
 			$result = mysqli_fetch_array($query);
+    */
       /* Variables para distribuir carta  */
-      $carta=$result['ID_CARTA'];
+    /*  $carta=$result['ID_CARTA'];
       $tipoUsuario=3;
      
       //echo $carta;
 			$query_insert1 = mysqli_query($conection,"INSERT INTO usuario_carta(ID_CARTA,IDUSUARIO) VALUES('$carta','$user')"); 
-      /*-------------------------------------------DISTRIBUIR---------------------------- */
+     */ /*-------------------------------------------DISTRIBUIR---------------------------- */
      
-           
+       /*    
            include "EnviarCartaParaRedactor.php";
 			$solucion=	Distruibuir($carta,$tipoUsuario,$conection);
 				if($query_insert){
@@ -89,25 +90,31 @@
 	
 
 
-
+*/
  ?>
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="es">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	
 	<title>Crear carta</title>
 	
-</head>
-<body>
+</head>-->
+<div style="height:0px">
 
 		
         
-     <center> <div class="responsivo">
+     <center > <div class="responsivo" style="height:0px">
+     <?php 
+if(isset($_GET['sol'])){
+$alert=$_GET['sol'];
+}
+
+?>
           <div class="alerta"><?php echo isset($alert) ? $alert : ''; ?></div>
                 <img src="img/portada_escribir_carta.jpg" alt="">
         
-                <form  method="POST" enctype="multipart/form-data" >
+                <form action="" method="POST" enctype="multipart/form-data" id="comment_form" >
                 
                 <h1><center>Escribe tu carta</center></h1>
 
@@ -141,9 +148,68 @@
 	
       </div> </center>
 	
-</body>
-</html>
-
+</div>
+<?php }?>
+<!--</html>-->
+<script>
+$(document).ready(function(){
+ 
+ function load_unseen_notification(view = '')
+ {
+  $.ajax({
+   url:"fetch.php",
+   method:"POST",
+   data:{view:view},
+   dataType:"json",
+   success:function(data)
+   {
+    $('.dropdown-menu').html(data.notification);
+    if(data.unseen_notification > 0)
+    {
+     $('.count').html(data.unseen_notification);
+    }
+   }
+  });
+ }
+ 
+ load_unseen_notification();
+ 
+ $('#comment_form').on('submit', function(event){
+  event.preventDefault();
+  if($('#titulo').val() != '' && $('#asunto').val() != '')
+  {
+    event.preventDefault();
+   var form_data = $(this).serialize();
+   console.log(form_data);
+   $.ajax({
+    url:"insert.php",
+    method:"POST",
+    data:form_data,
+    success:function(data)
+    {
+      console.log(data);
+     $('#comment_form')[0].reset();
+     load_unseen_notification();
+    }
+   });
+  }
+  else
+  {
+    alert('Campos Obligatorios');
+  }
+ });
+ 
+ $(document).on('click', '.dropdown-toggle', function(){
+  $('.count').html('');
+  load_unseen_notification('yes');
+ });
+ 
+ //setInterval(function(){ 
+ // load_unseen_notification();; 
+ //}, 10000);
+ 
+});
+</script>
 <style>
 @font-face {
     font-family: 'handwriting';

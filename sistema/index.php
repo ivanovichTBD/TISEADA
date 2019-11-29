@@ -25,14 +25,16 @@
 		</div>
 	<?php } ?>
 	<!-- FIN cambio de estilo cabecera segun tipo de usuario-->	
-	
-	<main style="height: 100vh;">
+	<?php 
+		include "crear_carta.php";
+		?>
+	<main style="height: 150vh;">
 		<?php include "anadirPalabrasEnCarta.php"; ?>
 	
 	</main
 
 	<iframe id="iframe" > </iframe>
-	
+		
 	<footer>
 		<!-- cambio de estilo cabecera segun tipo de usuario-->	
 		<?php if($_SESSION['tipo_usuario'] !=4){?>
