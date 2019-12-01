@@ -139,7 +139,7 @@ header nav{
 header nav ul{
 	/*background: #05817d;*/
 	list-style: none;
-	display: -webkit-flex;
+	/*display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
 	display: -o-flex;
@@ -148,10 +148,12 @@ header nav ul{
 	align-items: center;
 
 		overflow:hidden;
-		list-style:none;
+		list-style:none;*/
 }
 
 nav ul li{
+	display:inline-block;
+	/*position: relative;*/
 	background-color: #0ca4ce;
 	border-radius: 5px;
    		border:2px solid;
@@ -325,8 +327,9 @@ hr{
 form{
 	background: #FFF;
 	margin: auto;
-	padding: 20px 50px;
+	padding: 0px 25px 20px 25px;
 	border: 1px solid #d1d1d1;
+	border-radius: 10px;
 }
 label{
 	display: block;
@@ -371,7 +374,132 @@ input,select{
 	padding: 10px;
 }
 
-/*=============== LISTA USUARIO =============*/
+/*********FORMATO CONTENIDO CUERPO******/
+.contenido{
+    margin: 210px 5px 0px 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/*********INF AÑADIR PALABRAS****************/
+#FormularioPalabras{
+    padding: 0;
+    /*background: url(../images/) no-repeat 0px 0px;*/
+    background-size: cover;
+    font-family: 'Raleway', sans-serif;
+    width: 95%;
+    display: flex;
+    margin:auto;
+    /*margin-top:100px;*/
+}
+
+/*********LISTA DE PALABRAS****************/
+#listaPalabras{
+	margin: auto;
+	background: white;
+    border-radius: 10px;
+	padding: 1em;
+	height: 350px;
+    overflow: auto;
+}
+#listaPalabras .subtitulo{
+    Margin-top:20px;
+    color:black;
+    padding: 15px;
+}
+#listaPalabras .ListPal{
+    /*width:121px;*/
+    display:inline-block;
+    margin-left:15px;
+}
+#FormularioPalabras h2 {
+    margin: 0;
+    color: rgb(248, 252, 249);
+    font-size: 25px;
+    font-weight: 400;
+    text-align: center;
+    letter-spacing: 1px;
+    padding-bottom: 30px;
+}
+.w3l-login-form {
+    background: rgba(20, 30, 34, 0.412);
+    /*max-width: 500px;*/
+    /*margin: 0 auto;*/
+    padding: 3em;
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin-top: 5%;
+
+}
+#listaPalabras .group {
+    display: flex;
+    padding: 15px 0px;
+    background-color: #ffffff;
+}
+.group i {
+    color: #00BCD4;
+    font-size: 20px;
+    padding: 0 10px;
+}
+
+.w3l-form-group {
+    margin: 20px 0;
+}
+
+.w3l-form-group label {
+    display: block;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: #d2d2d2;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    border: none;
+    box-sizing: border-box;
+    background: transparent;
+    color: #000;
+    border: 1px solid #00bcd48a;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    outline: none;
+}
+
+.botoningreso {
+    background: #00BCD4;
+    color: #ffffff;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    /*padding: 12px 60px;*/
+    cursor: pointer;
+    width: 100%;
+    height:40px;
+    border-radius: 6px;
+    text-align:center;
+}
+.botoningreso:hover {
+    background-color: #00BCD4;
+    transition-duration: 5s;
+}
+.derechaP{
+	width: 70%;
+	margin-left:40px;
+	}
+
+.izquierdaP{
+  width: 30%;
+  height: 360px;
+}
+
+/*=============== LISTA USUARIO (TABLAS O LISTAS) =============*/
 .listaUS{
 	margin: 20px;
 }
@@ -534,8 +662,98 @@ table td{
 	margin-left: 10px;
 		width: 50%;
 }
+/*===========CONTENIDO DE LAS CARTAS=============*/
+#cajaex{
+	background:url('https://image.freepik.com/foto-gratis/suave-nublado-es-degradado-pastel-fondo-cielo-abstracto-color-dulce_6529-1108.jpg');
+	font-family:Calibri;
+	font-size:10px;
+	width:100%;
+	height:100%;
+	border: 1px solid #ffffff ;
+		border-radius: 10px;
+	  background-size: 100% 100%;
+  }
 
-/*PARA EL FOOTER*/
+  #numero{
+	display:inline;
+	width:9px;
+}
+.comentario{
+	width:100%;
+	height:60%;
+}
+.contenidoC tr:nth-child(odd) {
+    background: none; 
+}
+.contenidoC {
+    width: 100%;
+    border: none;
+    margin: 0px;
+}
+
+.fondoCont{
+	z-index: 5;
+    width: 95%;
+    height: 200px;
+    padding: 5px;
+    background: #fafafaa8;
+	border-radius: 5px;
+	margin:5px
+}
+.titulos{
+    width: 100%;
+    padding: 5px;
+    background: #ffffffed;
+    color: #2196F3;
+    /* text-align: center; */
+    text-transform: inherit;
+    /* letter-spacing: 2px; */
+    font-family: cursive;
+    font-size: 18px;
+    border: 2px solid #e91e6342;
+    border-radius: 10px;
+	margin-bottom: 5px;
+}
+.contenidoCar{
+	z-index: 5;
+    width: 100%;
+    height: 140px;
+	padding: 5px;
+	overflow: auto;
+    font-size: 15px;
+    font-family: calibri;
+    text-align: justify;
+    border: 1px solid #cbc8c8;
+    border-radius: 15px;
+}
+.contenidoImagen{
+	width: 100%;
+    height: 200px;
+    border: 5px solid #fafafaa8;
+	float: left;
+	border-radius: 10px;
+}
+
+#imagen{
+	background-size:100% 100%;
+	width:100%;
+	height:100%;
+	border-radius: 5px;
+	}
+ .nameImg{
+	color: white;
+    background: #03a9f478;
+    font-size: 15px;
+    text-align: center;
+    font-family: cursive;
+	font-size: 18px;
+	border-radius: 1px 5px 1px 5px;
+ }
+ .letraNiño{
+	font-family: cursive;
+}
+
+/*=====PARA EL FOOTER==================*/
 .posicion{
 	position: fixed;
 	position:relative;
@@ -567,14 +785,36 @@ table td{
 
 	/*navegador menu*/
 	header nav {
-	 height: 8%;
-	  background: rgb(253, 166, 166);
-	  margin:5px 0px;
+	 /*height: 8%;*/
+	 background: #d3d3d3c9;;
+	  margin: 5px 5px;
 	  position: fixed;
 	 	 border: 3px solid white;
-   		 padding: 0px 5px 0px 5px;
+			padding: 0px 5px 0px 5px;
+			
+
+			 width:60%;
+    height: calc(100% - 60px);
+    right: 100%;
+    margin:1px 0px 0px 5px;
+    border-radius: 15px 0px;
+    position: fixed;
+    overflow: scroll;
 	}
-  
+	
+	header nav ul li .children {
+		display: none;
+		background:#d3d3d3c9;
+		position: relative;
+		border-radius: 0px;
+		border: none;
+		width: 150%;
+		z-index:1000;
+	  }
+
+	  header nav ul li:hover {
+		background:rgba(39, 145, 163, 0.5);
+	  }
 	header form button{
 	  float:none;
 	}
@@ -611,6 +851,46 @@ table td{
 	/*contenido*/
 	.cuerpo{
 	  width:100%;
+	}
+	/*ventana añadir palabras*/
+	#FormularioPalabras {
+		padding: 0;
+		/* background: url(../images/) no-repeat 0px 0px; */
+		background-size: cover;
+		font-family: 'Raleway', sans-serif;
+		width: 95%;
+		display: block;
+		margin: auto;
+		/* margin-top: 100px; */
+	}
+	.izquierdaP {
+		width: 100%;
+		height: 300px;
+	}
+	.derechaP {
+		width: 100%;
+		margin-left: 0px; 
+	}
+	.contenido{
+		margin: 210px 5px 0px 5px;
+	  display: flex;
+	  justify-content: space-between;
+	}
+	#listaPalabras {
+		margin: auto;
+		background: white;
+		border-radius: 10px;
+		padding: 1em;
+		height: 180px;
+		overflow: auto;
+	}
+	#listaPalabras {
+		margin: auto;
+		background: white;
+		border-radius: 10px;
+		padding: 1em;
+		height: 180px;
+		overflow: auto;
 	}
   }
   

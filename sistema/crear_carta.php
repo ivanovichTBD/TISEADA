@@ -102,51 +102,55 @@
 </head>-->
 <div style="height:0px">
 
-		
-        
-     <center > <div class="responsivo" style="height:0px">
+
+    <div id="fondocar">
      <?php 
 if(isset($_GET['sol'])){
 $alert=$_GET['sol'];
 }
 
 ?>
-          <div class="alerta"><?php echo isset($alert) ? $alert : ''; ?></div>
-                <img src="img/portada_escribir_carta.jpg" alt="">
-        
-                <form action="" method="POST" enctype="multipart/form-data" id="comment_form" >
-                
-                <h1><center>Escribe tu carta</center></h1>
 
-                <div id="from">
-                    <label for="titulo">Titulo</label>
-                    <input required type="text" id="titulo" name="titulo" placeholder="Titulo de la carta">
-                </div>
+  <!--mensaje de envio-->
+			<div class="alerta"><?php echo isset($alert) ? $alert : ''; ?></div>
 
-                <div id="reply">
-                    <label for="categoria">Asunto</label>
-                    <input required type="text" id="categoria" name="asunto" placeholder="Categoria de la carta">
+          <form action="" method="POST" enctype="multipart/form-data" >
+              <div>
+                <div class="derecha">
+                  <h1>Escribe tu carta</h1>
+
+                  <div id="from">
+                      <label for="titulo">Titulo</label>
+                      <input required type="text" id="titulo" name="titulo" placeholder="Titulo de la carta">
+                  </div>
+
+                  <div id="reply">
+                      <label for="categoria">Asunto</label>
+                      <input required type="text" id="categoria" name="asunto" placeholder="Categoria de la carta">
+                  </div>
+
+                  <div id="reply2">
+                      <label for="nombre_imagen">Titulo para tu foto</label>
+                      <input required type="text" id="nombre_imagen" name="nombre_imagen" placeholder="Nombre para tu foto">
+                  </div>
+
+                  <div id="reply3">
+                      <label for="imagen">Selecciona una foto</label>
+                      <input required type="file" id="imagen" name="imagen">
+                  </div>
                 </div>
-                <div id="reply2">
-                    <label for="nombre_imagen">Titulo para tu foto</label>
-                    <input required type="text" id="nombre_imagen" name="nombre_imagen" placeholder="Nombre para tu foto">
-                </div>
-                <div id="reply3">
-                    <label for="imagen">Selecciona una foto</label>
-                    <input required type="file" id="imagen" name="imagen">
-                </div>
-                <div id="message">
-                    <label for="msg"><strong>Contenido de tu carta</strong></label>
-                    <textarea required id="msg" name="contenido"></textarea>
-                </div>
-                
-                <div class="button">
+              <div class="izquierda">
+                  <div id="message">
+                      <label for="msg">Contenido de tu carta</label>
+                      <textarea required id="msg" name="contenido"></textarea>
+                  </div>
+              </div>
+                <div class="button derecha">
                     <button type="submit">Envia tu carta</button>
-                </div>
-                </form>
 
-	
-      </div> </center>
+
+        </form>	
+    </div>
 	
 </div>
 <?php }?>
@@ -227,7 +231,7 @@ $(document).ready(function(){
     font-style: normal;
 }
 
-body {
+#fondocar{
   font  : 21px sans-serif;
   background:rgb(33, 177, 175);
   width:auto;
@@ -235,43 +239,54 @@ body {
 
 }
 
-form {
-  position: relative;
-  width  : 770px;
-  height : 550px;
-  margin : 0 ;
-  border-radius:3px;
-  margin-top:-30px;
-  padding-top:-90px;
+
+#fondocar form {
+  width  : 80%;
+  height : 555px;
+  margin : 0 auto;
   background: #FFF url(img/fondodecrearcarta2.jpg);
+  border-radius:10px;
+  border:2px solid white;
+}
+#fondocar .izquierda{
+  width  : 50%;
+  float:left;
+  margin:10px;
+}
+#fondocar .derecha{
+  width  : 45%;
+  float:right;
+  margin:10px;
 }
 
-h1 {
-  position : absolute;
+#fondocar h1 {
   left : 415px;
   top  : 1px;
   font : 3em "typewriter", sans-serif;
+  margin:30px 5px 15px 5px;
+  text-align: center;
+}
 
 }
 
 #from {
-  position: absolute;
   left : 398px;
-  top  : 195px;
+
+  top  : 245px;
+  margin-top:10px;
 }
 
 #reply {
-  position: absolute;
   left : 390px;
   top  : 245px;
 }
 #reply2 {
-  position: absolute;
   left : 380px;
-  top  : 305px;
+
+  top  : 345px;
+  margin-top: 5%;
 }
 #reply3 {
-  position: absolute;
   left : 390px;
   top  : 385px;
   right: 200px;
@@ -279,14 +294,14 @@ h1 {
 }
 
 #message {
-  position: absolute;
   left : 20px;
   top  : 28px;
 }
 
 
 label {
-  font : .8em "typewriter", sans-serif;
+  font : .9em "typewriter", sans-serif;
+  background: #ffffff87;
 }
 
 
@@ -310,6 +325,7 @@ input {
     height: 2em; /* for IE */
     vertical-align: middle; /* This is optional but it makes legacy IEs look better */
     font : 0.9em "typewriter", sans-serif;
+    margin: 5px;
   }
 
 textarea {
@@ -317,15 +333,15 @@ textarea {
   font:1.9em/1.5em "handwriting", sans-serif;
   padding : 10px;
   margin  : 10px 0 0 -10px;
-  width   : 340px;
+  width   : 90%;
   height  : 445px;
+  margin: 10px;
 
   resize  : none;
   overflow: auto;
 }
 
 button {
-  position     : absolute;
   left         : 440px;
   top          : 480px;
   padding      : 5px;
@@ -335,7 +351,9 @@ button {
   background   : none;
   cursor       : pointer;
   transform    : rotate(-1.5deg);
-  height:      40px;
+  height:      50px;
+  margin: 10px 0px 0px 50px;
+  background: wheat;
 }
 
 button:after {
@@ -349,12 +367,61 @@ button:focus {
   color       : #FFF;
 }
 
-.alerta{
+#fondocar .alerta{
+  margin : 15px auto;
   background   : rgba(0,0,0,.1);
+  border:2px solid rgba(0,0,0,.1);
   border-radius: 5px;
-  width  : 770px;
+  width  : 80%;
   height:35px;
-  
+}
+
+/*****************************RESPONSIVE**************************/
+
+@media screen and (max-width:768px ) {
+    /*cartaEstilo*/
+    #fondocar{
+      font  : 20px sans-serif;
+      padding : 3em;
+      margin  : 0;
+      background:linear-gradient(90deg, rgba(8,203,218,1) 0%, rgba(209,213,213,1) 53%, rgba(8,203,218,1) 100%);
+    }
+
+    #fondocar form {
+      width  : 100%;
+      height : 580px;
+      margin : 0 auto;
+      background: #FFF url(img/fondodecrearcarta2.jpg);
+      border-radius:10px;
+      border:2px solid white;
+    }
+    #fondocar h1 {
+      left: 415px;
+    top: 45px;
+      font: 2em "typewriter", sans-serif;
+      margin: 5px 5px 15px 5px;
+    }
+
+    #fondocar .izquierda{
+      width: 95%;
+      float: left;
+    }
+    #fondocar .derecha{
+      width: 95%;
+      float:left;
+    }
+    textarea {
+    display: block;
+    font: .9em/.5em "handwriting", sans-serif;
+    padding: 10px;
+    margin: 10px 0 0 -10px;
+    width: 90%;
+    height: 100px;
+    margin: auto;
+    resize: none;
+    overflow: auto;
+}
+
 }
 img{
   width:770px;
