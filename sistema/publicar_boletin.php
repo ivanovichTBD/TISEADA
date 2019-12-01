@@ -69,9 +69,9 @@ if(!empty($_POST))
 	
 	<section id="container">
 		
-		<center><h1>Publicar Boletin</h1></center><br>
+		<center><h2>Publicar Boletin</h2></center>
 		<!--formulario para redactar y enviar-->		
-		
+				<center><img src="img/portada_publicar_boletin.jpg" alt=""></center><br>
           
 			<center><form action="" method="POST" enctype="multipart/form-data">
                 
@@ -96,13 +96,13 @@ if(!empty($_POST))
 			
 		<!--fin formulario para redactar y enviar-->
 
+	
 
 
 
-
-
+		<hr>
         <!--Lista de los articulos-->
-
+			<center><h2>Articulos de los redactores</h2></center>
 		<table class="table table-hover ">
             
 			<thead class="table-dark">
@@ -117,7 +117,7 @@ if(!empty($_POST))
 			//Paginador
 			$sql_codificacion=mysqli_query($conection, "SET nombre utf8");
 			//$sql_codificacion=mysqli_query($conection, "SET tipo_usuario utf8");
-			$sql_registe = mysqli_query($conection,"SELECT COUNT(*) as total_registro FROM articulo");
+			$sql_registe = mysqli_query($conection,"SELECT COUNT(*) as total_registro FROM carta WHERE ID_TIPO_CARTA=2");
 			$result_register = mysqli_fetch_array($sql_registe);
 			$total_registro = $result_register['total_registro'];
 
@@ -133,7 +133,7 @@ if(!empty($_POST))
 			$desde = ($pagina-1) * $por_pagina;
 			$total_paginas = ceil($total_registro / $por_pagina);
 
-			$queryP = mysqli_query($conection,"SELECT id_articulo, titulo, contenido, nombre_imagen FROM articulo  WHERE   id_articulo >0 ORDER BY id_articulo DESC LIMIT $desde,$por_pagina 
+			$queryP = mysqli_query($conection,"SELECT ID_CARTA, TITULO, CONTENIDO, NOMBRE_IMAGEN FROM carta  WHERE   ID_CARTA >0 AND ID_TIPO_CARTA=2 ORDER BY ID_CARTA DESC LIMIT $desde,$por_pagina 
 				");
 
 			mysqli_close($conection);
@@ -145,16 +145,16 @@ if(!empty($_POST))
 					
 			?>
 				<tr>
-					<td><?php echo $data["id_articulo"]; ?></td>
-					<td><?php echo $data["titulo"]; ?></td>  
+					<td><?php echo $data["ID_CARTA"]; ?></td>
+					<td><?php echo $data["TITULO"]; ?></td>  
 					</div>
 
 					<div class="col-lg-6">
 					  <div class="form-group">
 						<td>
-						<textarea class="form-control"><?php echo $data["contenido"]; ?></textarea>
+						<textarea class="form-control"><?php echo $data["CONTENIDO"]; ?></textarea>
 						</td>
-						<td><?php echo $data['nombre_imagen'] ?></td>
+						<td><?php echo $data['NOMBRE_IMAGEN'] ?></td>
 					  </div>
 					</div>
 				</tr>
@@ -206,7 +206,7 @@ if(!empty($_POST))
 </html>
 
 <style>
-	h1{
+	h2{
 		font-family:Verdana;
 		color:white;
 		font-size:45px;
@@ -269,4 +269,11 @@ body{
   width  : auto;
   height:35px;
 }
+img{
+	border-radius:4px;
+	width:550px;
+	height:165px;
+	
+}
+
 </style>

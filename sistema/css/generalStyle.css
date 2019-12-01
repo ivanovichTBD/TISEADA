@@ -17,7 +17,7 @@
 }
 body{
 	
-	background: linear-gradient(90deg, rgba(202,201,207,0.9615196420365021) 0%, rgba(11,208,195,1) 53%, rgba(31,110,135,1) 100%);
+	background:rgb(33, 177, 175);
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: 'arial';

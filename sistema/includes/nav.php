@@ -76,6 +76,7 @@
 					<ul>
 					
 					<li><a href="publicar_boletin.php">Publicar Boletin</a></li>
+					<li><a href="subirpdf/index.php">Publicar Boletines pdfs</a></li>
 						
 					</ul>
 				</li>
@@ -83,6 +84,26 @@
 
 				</li>
 				
+     <ul class="nav navbar-nav navbar-right" style="height:47px">
+      <li class="dropdown" style="height:43px;margin: 0;position: absolute;">
+       <a href="#" class="dropdown-toggle " style="padding-top:8px;padding-bottom: 0px;" data-toggle="dropdown">
+       	<span class="label label-pill label-danger count" style="border-radius:10px;"></span> 
+       	<span class="glyphicon glyphicon-bell" style="font-size:18px;"></span></a>
+       <ul class="dropdown-menu" style="padding: 0;">
+	   <li style="margin: 0;"> <a href="#">Action</a></li>
+	   </ul>
+      </li>
+     </ul>
+    <!--<div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu ">
+    <li class="position-absolute"><a href="#">HTML</a></li>
+    <li><a href="#">CSS</a></li>
+    <li><a href="#">JavaScript</a></li>
+  </ul>
+</div>-->
+	 
 			</ul>
 		</nav>
 		</div>

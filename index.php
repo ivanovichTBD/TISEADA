@@ -8,7 +8,8 @@
     
     <link rel="stylesheet" href="css/PartesPag.css">
    
-    <link rel="stylesheet" href="fontawesome-free-5.11.2-web/css/fontawesome.min.css">
+    <link rel="stylesheet" href="fontawesome-free-5.11.2-web/css/fontawesome.min.css"> <!--Ruta para las fuentes del login-->
+    <link rel="stylesheet" href="fontawesome-free-5.11.2-web/css/all.css"> <!--Ruta para los iconos del login-->
     <link rel="stylesheet" href="bootstrap-4.3.1/dist/css/bootstrap.min.css">
     <?php 
 	
@@ -71,9 +72,7 @@
         <?php // include "ComponentesPagPrincipal/subMenus.php"?>
         <?php include "ComponentesPagPrincipal/cuerpo.php"?>
        
-
-        
-
+<?php include "sistema/mostrar_boletin.php"; ?>
 
         <?php include "ComponentesPagPrincipal/anexo.php"?>
         <?php //include "sistema/registro_usuario.php"; ?>

@@ -2,7 +2,7 @@
 <div class="IngresoUser"  id="IngresoUser" style="display:none">
     
     <div class=" w3l-login-form" name="hola">
-        <h2>MENSAJERO</h2>
+        <h2>INICIAR SESION</h2>
         <form action="#" method="POST">
 
             <div class=" w3l-form-group">
@@ -21,13 +21,14 @@
                     <input name="clave" type="password" class="form-control inputTextPass " placeholder="Contraseña" required="required" />
                 </div>
             </div>
-            <div class="forgot">
-           
-                <p><input type="checkbox">Recuérdame</p>
-            </div>
             <button class="botoningreso"type="submit">INGRESAR</button>
         </form>
-        <p class=" w3l-register-p">No tienes cuenta?<a href="./sistema/registro_usuario.php" class="register"> Registrarse</a></p>
+        <p class=" w3l-register-p">No tienes cuenta?<a href="./sistema/registro_usuario.php" class="register"> Registrate</a></p>
     </div>
 </div>
+<style>
+h2{
+    color:white;
+}
+</style>
 

@@ -1,10 +1,10 @@
 <?php 
-	session_start();
-	if($_SESSION['tipo_usuario'] != 4)
+//	session_start();
+	if($_SESSION['tipo_usuario'] == 4)
 	{
-		header("location: ./");
-	}
-	
+		//header("location: ./");
+	//}
+	/*
 	include "../conexion.php";
 				
 			
@@ -19,8 +19,8 @@
 			//echo $user;				
 			$titulo = $_POST['titulo'];
 			$asunto  = $_POST['asunto'];
-			$contenido   = $_POST['contenido'];		https://github.com/ivanovichTBD/TISEADA/pull/11/conflict?name=sistema%252Fcrear_carta.php&ancestor_oid=e4475aff10c78ea6a032dcfb577146ba240044a1&base_oid=8be4400ee8bb1f5c9db4035684effbb2de061389&head_oid=e022e0db02fb60304137412b957febbcbae69089
-			$nombre_imagen = $_REQUEST['nombre_imagen'];
+      $contenido   = $_POST['contenido'];	
+      		$nombre_imagen = $_REQUEST['nombre_imagen'];
 			$imagen = $_FILES['imagen']['name'];
 			$ruta   = $_FILES['imagen']['tmp_name']; //ruta 
 			$destino = "repo_imagenes/".$imagen;  //destino donde se almacenara y le adjuntamos el nombre de la imagen
@@ -53,15 +53,16 @@
 							                        VALUES('$titulo','$asunto','$contenido', '$nombre_imagen','$destino','$categoria','$prioridad','1')");
 			$query = mysqli_query($conection,"SELECT ID_CARTA FROM carta WHERE titulo = '$titulo' And contenido = '$contenido' ");
 			$result = mysqli_fetch_array($query);
+    */
       /* Variables para distribuir carta  */
-      $carta=$result['ID_CARTA'];
+    /*  $carta=$result['ID_CARTA'];
       $tipoUsuario=3;
      
       //echo $carta;
 			$query_insert1 = mysqli_query($conection,"INSERT INTO usuario_carta(ID_CARTA,IDUSUARIO) VALUES('$carta','$user')"); 
-      /*-------------------------------------------DISTRIBUIR---------------------------- */
+     */ /*-------------------------------------------DISTRIBUIR---------------------------- */
      
-           
+       /*    
            include "EnviarCartaParaRedactor.php";
 			$solucion=	Distruibuir($carta,$tipoUsuario,$conection);
 				if($query_insert){
@@ -89,20 +90,28 @@
 	
 
 
-
+*/
  ?>
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="es">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	
 	<title>Crear carta</title>
 	
-</head>
-<body>
+</head>-->
+<div style="height:0px">
+
 
     <div id="fondocar">
-      <!--mensaje de envio-->
+     <?php 
+if(isset($_GET['sol'])){
+$alert=$_GET['sol'];
+}
+
+?>
+
+  <!--mensaje de envio-->
 			<div class="alerta"><?php echo isset($alert) ? $alert : ''; ?></div>
 
           <form action="" method="POST" enctype="multipart/form-data" >
@@ -139,12 +148,72 @@
                 <div class="button derecha">
                     <button type="submit">Envia tu carta</button>
 
+
         </form>	
     </div>
 	
-</body>
-</html>
-
+</div>
+<?php }?>
+<!--</html>-->
+<script>
+$(document).ready(function(){
+ 
+ function load_unseen_notification(view = '')
+ {
+  $.ajax({
+   url:"fetch.php",
+   method:"POST",
+   data:{view:view},
+   dataType:"json",
+   success:function(data)
+   {
+    $('.dropdown-menu').html(data.notification);
+    if(data.unseen_notification > 0)
+    {
+     $('.count').html(data.unseen_notification);
+    }
+   }
+  });
+ }
+ 
+ load_unseen_notification();
+ 
+ $('#comment_form').on('submit', function(event){
+  event.preventDefault();
+  if($('#titulo').val() != '' && $('#asunto').val() != '')
+  {
+    event.preventDefault();
+   var form_data = $(this).serialize();
+   console.log(form_data);
+   $.ajax({
+    url:"insert.php",
+    method:"POST",
+    data:form_data,
+    success:function(data)
+    {
+      console.log(data);
+     $('#comment_form')[0].reset();
+     load_unseen_notification();
+    }
+   });
+  }
+  else
+  {
+    alert('Campos Obligatorios');
+  }
+ });
+ 
+ $(document).on('click', '.dropdown-toggle', function(){
+  $('.count').html('');
+  load_unseen_notification('yes');
+ });
+ 
+ //setInterval(function(){ 
+ // load_unseen_notification();; 
+ //}, 10000);
+ 
+});
+</script>
 <style>
 @font-face {
     font-family: 'handwriting';
@@ -164,10 +233,12 @@
 
 #fondocar{
   font  : 21px sans-serif;
-  padding : 2em;
-  margin  : 0;
-  background:linear-gradient(90deg, rgba(8,203,218,1) 0%, rgba(209,213,213,1) 53%, rgba(8,203,218,1) 100%);
+  background:rgb(33, 177, 175);
+  width:auto;
+  height:auto;
+
 }
+
 
 #fondocar form {
   width  : 80%;
@@ -190,7 +261,7 @@
 
 #fondocar h1 {
   left : 415px;
-  top  : 45px;
+  top  : 1px;
   font : 3em "typewriter", sans-serif;
   margin:30px 5px 15px 5px;
   text-align: center;
@@ -200,30 +271,31 @@
 
 #from {
   left : 398px;
+
   top  : 245px;
   margin-top:10px;
 }
 
 #reply {
   left : 390px;
-  top  : 295px;
+  top  : 245px;
 }
 #reply2 {
   left : 380px;
+
   top  : 345px;
   margin-top: 5%;
 }
 #reply3 {
   left : 390px;
-  top  : 425px;
+  top  : 385px;
   right: 200px;
-  
-  
+
 }
 
 #message {
   left : 20px;
-  top  : 70px;
+  top  : 28px;
 }
 
 
@@ -271,7 +343,7 @@ textarea {
 
 button {
   left         : 440px;
-  top          : 520px;
+  top          : 480px;
   padding      : 5px;
   font : 1.3em "typewriter", sans-serif;
   border       : 2px solid #333;
@@ -351,5 +423,12 @@ button:focus {
 }
 
 }
-
+img{
+  width:770px;
+  height:220px;
+}
+.responsivo{
+  width: auto;
+  height:auto;
+}
 </style>

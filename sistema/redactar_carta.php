@@ -15,7 +15,7 @@ if(!empty($_POST))
     {
         $alert='<p class="msg_error">Todos los campos son obligatorios.</p>';
     }else{
-
+		$ipAdd=$_SERVER['REMOTE_ADDR'];
         $titulo = $_POST['titulo'];
         $contenido = $_POST['contenido'];
         $nombre_imagen = $_REQUEST['nombre_imagen'];
@@ -31,9 +31,12 @@ if(!empty($_POST))
         if($result > 0){
             $alert='<p class="msg_error">El articulo ya existe, prueba redactando otro</p>';
         }else{
+			$query_insert = mysqli_query($conection,"INSERT INTO carta(TITULO, ASUNTO, CONTENIDO, NOMBRE_IMAGEN, IMAGEN,ID_TIPO_CARTA,ESTADO_NOTIFICACION,IP_NOTIFICACION)
+			VALUES('$titulo','REDACCION','$contenido','$nombre_imagen','$destino','2','0','$ipAdd')");
 
-            $query_insert = mysqli_query($conection,"INSERT INTO articulo(titulo,contenido,nombre_imagen,imagen)
+/*    $query_insert = mysqli_query($conection,"INSERT INTO articulo(titulo,contenido,nombre_imagen,imagen)
                                                                 VALUES('$titulo','$contenido','$nombre_imagen','$destino')");
+  */
             if($query_insert){
                 $alert='<p class="msg_save">El articulo se envio correctamente.</p>';
             }else{
@@ -74,7 +77,7 @@ if(!empty($_POST))
 		<center><h1>Redactar y enviar artículo</h1></center><br>
 		<!--formulario para redactar y enviar-->		
 		
-          
+			<img src="img/portada_redactar_carta.jpg" alt="">
 			<center><form action="" method="POST" enctype="multipart/form-data">
                 
                 <div class="col-md-6" id="reply">
@@ -269,5 +272,10 @@ body{
   border-radius: 5px;
   width  : auto;
   height:35px;
+}
+img{
+	width: 100%;
+  height: auto;
+  opacity: 0.92;
 }
 </style>

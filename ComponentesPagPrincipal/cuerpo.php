@@ -24,5 +24,5 @@
         </article>
 
         </div>
-        <?php include "sistema/mostrar_boletin.php"; ?> 
+ 
 </div>
