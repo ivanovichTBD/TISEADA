@@ -558,13 +558,13 @@ text-decoration: none;
   
   /*estilo de los botones*/
   .botonNav{
-    background:none;
+    background-color: #0ca4ce;
     border-radius: 5px;
-    border:none;
+    border:2px solid white;
     font-weight: bold;
     font-size: 10px,; 
-    padding-left: 0px;
-      margin: 0px;
+    padding: 2px;
+    margin: 10px 3px;
   }
     header nav ul li .children {
       display: none;
@@ -582,13 +582,16 @@ text-decoration: none;
 
   /*navegador menu*/
   header nav {
-    width:35%;
-    height: calc(50% - 80px);
+    width: 60%;
+    height: calc(100% - 60px);
     right: 100%;
-    margin:1px 0px 0px 5px;
+    margin: 1px 0px 0px 5px;
     border-radius: 15px 0px;
     position: fixed;
     overflow: scroll;
+    background: #d3d3d3c9;
+    border: 3px solid white;
+    padding: 0px 5px 0px 5px;
   }
 
   header form button{
@@ -639,7 +642,9 @@ text-decoration: none;
 
    /*estilo botones*/
    header nav ul li a {
-		display: block;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 	}
  
 	header nav ul li:hover .children {

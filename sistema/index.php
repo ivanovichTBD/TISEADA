@@ -6,6 +6,8 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<?php include "includes/scripts.php"; ?>
 	<title>	MENSAJERO</title>
 </head>
@@ -27,8 +29,9 @@
 	<!-- FIN cambio de estilo cabecera segun tipo de usuario-->	
 	
 	<main style="height: 100vh;">
-		<?php include "anadirPalabrasEnCarta.php"; ?>
-	
+		<div class="contenido" id="contenido">
+			<?php include "anadirPalabrasEnCarta.php"; ?>
+		</div>
 	</main
 
 	<iframe id="iframe" > </iframe>

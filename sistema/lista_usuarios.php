@@ -25,19 +25,20 @@
 			<a href="registro_usuario.php" class="btn_new">Crear usuario</a>
 			
 			<form action="buscar_usuario.php" method="get" class="form_search">
-				<input type="text" name="busqueda" id="busqueda" placeholder="Buscar">
+				<input type="text" name="busqueda" id="busqueda" placeholder="Buscar" style="background:white;">
 				<input type="submit" value="Buscar" class="btn_search">
 			</form>
 		</div>
 
-		<table>
+	<div class="table-responsive">
+		<table class="table">
 			<tr>
-				<th>ID</th>
-				<th>Nombre</th>
-				<th>Correo</th>
-				<th>Usuario</th>
-				<th>Tipo de Usuario</th>
-				<th>Acciones</th>
+				<th scope="col">ID</th>
+				<th scope="col">Nombre</th>
+				<th scope="col">Correo</th>
+				<th scope="col">Usuario</th>
+				<th scope="col">Tipo de Usuario</th>
+				<th scope="col">Acciones</th>
 			</tr>
 		<?php 
 			//Paginador
@@ -70,7 +71,7 @@
 				while ($data = mysqli_fetch_array($query)) {
 					
 			?>
-				<tr>
+				<tr scope="row">
 					<td><?php echo $data["IDUSUARIO"]; ?></td>
 					<td><?php echo $data["NOMBRE"]; ?></td>
 					<td><?php echo $data["CORREO"]; ?></td>
@@ -95,6 +96,7 @@
 
 
 		</table>
+		</div>
 		<div class="paginador">
 			<ul>
 			<?php 
