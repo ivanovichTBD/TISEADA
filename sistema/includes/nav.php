@@ -73,7 +73,7 @@
 			<?php if($_SESSION['tipo_usuario'] == 2){ ?>
 				<li class="principal">
 					<a href="#">Publicaciones </a>
-					<ul>
+					<ul class="children">
 					
 					<li><a href="publicar_boletin.php">Publicar Boletin</a></li>
 					<li><a href="subirpdf/index.php">Publicar Boletines pdfs</a></li>
