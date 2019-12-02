@@ -104,12 +104,10 @@ if(!empty($_POST))
 			</form>	</center>
 			<div  class="alerta col-md-6"><?php echo isset($alert) ? $alert : ''; ?></div>
                 
-			
-
 		<!--fin formulario para redactar y enviar-->
 		<table class="table table-hover ">
 			<thead class="table-dark">
-			  <tr class="bg-dark">
+			  <tr class="bg-dark" >
 				<th>Numero</th>
 				<th>Titulo</th>
 				<th>Categoria</th>

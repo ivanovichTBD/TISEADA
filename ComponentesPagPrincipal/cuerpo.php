@@ -1,6 +1,5 @@
 <div class="cuerpo">
 
-<h1>PUBLICACIONES DEL MENSAJERO</h1>
 
 
 
