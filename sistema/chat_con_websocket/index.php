@@ -15,9 +15,9 @@ $color_pick = array_rand($colors);
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 		<div class="chat-wrapper">
-		<center><h4>Conversa con los demas redactores y pídeles consejos</h4></center>
+	<h4>Conversa con los demas redactores y pídeles consejos</h4>
 		<hr>
-		  <center><img class="chat-image" src="chat.png" alt=""></center>
+		  <img class="chat-image " src="chat.png" alt="">
 		  	<div id="message-box"></div>
 				<div class="user-panel">
 				<input type="text" required name="name" id="name" placeholder="Tu nombre" maxlength="15" />
@@ -108,8 +108,13 @@ $color_pick = array_rand($colors);
 
 <!--Estilos del chat-->
 <style type="text/css">
-h4{
-	color:white;
+h4 {
+    font-size: 30px;
+    color: rgb(70, 92, 123);
+    font-style: italic;
+    display: inline-block;
+    letter-spacing: normal;
+    margin-right: 10px;
 }
 body{
 	background: #00a6bb;

@@ -1,7 +1,7 @@
 <!-- HEADER-PRINCIPAL -->
 <header >
   <div class="fixed-top">
-		<div class="navbar navbar-light justify-content-between header"> 
+		<div class="nav header"> 
         <h1 class="Titulo">MENSAJERO</h1>
           <!--buscador
           

@@ -7,6 +7,8 @@ function MostrarMisionVision(){
     else{
         var vis=document.getElementById("vision");
         vis.removeAttribute("style");
+        vis.style.display="none";
+    
     }
 }
 function MostrarLogin(){

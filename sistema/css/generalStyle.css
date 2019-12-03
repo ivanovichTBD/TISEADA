@@ -13,6 +13,8 @@
 	display: flex;
 	justify-content: center;
 	  margin:auto;  
+	  margin-top: 15px;
+	  
 
 }
 body{
@@ -27,6 +29,7 @@ h1, h2, h3, h4, h5, h6 {
 h1{
 	font-size: 35px;
 	letter-spacing: 2px;
+	
 }
 h2{
 	font-size: 20px;
@@ -95,11 +98,12 @@ header{
     display: -ms-flex;
     display: -o-flex;
     display: flex;
-    justify-content: flex-end;
 	align-items: center;
-	min-width: 100px;
-	margin-top:45px; 
 	margin-right: 25px;
+	margin-top: 15px;
+	
+	
+	
 }
 .optionsBar span {
 	width: 50px;
