@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-11-2019 a las 06:43:14
+-- Tiempo de generación: 29-11-2019 a las 19:25:24
 -- Versión del servidor: 10.1.19-MariaDB
 -- Versión de PHP: 5.6.24
 
@@ -62,7 +62,8 @@ CREATE TABLE `articulo` (
 
 INSERT INTO `articulo` (`id_articulo`, `titulo`, `contenido`, `nombre_imagen`, `imagen`) VALUES
 (1, 'test de articulo', 'prueba de los redactores a enviar a editor', 'puesta de sol', 'repo_imagenes_del_editor/gixxer blue.jpg'),
-(2, 'prueba 3 de una redaccion al editor', 'yo tengo una laptop', 'muestra de redaccion', 'repo_imagenes_del_editor/756444bb819791ce078d42ff0a76fe41.jpg');
+(2, 'prueba 3 de una redaccion al editor', 'yo tengo una laptop', 'muestra de redaccion', 'repo_imagenes_del_editor/756444bb819791ce078d42ff0a76fe41.jpg'),
+(3, 'hola ki onda', 'hola ki onda', 'hola ki onda', 'repo_imagenes_del_editor/gixxer blue.jpg');
 
 -- --------------------------------------------------------
 
@@ -73,18 +74,19 @@ INSERT INTO `articulo` (`id_articulo`, `titulo`, `contenido`, `nombre_imagen`, `
 CREATE TABLE `boletin` (
   `id_boletin` int(11) NOT NULL,
   `titulo` varchar(80) NOT NULL,
-  `contenido` varchar(80) NOT NULL,
-  `imagen` varchar(90) NOT NULL
+  `descripcion` varchar(1500) NOT NULL,
+  `imagen` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `boletin`
 --
 
-INSERT INTO `boletin` (`id_boletin`, `titulo`, `contenido`, `imagen`) VALUES
-(1, 'prueba de un boletin 1', '', 'repo_imagenes_boletin/gixxer blue.jpg'),
-(2, 'prueba 2 de un boletin a subir', '', 'repo_imagenes_boletin/gixxer blue.jpg'),
-(3, 'muestra de redaccion', '', 'repo_imagenes_boletin/756444bb819791ce078d42ff0a76fe41.jpg');
+INSERT INTO `boletin` (`id_boletin`, `titulo`, `descripcion`, `imagen`) VALUES
+(33, 'test 1', 'mozilla', 'mozilla12-pdf.pdf'),
+(34, 'test 2', 'php', 'php.pdf'),
+(35, 'test 44', 'ooooo', 'EJEMPLO.pdf'),
+(36, 'test 88|', '', 'sistema/repo_imagenes_boletin/');
 
 -- --------------------------------------------------------
 
@@ -111,9 +113,12 @@ CREATE TABLE `carta` (
 --
 
 INSERT INTO `carta` (`ID_CARTA`, `ID_CATEGORIA`, `ID_TIPO_CARTA`, `ID_PRIORIDAD`, `TITULO`, `CONTENIDO`, `NOMBRE_IMAGEN`, `IMAGEN`, `COMENTARIO`, `ASUNTO`, `LEIDO`) VALUES
-(54, 5, 1, 2, 'me gusta bailar ', 'me gusta bailar ', 'me gusta bailar ', 'repo_imagenes/pp.jpg', 'me gusto mucho tu carta', 'me gusta bailar ', NULL),
+(54, 5, 1, 2, 'me gusta bailar ', 'me gusta bailar ', 'me gusta bailar ', 'repo_imagenes/pp.jpg', 'me gusto tu carta siiiiiiiiiiiii', 'me gusta bailar ', NULL),
 (55, 5, 1, 2, 'me gusta cantar', 'me gusta cantar', 'me gusta cantar', 'repo_imagenes/ac}.jpg', 'me gusto mucho tu carta', 'me gusta cantar', NULL),
-(56, 2, 1, 2, 'laptop', 'yo tengo una laptop', 'laptop', 'repo_imagenes/gixxer blue.jpg', NULL, 'tengo laptop', NULL);
+(56, 2, 1, 2, 'laptop', 'yo tengo una laptop', 'laptop', 'repo_imagenes/gixxer blue.jpg', NULL, 'tengo laptop', NULL),
+(57, 1, 1, 1, 'fffffffff', 'el suicidio es malo', 'pruebassssss', 'repo_imagenes/des.jpg', NULL, 'deporte', NULL),
+(58, 1, 1, 1, 'hola ki onda', 'el suicidio es el suicidio mas comun', 'hola ki onda', 'repo_imagenes/des.jpg', NULL, 'hola ki onda', NULL),
+(59, 5, 1, 2, 'el cielo es azul y me gustan los colores ', 'el cielo es azul y me gustan los colores ', 'el cielo es azul y me gustan los colores ', 'repo_imagenes/des.jpg', 'su carta me gusto mucho sigue adelante', 'ppppp', NULL);
 
 -- --------------------------------------------------------
 
@@ -208,6 +213,36 @@ INSERT INTO `privilegios` (`ID_PRIVILEGIOS`, `NOMBRE_PRIVILEGIO`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `tbl_documentos`
+--
+
+CREATE TABLE `tbl_documentos` (
+  `id_documento` int(10) UNSIGNED NOT NULL,
+  `titulo` varchar(150) DEFAULT NULL,
+  `descripcion` mediumtext,
+  `tamanio` int(10) UNSIGNED DEFAULT NULL,
+  `tipo` varchar(150) DEFAULT NULL,
+  `nombre_archivo` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `tbl_documentos`
+--
+
+INSERT INTO `tbl_documentos` (`id_documento`, `titulo`, `descripcion`, `tamanio`, `tipo`, `nombre_archivo`) VALUES
+(6, 'test 111', 'es un php', 100152, 'application/pdf', 'php.pdf'),
+(7, 'test 2', 'es un pdf de mozilla', 350270, 'application/pdf', 'mozilla12-pdf.pdf'),
+(8, 'test 100', 'prueba de ejemplo222', 171758, 'application/pdf', 'EJEMPLO.pdf'),
+(9, 'test 12', 'ggggggg', 171758, 'application/pdf', 'EJEMPLO.pdf'),
+(10, 'test 12', 'ggggggg', 171758, 'application/pdf', 'EJEMPLO.pdf'),
+(11, 'test 12', 'ggggggg', 171758, 'application/pdf', 'EJEMPLO.pdf'),
+(12, 'test 12', 'ggggggg', 171758, 'application/pdf', 'EJEMPLO.pdf'),
+(13, 'test 13', 'cooroeea', 171758, 'application/pdf', 'EJEMPLO.pdf'),
+(14, 'test 13', 'cooroeea', 171758, 'application/pdf', 'EJEMPLO.pdf');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `tipo_carta`
 --
 
@@ -274,13 +309,15 @@ CREATE TABLE `usuario` (
 INSERT INTO `usuario` (`IDUSUARIO`, `ID_AREA`, `ID_TIPOUSUARIO`, `NOMBRE`, `CORREO`, `USUARIO`, `CLAVE`, `ESTATUS`, `EDAD`, `TELEFONO`, `DISTRIBUCION`) VALUES
 (1, NULL, 1, 'jose', 'raqui@gmail', 'admin', '202cb962ac59075b964b07152d234b70', 1, 22, 78999999, 0),
 (2, NULL, 4, 'ivan', 'flores@gmail.com', 'kid', '7de007e43f108e4b54b079f66e4285d8', 1, 25, 65321456, 0),
-(3, 2, 3, 'nao', 'hola', 'tuto', 'b2218117085d7b3886e312b35b7f42fa', 1, 24, 7568369, 0),
-(4, 2, 3, 'nio', 'ratu@gmail.com', 'nio', 'd0a5fd04b4b48be7ee56c1eb538d78cb', 1, 23, 65321456, 0),
+(3, 2, 3, 'nao', 'hola', 'tuto', 'b2218117085d7b3886e312b35b7f42fa', 1, 24, 7568369, 1),
+(4, 2, 3, 'nio', 'ratu@gmail.com', 'nio', 'd0a5fd04b4b48be7ee56c1eb538d78cb', 1, 23, 65321456, 1),
 (5, 3, 3, 'melina', 'mel@gmail.com', 'mel', '0ef174fc614c8d61e2d63329ef7f46c0', 1, 26, 7568369, 1),
 (6, 2, 3, 'Ivanovic', 'hola@hola', 'kidd', '202cb962ac59075b964b07152d234b70', 1, 26, 756326456, 1),
 (11, 5, 3, 'jose campos', 'raqui@gmail,bo', 'raquitich', '6ebb02e482851804e964db5f50d36318', 1, 22, 65321456, 1),
-(12, 6, 3, 'Soria Rami', 'holowiwi@gmail.com', 'fanoem', 'f020ef7c6521c69ba5bd192c3472738c', 1, 23, 7568366, 0),
-(13, 2, 2, 'eliana', 'eliana@gmail.com', 'eliana', '4b5feade9732bab1148ea9e7a2c4fb66', 1, 28, 76985476, 1);
+(12, 6, 3, 'Soria Rami', 'holowiwi@gmail.com', 'fanoem', 'f020ef7c6521c69ba5bd192c3472738c', 0, 23, 7568366, 0),
+(13, 2, 2, 'eliana', 'eliana@gmail.com', 'eliana', '4b5feade9732bab1148ea9e7a2c4fb66', 1, 28, 76985476, 1),
+(14, 4, 4, 'ddoo', 'ddoo@gmail.com', 'ddoo', 'ed70114efdedc13005c524b01ccd62f7', 1, 23, 78965888, 0),
+(15, 4, 3, 'harlin', 'harlin@gmail.com', 'harlin', 'ea31d6fe63c61782649a4e5f22ef59f6', 0, 26, 76435678, 0);
 
 -- --------------------------------------------------------
 
@@ -303,7 +340,13 @@ INSERT INTO `usuario_carta` (`ID_CARTA`, `IDUSUARIO`) VALUES
 (55, 2),
 (55, 11),
 (56, 2),
-(56, 6);
+(56, 6),
+(57, 2),
+(57, 4),
+(58, 2),
+(58, 3),
+(59, 2),
+(59, 11);
 
 --
 -- Índices para tablas volcadas
@@ -368,6 +411,12 @@ ALTER TABLE `privilegios`
   ADD PRIMARY KEY (`ID_PRIVILEGIOS`);
 
 --
+-- Indices de la tabla `tbl_documentos`
+--
+ALTER TABLE `tbl_documentos`
+  ADD PRIMARY KEY (`id_documento`);
+
+--
 -- Indices de la tabla `tipo_carta`
 --
 ALTER TABLE `tipo_carta`
@@ -407,17 +456,17 @@ ALTER TABLE `area_usuario`
 -- AUTO_INCREMENT de la tabla `articulo`
 --
 ALTER TABLE `articulo`
-  MODIFY `id_articulo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_articulo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT de la tabla `boletin`
 --
 ALTER TABLE `boletin`
-  MODIFY `id_boletin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_boletin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 --
 -- AUTO_INCREMENT de la tabla `carta`
 --
 ALTER TABLE `carta`
-  MODIFY `ID_CARTA` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `ID_CARTA` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 --
 -- AUTO_INCREMENT de la tabla `categoria_carta`
 --
@@ -439,6 +488,11 @@ ALTER TABLE `prioridad`
 ALTER TABLE `privilegios`
   MODIFY `ID_PRIVILEGIOS` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
+-- AUTO_INCREMENT de la tabla `tbl_documentos`
+--
+ALTER TABLE `tbl_documentos`
+  MODIFY `id_documento` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+--
 -- AUTO_INCREMENT de la tabla `tipo_carta`
 --
 ALTER TABLE `tipo_carta`
@@ -452,7 +506,7 @@ ALTER TABLE `tipo_usuario`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `IDUSUARIO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `IDUSUARIO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- Restricciones para tablas volcadas
 --
