@@ -97,27 +97,7 @@ if(!empty($_POST))
 			</form>
 			<center><div  class="alerta "><?php echo isset($alert) ? $alert : ''; ?></div></center>
                 
-			
-
 		<!--fin formulario para redactar y enviar-->
-		<div class=" table-responsive col-xs-12 col-md-12">
-			<table class="table table-hover ">
-		
-				<tr>
-					<th scope="col">Numero</th>
-					<th scope="col">Titulo</th>
-					<th scope="col">Categoria</th>
-					<th scope="col">Contenido</th>
-					<th scope="col">Titulo de la foto</th>
-				</tr>
-			
-				<?php 
-					//Paginador
-					$sql_codificacion=mysqli_query($conection, "SET nombre utf8");
-					//$sql_codificacion=mysqli_query($conection, "SET tipo_usuario utf8");
-					$sql_registe = mysqli_query($conection,"SELECT COUNT(*) as total_registro FROM carta");
-					$result_register = mysqli_fetch_array($sql_registe);
-					$total_registro = $result_register['total_registro'];
 
 					$por_pagina = 5;
 

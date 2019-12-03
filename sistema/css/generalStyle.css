@@ -108,15 +108,16 @@ header{
 .optionsBar span {
 	width: 50px;
     color: #FFF;
-    font-size: 11pt;
+    font-size: 8.5pt;
     font-family: 'GothamBook';
     text-transform: uppercase;
     margin-left: 2px;
 }
 .photouser {
-    margin-left: 10px;
-    width: 60px;
-	height: 60px;
+	margin-left: 20px;
+	margin-right:-20px;
+    width: 42px;
+	height: 42px;
 }
 .close{
 	width: 25px;

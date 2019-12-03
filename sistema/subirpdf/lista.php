@@ -15,33 +15,25 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-
-    <h1>Publicaciones del Mensajero</h1>
-        <table class="table table-striped table-responsive col-xs-12 col-md-12">
             <tr>
-                <th scope="col">TITULO</th>
-                <th scope="col">DESCRIPCION</th>
-                
-                <th scope="col">TIPO</td>
-                <th scope="col">BOLETIN</td>
+                <th scope="col" class="bg-primary col-md-auto">TITULO</th>
+                <th scope="col" class="bg-primary col-md-auto">DESCRIPCION</th>
+                <th scope="col" class="bg-primary col-md-auto">BOLETIN</td>
             </tr>
+   
         <?php
         include 'config.inc.php';
         $db=new Conect_MySql();
-            $sql = "select*from tbl_documentos";
-            $query = $db->execute($sql);
-            while($datos=$db->fetch_row($query)){?>
-            <tr scope="row">
+
                 <td><?php echo $datos['titulo']; ?></td>
                 <td><?php echo $datos['descripcion']; ?></td>
-                
-                <td><?php echo $datos['tipo']; ?></td>
                 <td><a href="archivo.php?id=<?php echo $datos['id_documento']?>"><?php echo $datos['nombre_archivo']; ?></a></td>
             </tr>
                 
           <?php  } ?>
             
         </table>
+        </div></center>
 
 
     
@@ -52,17 +44,10 @@
 </html>
 
 <style>
-
-body{
-	background:rgb(33, 177, 175);
-	font-family:Helvetica;
+h2{
+    color:white;
 }
-h1 {
-    font-size: 30px;
-    color: rgb(70, 92, 123);
-    font-style: italic;
-    display: inline-block;
-    letter-spacing: normal;
-    margin-right: 10px;
+body{
+
 }
 </style>
