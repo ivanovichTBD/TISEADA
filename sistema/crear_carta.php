@@ -114,7 +114,7 @@ $alert=$_GET['sol'];
   <!--mensaje de envio-->
 			<div class="alerta"><?php echo isset($alert) ? $alert : ''; ?></div>
 
-          <form action="" method="POST" enctype="multipart/form-data" >
+          <form action="" method="POST" id="comment_form" enctype="multipart/form-data" >
               <div>
                 <div class="derecha">
                   <h1>Escribe tu carta</h1>

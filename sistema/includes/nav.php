@@ -65,7 +65,8 @@
 					<ul class="children">
 					
 					<li><a href="chat_con_websocket/index.php">Colaboración entre redactores</a></li>
-						
+					<li><a href="lista_usuarios.php">Nuevo Mensaje</a></li>
+					
 					</ul>
 				</li>
 			<?php } ?>

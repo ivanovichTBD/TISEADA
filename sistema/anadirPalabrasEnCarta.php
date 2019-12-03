@@ -1,7 +1,7 @@
 <?php
 //session_start();
 include "../conexion.php";
-
+if($_SESSION['tipo_usuario']==3){
 $usuario=$_SESSION['idUser'];
 
 $ConsultaUser=mysqli_query($conection,"SELECT ID_AREA FROM usuario WHERE IDUSUARIO='$usuario'");
@@ -55,7 +55,7 @@ function vistaCarta($resultadoConsulta,$data){
         </div>
     </div>
 </div>
-
+        <?php }?>
 
 <style>
 
