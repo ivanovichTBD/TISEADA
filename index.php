@@ -67,12 +67,13 @@
     <?php include "sistema/includes/functions.php"?>
     <?php include "ComponentesPagPrincipal/HeaderPrincipal.php"?>
     
-    <main style="height: 81vh;">
+    <main>
     <div class="contenido" id="contenido">
         <?php // include "ComponentesPagPrincipal/subMenus.php"?>
+        <div>
         <?php include "ComponentesPagPrincipal/cuerpo.php"?>
-       
-<?php include "sistema/mostrar_boletin.php"; ?>
+       </div>
+        <?php include "sistema/mostrar_boletin.php";?>
 
         <?php include "ComponentesPagPrincipal/anexo.php"?>
         <?php //include "sistema/registro_usuario.php"; ?>

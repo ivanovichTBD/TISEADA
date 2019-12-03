@@ -21,10 +21,26 @@
     
   </head>
   <body>
+
+
+
   	<div class='container'>
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">Galería</h1>
+            
+				<h1 class="page-header"></h1>
+                
+  <!--inicio lista de publicaciones-->
+<center><p>
+  <a class="btn btn-primary" href="sistema/subirpdf/lista.php"aria-expanded="false" aria-controls="collapseExample">
+    Boletines
+  </a>
+</p></center>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+   </div>
+</div>
+  <!--fin lista de publicaciones-->
 			<?php
                 
                 

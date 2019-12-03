@@ -2,7 +2,7 @@
 <div class="menu_bar">
 	  <a href="#" class="bt-menu"><span class="icon-view-list"></span>Menu</a>
 </div>
-		<div class="topnav" id="myTopnav">
+	<div class="topnav" id="myTopnav">
 		<nav class="navbar-expand-lg  scrolling-navbar">
 			<ul>
 				<li><a href="index.php">Inicio</a></li>
@@ -23,8 +23,8 @@
 				<li class="principal">
 					<a href="#" class="letraNiño">Escribir Carta</a>
 					<ul class="children">
-						<li><a href="crear_carta.php" class="letraNiño">Nueva Carta</a></li>
-						<li><a href="mostrar_plantilla.php" class="letraNiño">Plantillas</a></li>
+						<li><a href="crear_carta.php" class="letraNiño">Nueva Carta</a></li> 
+					<!--	<li><a href="mostrar_plantilla.php" class="letraNiño">Plantillas</a></li> -->
 					</ul>
 
 				</li>
@@ -74,10 +74,18 @@
 			<?php if($_SESSION['tipo_usuario'] == 2){ ?>
 				<li class="principal">
 					<a href="#">Publicaciones </a>
-					<ul>
+					<ul class="children">
 					
 					<li><a href="publicar_boletin.php">Publicar Boletin</a></li>
 					<li><a href="subirpdf/index.php">Publicar Boletines pdfs</a></li>
+						
+					</ul>
+				</li>
+				<li class="principal">
+					<a href="#">Plantillas </a>
+					<ul class="children">
+					
+					<li><a href="mostrar_plantilla.php">Descargar plantillas</a></li>
 						
 					</ul>
 				</li>
@@ -85,16 +93,17 @@
 
 				</li>
 				
-     <ul class="nav navbar-nav navbar-right" style="height:47px">
-      <li class="dropdown" style="height:43px;margin: 0;position: absolute;">
-       <a href="#" class="dropdown-toggle " style="padding-top:8px;padding-bottom: 0px;" data-toggle="dropdown">
-       	<span class="label label-pill label-danger count" style="border-radius:10px;"></span> 
-       	<span class="glyphicon glyphicon-bell" style="font-size:18px;"></span></a>
-       <ul class="dropdown-menu" style="padding: 0;">
-	   <li style="margin: 0;"> <a href="#">Action</a></li>
-	   </ul>
-      </li>
-     </ul>
+			
+				<ul class="nav navbar-nav navbar-right children" >
+					<li class="dropdown principal">
+							<a href="#" class="dropdown-toggle " style="padding-top:8px;padding-bottom: 0px;" data-toggle="dropdown">
+							<span class="label label-pill label-danger count" style="border-radius:10px;"></span> 
+							<span class="glyphicon glyphicon-bell" style="font-size:18px;"></span></a>
+						<ul class="dropdown-menu" style="padding: 0;">
+							<li style="margin: 0;"> <a href="#">Action</a></li>
+						</ul>
+     		 		</li>
+    			</ul>
     <!--<div class="dropdown">
   <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
   <span class="caret"></span></button>

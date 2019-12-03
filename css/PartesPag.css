@@ -265,7 +265,7 @@ color: white;
 /*calendario------------------------------------------------------------------------------------------------*/
 .ubicCal{
   width: 180px;
-  margin-left: 5%;
+  margin:auto;
 }
 #calendar {
   font-family:Arial;

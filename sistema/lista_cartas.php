@@ -23,11 +23,11 @@
 
 	<section id="containerU container">
 		
-		<div class= "listaUS">
+	<div class= "listaUS">
 			<h1 class="letraNiño">Fotos y lista de cartas</h1>
 		</div>
 			<div class="row conCarTab">
-			<div class=" table-responsive col-xs-12 col-md-6">
+			 <div class=" table-responsive col-xs-12 col-md-6">
 				<table  class="table letraNiño">
 					<tr>
 						<th scope="col">Nº</th>

@@ -112,11 +112,14 @@ $alert=$_GET['sol'];
 ?>
 
   <!--mensaje de envio-->
-			<div class="alerta"><?php echo isset($alert) ? $alert : ''; ?></div>
+			<div class="alerta"><?php echo isset($alert) ? $alert : ''; ?></div><<<<<<< Ivan3
 
-          <form action="" method="POST" id="comment_form" enctype="multipart/form-data" >
+         
+        <div class="row" id="creaCart">
+          <form action="" id="comment_form" method="POST" enctype="multipart/form-data" >
+
               <div>
-                <div class="derecha">
+                <div class="col-xs-12 col-md-6">
                   <h1>Escribe tu carta</h1>
 
                   <div id="from">
@@ -139,17 +142,18 @@ $alert=$_GET['sol'];
                       <input required type="file" id="imagen" name="imagen">
                   </div>
                 </div>
-              <div class="izquierda">
+              <div class="col-xs-12 col-md-6">
                   <div id="message">
                       <label for="msg">Contenido de tu carta</label>
                       <textarea required id="msg" name="contenido"></textarea>
                   </div>
               </div>
-                <div class="button derecha">
-                    <button type="submit">Envia tu carta</button>
+                <div>
+                    <button class="buttonCar" type="submit">Envia tu carta</button> 
 
 
         </form>	
+      </div>
     </div>
 	
 </div>
@@ -242,7 +246,7 @@ $(document).ready(function(){
 
 #fondocar form {
   width  : 80%;
-  height : 555px;
+  height : 570px;
   margin : 0 auto;
   background: #FFF url(img/fondodecrearcarta2.jpg);
   border-radius:10px;
@@ -301,7 +305,6 @@ $(document).ready(function(){
 
 label {
   font : .9em "typewriter", sans-serif;
-  background: #ffffff87;
 }
 
 
@@ -314,10 +317,11 @@ input, textarea {
   background: none;
 }
 
-input, textarea {
+#creaCart input, textarea {
   background   : rgba(0,0,0,.1);
   border-radius: 5px;
   outline      : none;
+  border: none;
 }
 
 
@@ -341,7 +345,8 @@ textarea {
   overflow: auto;
 }
 
-button {
+.buttonCar
+ {
   left         : 440px;
   top          : 480px;
   padding      : 5px;
@@ -356,12 +361,12 @@ button {
   background: wheat;
 }
 
-button:after {
+.buttonCar:after {
   content      : " >>>";
 }
 
-button:hover,
-button:focus {
+.buttonCar:hover,
+.buttonCar:focus {
   outline     : none;
   background  : #001;
   color       : #FFF;
@@ -378,7 +383,7 @@ button:focus {
 
 /*****************************RESPONSIVE**************************/
 
-@media screen and (max-width:768px ) {
+@media screen and (max-width:991px ) {
     /*cartaEstilo*/
     #fondocar{
       font  : 20px sans-serif;
@@ -430,5 +435,21 @@ img{
 .responsivo{
   width: auto;
   height:auto;
+}
+.buttonCar
+ {
+    left: 440px;
+    top: 480px;
+    padding: 0px;
+    font: 1em "typewriter", sans-serif;
+    border: 2px solid #333;
+    border-radius: 5px;
+    background: none;
+    cursor: pointer;
+    transform: rotate(-1.5deg);
+    height: auto;
+    margin: 10px 0px 0px 0px;
+    background: wheat;
+    
 }
 </style>
