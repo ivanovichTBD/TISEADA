@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
+    <meta charset="UTF-8">
         <title></title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -16,8 +16,8 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 
-          <center> <h1>Publicaciones del Mensajero</h1></center>
-        <table class="table table-striped">
+    <h1>Publicaciones del Mensajero</h1>
+        <table class="table table-striped table-responsive col-xs-12 col-md-12">
             <tr>
                 <th scope="col">TITULO</th>
                 <th scope="col">DESCRIPCION</th>
@@ -31,7 +31,7 @@
             $sql = "select*from tbl_documentos";
             $query = $db->execute($sql);
             while($datos=$db->fetch_row($query)){?>
-            <tr>
+            <tr scope="row">
                 <td><?php echo $datos['titulo']; ?></td>
                 <td><?php echo $datos['descripcion']; ?></td>
                 
@@ -54,6 +54,15 @@
 <style>
 
 body{
-    background:radial-gradient(circle, rgba(233,174,238,0.9391106784510679) 0%, rgba(96,181,236,1) 100%);
+	background:rgb(33, 177, 175);
+	font-family:Helvetica;
+}
+h1 {
+    font-size: 30px;
+    color: rgb(70, 92, 123);
+    font-style: italic;
+    display: inline-block;
+    letter-spacing: normal;
+    margin-right: 10px;
 }
 </style>

@@ -36,11 +36,10 @@ if (isset($_POST['subir'])) {
     
     <section id="containerU">
         
-            <div class= "listaUS row">   
-               
+            <div class= "listaUS">   
                     <h1>Publicar Boletin</h1>
-                    
             </div>
+            
             <center><img src="portada_publicar_boletin.jpg" alt=""></center><br>
             
             <form method="post" action="" enctype="multipart/form-data">

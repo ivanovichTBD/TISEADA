@@ -23,7 +23,7 @@
 
 	<section id="containerU container">
 		
-		<div class= "listaUS">
+	<div class= "listaUS">
 			<h1 class="letraNiño">Fotos y lista de cartas</h1>
 		</div>
 			<div class="row conCarTab">

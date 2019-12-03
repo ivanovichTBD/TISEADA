@@ -53,29 +53,22 @@ if(!empty($_POST))
 <html lang="es">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+	<?php include "includes/scripts.php"; ?> 
 	<title>Publicar boletin</title>
 </head>
 <body>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<section id="container containerU">
+		<div class= "listaUS">
+			<h1>Publicar Boletin</h1>
+		</div>
 
-	
-	<section id="container">
-		
-		<center><h2>Publicar Boletin</h2></center>
 		<!--formulario para redactar y enviar-->		
-				<center><img src="img/portada_publicar_boletin.jpg" alt=""></center><br>
+			<img src="img/portada_publicar_boletin.jpg" class=" img-thum bnail rounded mx-auto d-block" alt=""><br>
           
-			<center><form action="" method="POST" enctype="multipart/form-data">
+			<form action="" method="POST" enctype="multipart/form-data">
                 
-                <div class="col-md-6" id="reply">
+                <div class="col-xs-12 col-md-12" id="reply">
                     <label for="titulo">Titulo del Boletin</label>
                     <input class="form-control" required type="text" id="titulo" name="titulo" placeholder="Titulo">
                 <!--<div id="message">
@@ -84,15 +77,15 @@ if(!empty($_POST))
                 </div> -->
                 </div>
 				<br>
-                <div class="col-md-6" id="reply3">
+                <div class="col-xs-12 col-md-12" id="reply3">
                     <label for="imagen">Subir Boletin</label>
                     <input class="col-md-4" required type="file" id="imagen" name="imagen">
                 </div>
 					<br>
-				<button class="btn btn-primary btn-lg active" type="submit">Publicar Boletin</button>
+				<button class="btn btn-primary btn-lg active" type="submit" style="margin:15px;">Publicar Boletin</button>
 				<div  class="alerta"><?php echo isset($alert) ? $alert : ''; ?></div>
                 
-			</form>	</center>
+			</form>
 			
 		<!--fin formulario para redactar y enviar-->
 
@@ -102,71 +95,76 @@ if(!empty($_POST))
 
 		<hr>
         <!--Lista de los articulos-->
-			<center><h2>Articulos de los redactores</h2></center>
-		<table class="table table-hover ">
-            
-			<thead class="table-dark">
-			  <tr class="bg-dark">
-            	<th>Numero</th>
-				<th>Titulo</th>
-				<th>Contenido del articulo</th>
-                <th>Nombre imagen</th>
-			  </tr>
-			</thead>
-		<?php 
-			//Paginador
-			$sql_codificacion=mysqli_query($conection, "SET nombre utf8");
-			//$sql_codificacion=mysqli_query($conection, "SET tipo_usuario utf8");
-			$sql_registe = mysqli_query($conection,"SELECT COUNT(*) as total_registro FROM carta WHERE ID_TIPO_CARTA=2");
-			$result_register = mysqli_fetch_array($sql_registe);
-			$total_registro = $result_register['total_registro'];
-
-			$por_pagina = 5;
-
-			if(empty($_GET['pagina']))
-			{
-				$pagina = 1;
-			}else{
-				$pagina = $_GET['pagina'];
-			}
-
-			$desde = ($pagina-1) * $por_pagina;
-			$total_paginas = ceil($total_registro / $por_pagina);
-
-			$queryP = mysqli_query($conection,"SELECT ID_CARTA, TITULO, CONTENIDO, NOMBRE_IMAGEN FROM carta  WHERE   ID_CARTA >0 AND ID_TIPO_CARTA=2 ORDER BY ID_CARTA DESC LIMIT $desde,$por_pagina 
-				");
-
-			mysqli_close($conection);
-
-			$result = mysqli_num_rows($queryP);
-			if($result > 0){
-
-				while ($data = mysqli_fetch_array($queryP)) {
+		<div class= "listaUS">
+			<h1>Articulos de los redactores</h1>
+		</div>
+		<div class="row">
+			<div class=" table-responsive col-xs-12 col-md-12">
+				<table class="table table-hover ">
 					
-			?>
-				<tr>
-					<td><?php echo $data["ID_CARTA"]; ?></td>
-					<td><?php echo $data["TITULO"]; ?></td>  
-					</div>
+					<tr>
+						<th  scope="col">Numero</th>
+						<th  scope="col">Titulo</th>
+						<th  scope="col">Contenido del articulo</th>
+						<th  scope="col">Nombre imagen</th>
+					</tr>
+					</thead>
+				<?php 
+					//Paginador
+					$sql_codificacion=mysqli_query($conection, "SET nombre utf8");
+					//$sql_codificacion=mysqli_query($conection, "SET tipo_usuario utf8");
+					$sql_registe = mysqli_query($conection,"SELECT COUNT(*) as total_registro FROM carta WHERE ID_TIPO_CARTA=2");
+					$result_register = mysqli_fetch_array($sql_registe);
+					$total_registro = $result_register['total_registro'];
 
-					<div class="col-lg-6">
-					  <div class="form-group">
-						<td>
-						<textarea class="form-control"><?php echo $data["CONTENIDO"]; ?></textarea>
-						</td>
-						<td><?php echo $data['NOMBRE_IMAGEN'] ?></td>
-					  </div>
-					</div>
-				</tr>
-			
-		<?php 
-				}
+					$por_pagina = 5;
 
-			}
-		 ?>
+					if(empty($_GET['pagina']))
+					{
+						$pagina = 1;
+					}else{
+						$pagina = $_GET['pagina'];
+					}
+
+					$desde = ($pagina-1) * $por_pagina;
+					$total_paginas = ceil($total_registro / $por_pagina);
+
+					$queryP = mysqli_query($conection,"SELECT ID_CARTA, TITULO, CONTENIDO, NOMBRE_IMAGEN FROM carta  WHERE   ID_CARTA >0 AND ID_TIPO_CARTA=2 ORDER BY ID_CARTA DESC LIMIT $desde,$por_pagina 
+						");
+
+					mysqli_close($conection);
+
+					$result = mysqli_num_rows($queryP);
+					if($result > 0){
+
+						while ($data = mysqli_fetch_array($queryP)) {
+							
+					?>
+						<tr scope="row">
+							<td><?php echo $data["ID_CARTA"]; ?></td>
+							<td><?php echo $data["TITULO"]; ?></td>  
+							</div>
+
+							<div class="col-lg-6">
+							<div class="form-group">
+								<td>
+								<textarea class="form-control"><?php echo $data["CONTENIDO"]; ?></textarea>
+								</td>
+								<td><?php echo $data['NOMBRE_IMAGEN'] ?></td>
+							</div>
+							</div>
+						</tr>
+					
+				<?php 
+						}
+
+					}
+				?>
 
 
-		</table>
+			</table>
+			</div>
+			</div>
 		<div class="paginador">
 			<ul>
 			<?php 
@@ -215,6 +213,14 @@ if(!empty($_POST))
 body{
 	background:rgb(33, 177, 175);
 	font-family:Helvetica;
+}
+h1 {
+    font-size: 30px;
+    color: rgb(70, 92, 123);
+    font-style: italic;
+    display: inline-block;
+    letter-spacing: normal;
+    margin-right: 10px;
 }
 .texto_area{
   display : block;
@@ -270,9 +276,11 @@ body{
   height:35px;
 }
 img{
-	border-radius:4px;
-	width:550px;
-	height:165px;
+	width: 100%;
+  height: auto;
+  opacity: 0.92;
+  margin:20px auto;
+  border-radius:10px;
 	
 }
 
