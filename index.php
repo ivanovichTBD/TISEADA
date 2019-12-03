@@ -70,8 +70,9 @@
     <main>
     <div class="contenido" id="contenido">
         <?php // include "ComponentesPagPrincipal/subMenus.php"?>
+        <div>
         <?php include "ComponentesPagPrincipal/cuerpo.php"?>
-       
+       </div>
         <?php include "sistema/mostrar_boletin.php";?>
 
         <?php include "ComponentesPagPrincipal/anexo.php"?>
