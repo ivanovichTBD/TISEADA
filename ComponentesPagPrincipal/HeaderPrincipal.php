@@ -3,7 +3,8 @@
   <div class="fixed-top">
 		<div class="navbar navbar-light justify-content-between header"> 
         <h1 class="Titulo">MENSAJERO</h1>
-          <!--buscador-->
+          <!--buscador
+          
           <form action="#" method="get" class="form_search">
             <div class="wrap">
               <div class="search">
@@ -13,7 +14,8 @@
               </div>
             </div>
           </form>
-          <!--fin buscador-->
+
+          fin buscador-->
       </div>
     <div>
   

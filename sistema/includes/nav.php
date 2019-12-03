@@ -23,8 +23,8 @@
 				<li class="principal">
 					<a href="#" class="letraNiño">Escribir Carta</a>
 					<ul class="children">
-						<li><a href="crear_carta.php" class="letraNiño">Nueva Carta</a></li>
-						<li><a href="mostrar_plantilla.php" class="letraNiño">Plantillas</a></li>
+						<li><a href="crear_carta.php" class="letraNiño">Nueva Carta</a></li> 
+					<!--	<li><a href="mostrar_plantilla.php" class="letraNiño">Plantillas</a></li> -->
 					</ul>
 
 				</li>
@@ -77,6 +77,14 @@
 					
 					<li><a href="publicar_boletin.php">Publicar Boletin</a></li>
 					<li><a href="subirpdf/index.php">Publicar Boletines pdfs</a></li>
+						
+					</ul>
+				</li>
+				<li class="principal">
+					<a href="#">Plantillas </a>
+					<ul class="children">
+					
+					<li><a href="mostrar_plantilla.php">Descargar plantillas</a></li>
 						
 					</ul>
 				</li>
