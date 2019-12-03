@@ -15,10 +15,10 @@ if (isset($_POST['subir'])) {
             $sql = "INSERT INTO tbl_documentos(titulo,descripcion,tamanio,tipo,nombre_archivo) VALUES('$titulo','$descri','$tamanio','$tipo','$nombre')";
             $query = $db->execute($sql);
             if($query){
-                echo "Se guardo correctamente";
+               echo "Se publicó correctamente";
             }
         } else {
-            echo "Error";
+            echo "Error al publicar";
         }
     }
 }
@@ -142,5 +142,9 @@ input[type=submit]:hover {
 }
 a{
     color:white;
+}
+.publico{
+    height:20px;
+    width:auto;
 }
 </style>

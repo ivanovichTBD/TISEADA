@@ -14,13 +14,14 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-
+        <center><h2>Lista de boletines</h2></center>
+        <center><div class="lista">
+        <img src="portada_lista_boletines.jpg" alt="">
         <table class="table table-striped">
             <tr>
-                <th scope="col">TITULO</th>
-                <th scope="col">DESCRIPCION</th>
-                <th scope="col">BOLETIN</td>
+                <th scope="col" class="bg-primary col-md-auto">TITULO</th>
+                <th scope="col" class="bg-primary col-md-auto">DESCRIPCION</th>
+                <th scope="col" class="bg-primary col-md-auto">BOLETIN</td>
             </tr>
    
         <?php
@@ -39,6 +40,7 @@
           <?php  } ?>
             
         </table>
+        </div></center>
 
 
     
@@ -49,8 +51,26 @@
 </html>
 
 <style>
-
+h2{
+    color:white;
+}
 body{
-    background:radial-gradient(circle, rgba(233,174,238,0.9391106784510679) 0%, rgba(96,181,236,1) 100%);
+    background: #00a6bb ;
+}
+.lista{
+    background-color: #00a6bb;
+    box-shadow: 2px 2px 2px 0px #00000017;
+	
+	border-radius:3px;
+
+	position:relative;
+
+	width: 98%;
+ 	height:auto;
+
+}
+img{
+    width: 100%;
+ 	height:auto;
 }
 </style>

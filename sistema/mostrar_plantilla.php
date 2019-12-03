@@ -1,6 +1,6 @@
 <?php 
 	session_start();
-	if($_SESSION['tipo_usuario'] != 4)
+	if($_SESSION['tipo_usuario'] != 2)
 	{
 		header("location: ./");
 	}
@@ -34,39 +34,34 @@
 -->
 
 	<?php include "includes/header.php"; ?>
-    <br><br><br><br><br><br><br><br>
+    <br>
     <h1><center>ESCOGE UNA PLANTILLA</center></h1>
-
+       <center><h4>"Click en una imagen para descargar"</h4></center>
     <div class="m-4">
     <div class="card-deck">
             <div class="card" >
-                <a href="repo_plantillas/Publicación1.jpg"><img src="repo_plantillas/Publicación1.jpg" class="card-img-top" alt="..."></a>
+                <a href="repo_plantillas/Boletin1.pub"><img src="repo_plantillas/Boletin1.jpg" class="card-img-top" alt="..."></a>
                 <div class="card-body">
-                <h5 class="card-title">COLORES</h5>
                 </div>
             </div>
             <div class="card">
-            <a href="repo_plantillas/Publicación2.jpg"><img src="repo_plantillas/Publicación2.jpg" class="card-img-top" alt="..."></a>
+            <a href="repo_plantillas/Boletin2.pub"><img src="repo_plantillas/Boletin2.jpg" class="card-img-top" alt="..."></a>
                 <div class="card-body">
-                <h5 class="card-title">NATURALEZA</h5>
                 </div>
             </div>
             <div class="card">
-            <a href="repo_plantillas/Publicación3.jpg"><img src="repo_plantillas/Publicación3.jpg" class="card-img-top" alt="..."></a>
+            <a href="repo_plantillas/Boletin3.pub"><img src="repo_plantillas/Boletin3.jpg" class="card-img-top" alt="..."></a>
                 <div class="card-body">
-                <h5 class="card-title">UNIVERSO</h5>
                 </div>
             </div>
             <div class="card">
-            <a href="repo_plantillas/Publicación4.jpg"><img src="repo_plantillas/Publicación4.jpg" class="card-img-top" alt="..."></a>
+            <a href="repo_plantillas/Boletin4.pub"><img src="repo_plantillas/Boletin4.jpg" class="card-img-top" alt="..."></a>
                 <div class="card-body">
-                <h5 class="card-title">Card title</h5>
                 </div>
             </div>
             <div class="card">
-            <a href="repo_plantillas/Publicación5.jpg"><img src="repo_plantillas/Publicación5.jpg" class="card-img-top" alt="..."></a>
+            <a href="repo_plantillas/Boletin5.pub"><img src="repo_plantillas/Boletin5.jpg" class="card-img-top" alt="..."></a>
                 <div class="card-body">
-                <h5 class="card-title">Card title</h5>
                 </div>
             </div>
     </div>
@@ -76,33 +71,28 @@
 
     <div class="card-deck">
             <div class="card">
-                <a href="repo_plantillas/Publicación6.jpg"><img src="repo_plantillas/Publicación6.jpg" class="card-img-top" alt="..."></a>
+                <a href="repo_plantillas/Boletin6.pub"><img src="repo_plantillas/Boletin6.jpg" class="card-img-top" alt="..."></a>
                 <div class="card-body">
-                <h5 class="card-title">Card title</h5>
                 </div>
             </div>
             <div class="card">
-            <a href="repo_plantillas/Publicación7.jpg"><img src="repo_plantillas/Publicación7.jpg" class="card-img-top" alt="..."></a>
+            <a href="repo_plantillas/Boletin7.pub"><img src="repo_plantillas/Boletin7.jpg" class="card-img-top" alt="..."></a>
                 <div class="card-body">
-                <h5 class="card-title">Card title</h5>
                 </div>
             </div>
             <div class="card">
-            <a href="repo_plantillas/Publicación8.png"><img src="repo_plantillas/Publicación8.png" class="card-img-top" alt="..."></a>
+            <a href="repo_plantillas/Boletin8.pub"><img src="repo_plantillas/Boletin8.jpg" class="card-img-top" alt="..."></a>
                 <div class="card-body">
-                <h5 class="card-title">Card title</h5>
                 </div>
             </div>
             <div class="card">
-            <a href="repo_plantillas/Publicación9.jpg"><img src="repo_plantillas/Publicación9.jpg" class="card-img-top" alt="..."></a>
+            <a href="repo_plantillas/Boletin9.pub"><img src="repo_plantillas/Boletin9.jpg" class="card-img-top" alt="..."></a>
                 <div class="card-body">
-                <h5 class="card-title">Card title</h5>
                 </div>
             </div>
             <div class="card">
-            <a href="repo_plantillas/Publicación10.jpg"><img src="repo_plantillas/Publicación10.jpg" class="card-img-top" alt="..."></a>
+            <a href="repo_plantillas/Boletin10.pub"><img src="repo_plantillas/Boletin10.jpg" class="card-img-top" alt="..."></a>
                 <div class="card-body">
-                <h5 class="card-title">Card title</h5>
                 </div>
             </div>
     </div>
@@ -113,31 +103,31 @@
 
     <div class="card-deck">
             <div class="card">
-                <a href="repo_plantillas/Publicación11.jpg"><img src="repo_plantillas/Publicación11.jpg" class="card-img-top" alt="..."></a>
+                <a href="repo_plantillas/Boletin11.pub"><img src="repo_plantillas/Boletin11.jpg" class="card-img-top" alt="..."></a>
                 <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 </div>
             </div>
             <div class="card">
-            <a href="repo_plantillas/Publicación12.jpg"><img src="repo_plantillas/Publicación12.jpg" class="card-img-top" alt="..."></a>
+            <a href="repo_plantillas/Boletin12.pub"><img src="repo_plantillas/Boletin12.jpg" class="card-img-top" alt="..."></a>
                 <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 </div>
             </div>
             <div class="card">
-            <a href="repo_plantillas/Publicación13.jpg"><img src="repo_plantillas/Publicación13.jpg" class="card-img-top" alt="..."></a>
+            <a href="repo_plantillas/Boletin13.pub"><img src="repo_plantillas/Boletin13.jpg" class="card-img-top" alt="..."></a>
                 <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 </div>
             </div>
             <div class="card">
-            <a href="repo_plantillas/Publicación14.jpg"><img src="repo_plantillas/Publicación14.jpg" class="card-img-top" alt="..."></a>
+            <a href="repo_plantillas/Boletin14.pub"><img src="repo_plantillas/Boletin14.jpg" class="card-img-top" alt="..."></a>
                 <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 </div>
             </div>
             <div class="card">
-            <a href="repo_plantillas/Publicación15.jpg"><img src="repo_plantillas/Publicación15.jpg" class="card-img-top" alt="..."></a>
+            <a href="repo_plantillas/Boletin15.pub"><img src="repo_plantillas/Boletin15.jpg" class="card-img-top" alt="..."></a>
                 <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 </div>
@@ -149,7 +139,14 @@
 
 
 
-	<?php include "includes/footer.php"; ?>
 </body>
 </html>
+<style>
+h1,h4{
+    color:white;
+}
+body{
+    background:rgb(33, 177, 175);
+}
+</style>
 
