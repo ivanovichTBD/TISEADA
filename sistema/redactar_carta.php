@@ -25,7 +25,7 @@ if(!empty($_POST))
         copy($ruta, $destino);
     
         
-        $query = mysqli_query($conection,"SELECT * FROM articulo WHERE titulo = '$titulo' OR contenido = '$contenido' ");
+        $query = mysqli_query($conection,"SELECT * FROM carta WHERE ID_TIPO_CARTA=2 AND titulo = '$titulo' OR contenido = '$contenido' ");
         $result = mysqli_fetch_array($query);
 
         if($result > 0){
@@ -33,7 +33,15 @@ if(!empty($_POST))
         }else{
 			$query_insert = mysqli_query($conection,"INSERT INTO carta(TITULO, ASUNTO, CONTENIDO, NOMBRE_IMAGEN, IMAGEN,ID_TIPO_CARTA,ESTADO_NOTIFICACION,IP_NOTIFICACION)
 			VALUES('$titulo','REDACCION','$contenido','$nombre_imagen','$destino','2','0','$ipAdd')");
-
+			
+			$usuarioActual=$_SESSION["idUser"];
+			
+			$query = mysqli_query($conection,"SELECT ID_CARTA FROM carta WHERE titulo = '$titulo' And contenido = '$contenido' ");
+        	$result = mysqli_fetch_array($query);
+  			/* Variables para distribuir carta  */
+ 			 $carta=$result['ID_CARTA'];
+  
+			$insertarCarta= mysqli_query($conection,"INSERT INTO `usuario_carta` (`ID_CARTA`, `IDUSUARIO`) VALUES ('$carta', '$usuarioActual')");
 /*    $query_insert = mysqli_query($conection,"INSERT INTO articulo(titulo,contenido,nombre_imagen,imagen)
                                                                 VALUES('$titulo','$contenido','$nombre_imagen','$destino')");
   */

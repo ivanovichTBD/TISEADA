@@ -112,9 +112,12 @@ $alert=$_GET['sol'];
 ?>
 
   <!--mensaje de envio-->
-			<div class="alerta"><?php echo isset($alert) ? $alert : ''; ?></div>
+			<div class="alerta"><?php echo isset($alert) ? $alert : ''; ?></div><<<<<<< Ivan3
+
+         
         <div class="row" id="creaCart">
-          <form action="" method="POST" enctype="multipart/form-data" >
+          <form action="" id="comment_form" method="POST" enctype="multipart/form-data" >
+
               <div>
                 <div class="col-xs-12 col-md-6">
                   <h1>Escribe tu carta</h1>

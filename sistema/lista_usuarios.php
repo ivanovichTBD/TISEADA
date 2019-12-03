@@ -1,10 +1,10 @@
 <?php 
 	session_start();
-	if($_SESSION['tipo_usuario'] != 1)
+	if($_SESSION['tipo_usuario'] == 1 || $_SESSION['tipo_usuario'] == 3)
 	{
-		header("location: ./");  //Direcciona a la pagina principal
-	}
-	
+		//header("location: ./");  //Direcciona a la pagina principal
+	//}
+	$usuarioActual= $_SESSION['idUser'];
 	include "../conexion.php";	
 
  ?>
@@ -22,12 +22,14 @@
 		
 		<div class= "listaUS">
 			<h1>Lista de usuarios</h1>
+		<?php if($_SESSION['tipo_usuario'] == 1){?>
 			<a href="registro_usuario.php" class="btn_new">Crear usuario</a>
 			
 			<form action="buscar_usuario.php" method="get" class="form_search">
 				<input type="text" name="busqueda" id="busqueda" placeholder="Buscar" style="background:white;">
 				<input type="submit" value="Buscar" class="btn_search">
 			</form>
+		<?php }?>
 		</div>
 
 	<div class="table-responsive">
@@ -36,7 +38,9 @@
 				<th scope="col">ID</th>
 				<th scope="col">Nombre</th>
 				<th scope="col">Correo</th>
+				<?php if($_SESSION['tipo_usuario'] == 1){ ?>	
 				<th scope="col">Usuario</th>
+				<?php }?>
 				<th scope="col">Tipo de Usuario</th>
 				<th scope="col">Acciones</th>
 			</tr>
@@ -59,9 +63,14 @@
 
 			$desde = ($pagina-1) * $por_pagina;
 			$total_paginas = ceil($total_registro / $por_pagina);
-
-			$query = mysqli_query($conection,"SELECT u.IDUSUARIO, u.NOMBRE, u.CORREO, u.USUARIO, r.ID_TIPOUSUARIO FROM usuario u INNER JOIN tipo_usuario r ON u.ID_TIPOUSUARIO = r.ID_TIPOUSUARIO WHERE ESTATUS = 1 ORDER BY u.IDUSUARIO DESC LIMIT $desde,$por_pagina 
+			if($_SESSION['tipo_usuario'] == 1){
+			$query = mysqli_query($conection,"SELECT u.IDUSUARIO, u.NOMBRE, u.CORREO, u.USUARIO, r.TIPO_USUARIO FROM usuario u INNER JOIN tipo_usuario r ON u.ID_TIPOUSUARIO = r.ID_TIPOUSUARIO WHERE ESTATUS = 1 ORDER BY u.IDUSUARIO DESC LIMIT $desde,$por_pagina 
 				");
+				}else{
+					$query = mysqli_query($conection,"SELECT u.IDUSUARIO, u.NOMBRE, u.CORREO, u.USUARIO, r.TIPO_USUARIO FROM usuario u INNER JOIN tipo_usuario r ON u.ID_TIPOUSUARIO = r.ID_TIPOUSUARIO WHERE r.ID_TIPOUSUARIO=3 AND u.IDUSUARIO!='$usuarioActual' AND  ESTATUS = 1 ORDER BY u.IDUSUARIO DESC LIMIT $desde,$por_pagina 
+					");
+
+				}
 
 			mysqli_close($conection);
 
@@ -75,15 +84,23 @@
 					<td><?php echo $data["IDUSUARIO"]; ?></td>
 					<td><?php echo $data["NOMBRE"]; ?></td>
 					<td><?php echo $data["CORREO"]; ?></td>
+				<?php if($_SESSION['tipo_usuario'] == 1){ ?>	
 					<td><?php echo $data["USUARIO"]; ?></td>
-					<td><?php echo $data['ID_TIPOUSUARIO'] ?></td>
+				<?PHP } ?>
+					<td><?php echo $data['TIPO_USUARIO'] ?></td>
+					
 					<td>
+					<?php if($_SESSION['tipo_usuario'] == 1){ ?>
 						<a class="link_edit" href="editar_usuario.php?id=<?php echo $data["IDUSUARIO"]; ?>">Editar</a>
 
 					<?php if($data["IDUSUARIO"] != 1){ ?>
 						|
 						<a class="link_delete" href="eliminar_confirmar_usuario.php?id=<?php echo $data["IDUSUARIO"]; ?>">Eliminar</a>
-					<?php } ?>
+					<?php }
+					}
+					else{
+					?><a class="link_edit" href="EnviarMensajeARedactor.php?receptor=<?php echo $data["IDUSUARIO"]; ?>">Enviar Mensaje</a>
+					<?php }?>
 						
 					</td>
 				</tr>
@@ -122,9 +139,15 @@
 			 ?>
 				<li><a href="?pagina=<?php echo $pagina + 1; ?>">>></a></li>
 				<li><a href="?pagina=<?php echo $total_paginas; ?> ">>|</a></li>
-			<?php } ?>
+			<?php } 
+			?>
 			</ul>
 		</div>
 	</section>
 </body>
 </html>
+				<?php }
+				
+				else{
+					header("location: ./"); 
+				}?>
