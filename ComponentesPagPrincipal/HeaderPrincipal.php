@@ -1,9 +1,10 @@
 <!-- HEADER-PRINCIPAL -->
 <header >
   <div class="fixed-top">
-		<div class="navbar navbar-light justify-content-between header"> 
+		<div class="nav header"> 
         <h1 class="Titulo">MENSAJERO</h1>
-          <!--buscador-->
+          <!--buscador
+          
           <form action="#" method="get" class="form_search">
             <div class="wrap">
               <div class="search">
@@ -13,7 +14,8 @@
               </div>
             </div>
           </form>
-          <!--fin buscador-->
+
+          fin buscador-->
       </div>
     <div>
   
@@ -29,8 +31,7 @@
               <ul class="children">
                 <!--lista de publicaciones pdf-->
                   <li><a href="sistema/subirpdf/lista.php">Ultimos Boletines</a></li>
-
-                  
+  
               </ul>         
           </li>
           <li class="botonNav"> <a href="#" onclick="MostrarMisionVision()"><span class="icon-book"></span>Mision y Vision</a> </li>

@@ -15,55 +15,58 @@ if (isset($_POST['subir'])) {
             $sql = "INSERT INTO tbl_documentos(titulo,descripcion,tamanio,tipo,nombre_archivo) VALUES('$titulo','$descri','$tamanio','$tipo','$nombre')";
             $query = $db->execute($sql);
             if($query){
-                echo "Se guardo correctamente";
+               echo "Se publicó correctamente";
             }
         } else {
-            echo "Error";
+            echo "Error al publicar";
         }
     }
 }
 ?>
 
-<html>
+<html lang="es">
     <head>
-        <meta charset="UTF-8">
-        <title></title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
+        <?php include "../includes/scripts.php"; ?>   
+        <title>MENSAJERO</title>
+       
     </head>
     <body>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-
-        <div style="width: 800px;margin: auto;border: 1px solid blue;padding: 30px;">
-            <center><h2>Publicar Boletin</h2></center>
+    
+    <section id="containerU">
+        
+            <div class= "listaUS">   
+                    <h1>Publicar Boletin</h1>
+            </div>
+            
             <center><img src="portada_publicar_boletin.jpg" alt=""></center><br>
+            
             <form method="post" action="" enctype="multipart/form-data">
-                <table>
-                    <tr>
-                        <td><label>Titulo</label></td>
-                        <td><input type="text" name="titulo"></td>
-                    </tr>
-                    <tr>
-                        <td><label>Descripcion</label></td>
+                <div class="w3l-login-form  row" id= "boletinPDF" >
+                    <div class="col-xs-12 col-md-1">
+                         <label>Titulo</label>
+                    </div>
+                    <div class="col-xs-12 col-md-11">
+                         <input type="text" name="titulo">
+                    </div>
+                   
+                    <div class="col-xs-12 col-md-1">
+                        <label>Descripcion</label>
+                    </div>
+                    <div class="col-xs-12 col-md-11">
                         <td><textarea name="descripcion"></textarea></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><input type="file" name="archivo"></td>
-                    <tr>
-                    <td><center><button class="btn btn-primary btn-lg" type="submit" value="Publicar boletin" name="subir">Publicar boletin</button></center></td>
-                        
-                    </tr>
-                    <td><a href="lista.php">Lista de publicaciones</a></td>
-                </table>
+                    </div>
+
+                    <div class="col-xs-12 col-md-12">
+                         <input type="file" name="archivo">
+                    </div>
+                    <center><button class="btn btn-lg " type="submit" value="Publicar boletin" name="subir">Publicar boletin</button></center>
+                   <hr> <a  href="lista.php">Lista de publicaciones</a>
+                
+                </div>
             </form>            
-        </div>
+    </section>
     </body>
 </html>
 
@@ -75,36 +78,72 @@ body{
     background:rgb(33, 177, 175);
 
 }
+
+#containerU{
+    padding:15px;
+}
+
+
+.w3l-login-form {
+    background: rgba(20, 30, 34, 0.412);
+    /*width: 55%;*/
+    margin: 0 auto;
+    padding: 3em;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+label{
+    margin-top:10px;
+    color: rgb(248, 252, 249);
+    font-size: 15px;
+    font-weight: 400;
+}
+
+input{
+    width: 100%;
+    border-radius: 10px;
+    resize: none;
+    overflow: auto;
+    margin-top: 10px;
+    background: white;
+
+}
+
+textarea{
+    padding: 15px;
+    margin: 15px 0px 0px 0px;
+    width: 100%;
+    height: 215px;
+    border-radius: 10px;
+    resize: none;
+    overflow: auto;
+}
+
 img{
 	border-radius:4px;
 	width:auto;
 	height:165px;
 	
 }
-textarea{
-    display : block;
-  padding : 10px;
-  margin  : 10px 0 0 -10px;
-  width   : 430px;
-  height  : 215px;
-  border-radius:4px;
-  resize  : none;
-  overflow: auto;
-}
-input{
-    display : block;
-  width   : 330px;
-  
-  border-radius:4px;
-  resize  : none;
-  overflow: auto;
-}
-button{
 
+button{
+    background: #00BCD4;
+    color: #ffffff;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top:10px;
+    border:1px solid #ffffff;
 }
 
 input[type=submit]:hover {
   background-color: #45a049;
 
+}
+a{
+    color:white;
+}
+.publico{
+    height:20px;
+    width:auto;
 }
 </style>

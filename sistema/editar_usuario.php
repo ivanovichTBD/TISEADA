@@ -25,8 +25,8 @@
 
 
 			$query = mysqli_query($conection,"SELECT * FROM usuario 
-													   WHERE (usuario = '$user' AND idusuario != $idUsuario)
-													   OR (correo = '$email' AND idusuario != $idUsuario) ");
+													   WHERE (USUARIO = '$user' AND IDUSUARIO != $idUsuario)
+													   OR (CORREO = '$email' AND IDUSUARIO != $idUsuario) ");
 
 			$result = mysqli_fetch_array($query);
 
@@ -37,8 +37,8 @@
 				if(empty($_POST['clave']))
 				{
 
-					$sql_update = mysqli_query($conection,"UPDATE usuario
-															SET nombre = '$nombre', correo='$email',usuario='$user',tipo_usuario='$tipo_usuario'
+					$sql_update = mysqli_query($conection,"UPDATE USUARIO
+															SET NOMBRE = '$nombre', correo='$email',usuario='$user',tipo_usuario='$tipo_usuario'
 															WHERE idusuario= $idUsuario ");
 				}else{
 					$sql_update = mysqli_query($conection,"UPDATE usuario
@@ -67,13 +67,15 @@
 		mysqli_close($conection);
 	}
 	$iduser = $_REQUEST['id'];
-
-	$sql= mysqli_query($conection,"SELECT u.idusuario, u.nombre,u.correo,u.usuario, (u.tipo_usuario) as id_tipousuario, (r.tipo_usuario) as tipo_usuario
+$sql=mysqli_query($conection,"SELECT u.IDUSUARIO, u.NOMBRE,u.CORREO,u.USUARIO,u.ID_TIPOUSUARIO,r.TIPO_USUARIO
+FROM usuario as u, tipo_usuario as r
+WHERE u.IDUSUARIO='$iduser'");
+	/*$sql= mysqli_query($conection,"SELECT u.IDUSUARIO, u.NOMBRE,u.CORREO,u.USUARIO, (u.ID_TIPOUSUARIO) as ID_TIPOUSUARIO, (r.TIPO_USUARIO) as TIPO_USUARIO
 									FROM usuario u
 									INNER JOIN tipo_usuario r
-									on u.tipo_usuario = r.id_tipousuario
-									WHERE idusuario= $iduser ");
-	mysqli_close($conection);
+									on u.ID_TIPOUSUARIO = r.ID_TIPOUSUARIO
+									WHERE ID_TIPOUSUARIO= $iduser ");
+	*/mysqli_close($conection);
 	$result_sql = mysqli_num_rows($sql);
 
 	if($result_sql == 0){
@@ -82,14 +84,14 @@
 		$option = '';
 		while ($data = mysqli_fetch_array($sql)) {
 			# code...
-			$iduser  = $data['idusuario'];
-			$nombre  = $data['nombre'];
-			$correo  = $data['correo'];
-			$usuario = $data['usuario'];
-			$id_tipousuario   = $data['id_tipousuario'];
-			$tipo_usuario     = $data['tipo_usuario'];
+			$iduser  = $data['IDUSUARIO'];
+			$nombre  = $data['NOMBRE'];
+			$correo  = $data['CORREO'];
+			$usuario = $data['USUARIO'];
+			$id_tipousuario   = $data['ID_TIPOUSUARIO'];
+			$tipo_usuario     = $data['TIPO_USUARIO'];
 
-			if($id_tipousuario == 1){  /*seria el Admin*/
+			if($id_tipousuario==1){  /*seria el Admin*/
 				$option = '<option value="'.$id_tipousuario.'" select>'.$tipo_usuario.'</option>';
 			}else if($id_tipousuario == 2){  /*seria el editor*/
 				$option = '<option value="'.$id_tipousuario.'" select>'.$tipo_usuario.'</option>';	
@@ -149,7 +151,7 @@
 						{
 							while ($tipo_usuario = mysqli_fetch_array($query_tipo_usuario)) {
 					?> <!--option desabilitado -- no puede cambiar de tipo de usuario -->
-							<option disabled value="<?php echo $tipo_usuario["id_tipousuario"]; ?>"><?php echo $tipo_usuario["tipo_usuario"] ?></option>
+							<option disabled value="<?php echo $tipo_usuario["ID_TIPOUSUARIO"]; ?>"><?php echo $tipo_usuario["TIPO_USUARIO"] ?></option>
 					<?php 
 								# code...
 							}
