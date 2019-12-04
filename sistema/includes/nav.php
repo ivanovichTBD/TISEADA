@@ -95,7 +95,7 @@
 				
 			
 				<ul class="nav navbar-nav navbar-right children" >
-					<li class="dropdown principal">
+					<li class="dropdown principal notif">
 							<a href="#" class="dropdown-toggle " style="padding-top:8px;padding-bottom: 0px;" data-toggle="dropdown">
 							<span class="label label-pill label-danger count" style="border-radius:10px;"></span> 
 							<span class="glyphicon glyphicon-bell" style="font-size:18px;"></span></a>
