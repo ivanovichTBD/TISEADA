@@ -105,31 +105,26 @@
             <div class="card">
                 <a href="repo_plantillas/Boletin11.pub"><img src="repo_plantillas/Boletin11.jpg" class="card-img-top" alt="..."></a>
                 <div class="card-body">
-                <h5 class="card-title">Card title</h5>
                 </div>
             </div>
             <div class="card">
             <a href="repo_plantillas/Boletin12.pub"><img src="repo_plantillas/Boletin12.jpg" class="card-img-top" alt="..."></a>
                 <div class="card-body">
-                <h5 class="card-title">Card title</h5>
                 </div>
             </div>
             <div class="card">
             <a href="repo_plantillas/Boletin13.pub"><img src="repo_plantillas/Boletin13.jpg" class="card-img-top" alt="..."></a>
                 <div class="card-body">
-                <h5 class="card-title">Card title</h5>
                 </div>
             </div>
             <div class="card">
             <a href="repo_plantillas/Boletin14.pub"><img src="repo_plantillas/Boletin14.jpg" class="card-img-top" alt="..."></a>
                 <div class="card-body">
-                <h5 class="card-title">Card title</h5>
                 </div>
             </div>
             <div class="card">
             <a href="repo_plantillas/Boletin15.pub"><img src="repo_plantillas/Boletin15.jpg" class="card-img-top" alt="..."></a>
                 <div class="card-body">
-                <h5 class="card-title">Card title</h5>
                 </div>
             </div>
     </div>

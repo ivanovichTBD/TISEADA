@@ -37,8 +37,8 @@
 				if(empty($_POST['clave']))
 				{
 
-					$sql_update = mysqli_query($conection,"UPDATE USUARIO
-															SET NOMBRE = '$nombre', correo='$email',usuario='$user',tipo_usuario='$tipo_usuario'
+					$sql_update = mysqli_query($conection,"UPDATE usuario
+															SET nombre = '$nombre', correo='$email',usuario='$user',tipo_usuario='$tipo_usuario'
 															WHERE idusuario= $idUsuario ");
 				}else{
 					$sql_update = mysqli_query($conection,"UPDATE usuario

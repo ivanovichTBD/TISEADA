@@ -45,7 +45,7 @@
                 
                 
 				$nums=1;
-				$sql_banner_top=mysqli_query($conection,"SELECT id_boletin, titulo, contenido, imagen FROM boletin ");
+				$sql_banner_top=mysqli_query($conection,"SELECT id_boletin, titulo, descripcion, imagen FROM boletin ");
 				while($rw_banner_top=mysqli_fetch_array($sql_banner_top)){
 					?>
 					
@@ -56,7 +56,7 @@
                     data-image-id="" 
                     data-toggle="modal" 
                     data-title="<?php echo $rw_banner_top['titulo'];?>" 
-                    data-caption="<?php echo $rw_banner_top['contenido'];	?>" 
+                    data-caption="<?php echo $rw_banner_top['descripcion'];	?>" 
                     data-image="<?php echo $rw_banner_top['imagen'];?>" 
                     data-target="#image-gallery">
 							

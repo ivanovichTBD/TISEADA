@@ -1,7 +1,7 @@
 <?php 
 //	session_start();
-	if($_SESSION['tipo_usuario'] == 4)
-	{
+	
+  
 		//header("location: ./");
 	//}
 	/*
@@ -64,8 +64,8 @@
      
        /*    
            include "EnviarCartaParaRedactor.php";
-			$solucion=	Distruibuir($carta,$tipoUsuario,$conection);
-				if($query_insert){
+      $solucion=	Distruibuir($carta,$tipoUsuario,$conection);
+      if($query_insert){
 					$alert="<p class='msg_save'>$solucion</p>";
 					
 				}
@@ -157,7 +157,7 @@ $alert=$_GET['sol'];
     </div>
 	
 </div>
-<?php }?>
+
 <!--</html>-->
 <script>
 $(document).ready(function(){

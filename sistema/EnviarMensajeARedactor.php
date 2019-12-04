@@ -39,16 +39,16 @@ while ($sms = mysqli_fetch_array($listaMensaje)) {
 echo "Redactando";
 }
   ?></h3>
-  <h1 class="formulario__titulo">Enviar Mensaje a
+  <h1 class="formulario__titulo">Enviar Mensaje a :
    <?php 
             
             echo $result['NOMBRE'];
             
    ?>
    </h1>
-  <input type="text" class="formulario__input" name="asunto">
+  <input type="text" class="formulario__input" name="asunto" placeholder="Asunto">
   <label for="" class="formulario__label" >Asunto</label>
-  <input type="text" class="formulario__input" name="mensaje">
+  <input type="text" class="formulario__input" name="mensaje" placeholder="Escribe tu mensaje aqui...">
   <label for="" class="formulario__label" >Mensaje</label>
   <input type="submit" class="formulario__submit">
 </form>
