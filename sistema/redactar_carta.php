@@ -106,6 +106,13 @@ if(!empty($_POST))
 			<center><div  class="alerta "><?php echo isset($alert) ? $alert : ''; ?></div></center>
                 
 		<!--fin formulario para redactar y enviar-->
+<?php
+//Paginador
+$sql_codificacion=mysqli_query($conection, "SET nombre utf8");
+//$sql_codificacion=mysqli_query($conection, "SET tipo_usuario utf8");
+$sql_registe = mysqli_query($conection,"SELECT COUNT(*) as total_registro FROM carta");
+$result_register = mysqli_fetch_array($sql_registe);
+$total_registro = $result_register['total_registro'];
 
 					$por_pagina = 5;
 
@@ -119,28 +126,32 @@ if(!empty($_POST))
 					$desde = ($pagina-1) * $por_pagina;
 					$total_paginas = ceil($total_registro / $por_pagina);
 
-					$query = mysqli_query($conection,"SELECT ID_CARTA, TITULO, ID_CATEGORIA,CONTENIDO, NOMBRE_IMAGEN FROM carta  WHERE    ID_CARTA>0 ORDER BY ID_CARTA DESC LIMIT $desde,$por_pagina 
+					$idusuario=$_SESSION['idUser'];
+					$query = mysqli_query($conection,"SELECT C.* , CC.CATEGORIA from carta C, usuario_carta UC ,usuario U,categoria_carta CC  WHERE UC.IDUSUARIO=U.IDUSUARIO and UC.ID_CARTA=C.ID_CARTA and UC.IDUSUARIO='$idusuario' and ID_TIPO_CARTA=1 and CC.ID_CATEGORIA=C.ID_CATEGORIA ORDER BY ID_CARTA DESC LIMIT $desde,$por_pagina 
 						");
 
-					mysqli_close($conection);
+					//mysqli_close($conection);
 
 					$result = mysqli_num_rows($query);
 					if($result > 0){
-
+						$i=0;
 						while ($data = mysqli_fetch_array($query)) {
 							
 					?>
 				<tr scope="row">
-					<td><?php echo $data["ID_CARTA"]; ?></td>
-					<td><?php echo $data["TITULO"]; ?></td>  
+					<td><?php 
+					$i++;
+					echo $i; 
+					//$data["ID_CARTA"]; ?></td>
+					<td> <h3><?php echo $data["TITULO"]; ?></h3>	</td>  
 					</div>
-					<td><?php echo $data["ID_CATEGORIA"]; ?></td>
+					<td> <?php echo $data["CATEGORIA"]; ?></td>
 					<div class="col-lg-6">
 					  <div class="form-group">
 						<td>
 						<textarea class="form-control"><?php echo $data["CONTENIDO"]; ?></textarea>
 						</td>
-						<td><?php echo $data['NOMBRE_IMAGEN'] ?></td>
+						<td><?php //echo $data['NOMBRE_IMAGEN'] ?></td>
 					  </div>
 					</div>
 				</tr>

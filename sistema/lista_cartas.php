@@ -7,7 +7,7 @@
 		$idusuario=$_SESSION['idUser'];
 		
 		include '../conexion.php';
-			$query = mysqli_query($conection,"select C.* from carta C, usuario_carta UC ,usuario U WHERE UC.IDUSUARIO=U.IDUSUARIO and UC.ID_CARTA=C.ID_CARTA and UC.IDUSUARIO='$idusuario'") ;
+			$query = mysqli_query($conection,"select C.* , CC.CATEGORIA from carta C, usuario_carta UC ,usuario U,categoria_carta CC  WHERE UC.IDUSUARIO=U.IDUSUARIO and UC.ID_CARTA=C.ID_CARTA and UC.IDUSUARIO='$idusuario' and ID_TIPO_CARTA=1 and CC.ID_CATEGORIA=C.ID_CATEGORIA") ;
 			
     ?>
 
@@ -67,7 +67,7 @@
 								<td><?php echo $result["TITULO"];
 								
 								?></td>
-								<td><?php echo $result["ID_CATEGORIA"]; ?></td>
+								<td><?php echo $result["CATEGORIA"]; ?></td>
 								<td><?php echo $result["CONTENIDO"]; ?></td>
 								<td ><?php echo $result["COMENTARIO"]; ?></td>
 								<td><button onclick="VerCarta(<?php echo $CARTA_ID.','.$TITULO.','.$CONTENIDO.','.$NOMBREIMAGEN.','.$IMAGEN.','.$cont; ?>)">Ver Carta</button> 
