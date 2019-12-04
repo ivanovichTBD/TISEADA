@@ -112,7 +112,7 @@ $alert=$_GET['sol'];
 ?>
 
   <!--mensaje de envio-->
-			<div class="alerta"><?php echo isset($alert) ? $alert : ''; ?></div><<<<<<< Ivan3
+			<div class="alerta"><?php echo isset($alert) ? $alert : ''; ?></div>
 
          
         <div class="row" id="creaCart">
