@@ -93,7 +93,9 @@
 
 				</li>
 				
-			
+				<?php 
+				if($_SESSION['tipo_usuario'] == 3 || $_SESSION['tipo_usuario'] == 2 ){
+			 ?>
 				<ul class="nav navbar-nav navbar-right children" >
 					<li class="dropdown principal">
 							<a href="#" class="dropdown-toggle " style="padding-top:8px;padding-bottom: 0px;" data-toggle="dropdown">
@@ -104,6 +106,7 @@
 						</ul>
      		 		</li>
     			</ul>
+				<?php }?>
     <!--<div class="dropdown">
   <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
   <span class="caret"></span></button>
