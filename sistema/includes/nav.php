@@ -12,7 +12,7 @@
 				<li class="principal">
 					<a href="#">Usuarios</a>
 					<ul class="children">
-						<li><a href="#" onclick="return form()">Nuevo Usuario</a></li>
+						<li><a href="registro_usuario.php" onclick="return form()">Nuevo Usuario</a></li>
 						<li><a href="lista_usuarios.php">Lista de Usuarios</a></li>
 					</ul>
 				</li>
@@ -20,14 +20,14 @@
 
 			<?php if($_SESSION['tipo_usuario'] == 4){
 			  ?>
-				<li class="principal">
+				<!--  <li class="principal">
 					<a href="#" class="letraNiño">Escribir Carta</a>
 					<ul class="children">
 						<li><a href="crear_carta.php" class="letraNiño">Nueva Carta</a></li> 
-					<!--	<li><a href="mostrar_plantilla.php" class="letraNiño">Plantillas</a></li> -->
+						<li><a href="mostrar_plantilla.php" class="letraNiño">Plantillas</a></li>
 					</ul>
 
-				</li>
+				</li>   -->
 			<?php } ?>
 
 			
@@ -51,7 +51,7 @@
 					<ul class="children">
 					
 						<li><a href="lista_cartas.php">Lista de Cartas</a></li>
-						<li><a href="#anadirPalabrasEnCarta.php" onclick="ViewAnadirPalabra()">Informacion sobre las Cartas</a></li>		
+						<!-- <li><a href="#anadirPalabrasEnCarta.php" onclick="ViewAnadirPalabra()">Informacion sobre las Cartas</a></li> -->		
 					</ul>
 				</li>
 				<li class="principal">

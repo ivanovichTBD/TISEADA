@@ -110,7 +110,7 @@ $color_pick = array_rand($colors);
 <style type="text/css">
 h4 {
     font-size: 30px;
-    color: rgb(70, 92, 123);
+    color: white;
     font-style: italic;
     display: inline-block;
     letter-spacing: normal;
