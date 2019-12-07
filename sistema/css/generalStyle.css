@@ -876,7 +876,9 @@ table td{
 		margin-left: 0px; 
 	}
 	.contenido{
-		margin: 210px 5px 0px 5px;
+		margin: 0px 5px 0px 5px;
+	
+		/*margin: 210px 5px 0px 5px;*/
 	  display: flex;
 	  justify-content: space-between;
 	}

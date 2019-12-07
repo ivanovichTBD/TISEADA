@@ -1,8 +1,5 @@
 <div class="cuerpo">
 
-
-
-
 <div>
         <article class="infoVis" id="vision">
                 <Section class="mision">

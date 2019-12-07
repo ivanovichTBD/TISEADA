@@ -33,7 +33,7 @@
     site: programlamadersleri.net
 -->
 
-	<?php include "includes/header.php"; ?>
+	<?php // include "includes/header.php"; ?>
     <br>
     <h1><center>ESCOGE UNA PLANTILLA</center></h1>
        <center><h4>"Click en una imagen para descargar"</h4></center>

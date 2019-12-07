@@ -61,8 +61,9 @@ $query = mysqli_query($conection,"SELECT * FROM carta WHERE titulo = '$titulo' O
        include "EnviarCartaParaRedactor.php";
         $solucion=	Distruibuir($carta,$tipoUsuario,$conection);
             if($query_insert){
-                $alert="<p class='msg_save'>$solucion</p>";
-                echo $alert;
+              //  $alert="<p class='msg_save'>$solucion</p>";
+              $alert='<p class="msg_save">Tu carta see mandó correctamente</p>'; 
+              echo $alert;
                // header("Location:index.php?sol=$alert");
             }
             else{
