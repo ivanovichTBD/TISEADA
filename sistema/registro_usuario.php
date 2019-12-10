@@ -72,7 +72,7 @@ echo $area_usuario;
         <label for="nombre">Nombre Completo</label>
       </div>
       <div class="col-75">
-        <input type="name" id="nombre" name="nombre" required placeholder="Nombre Completo" pattern="[a-z,A-Z]{3,40}"/>
+        <input type="name" id="nombre" name="nombre" required placeholder="Nombre Completo" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚüÜ]{2,25}+[a-zA-ZñÑáéíóúÁÉÍÓÚüÜ]{2,25}+[a-zA-ZñÑáéíóúÁÉÍÓÚüÜ]{2,25}" title="Escriba su Nombre y Apellidos" required/>
       </div>
     </div>
     <div class="row">
