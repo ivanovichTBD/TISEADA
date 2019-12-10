@@ -192,16 +192,7 @@ mysqli_close($conection);
 
 
 	
-	<script>
-	function salir(){
-		var varia=window.location.href;
-		var comp="http://localhost:88/TISEADA/sistema/registro_usuario.php";
-		console.log(varia);
-		if(varia==comp){
-			return location.href="./"
-		}
-	}
-	</script>
+	
 	
 </div>
 
