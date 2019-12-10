@@ -1,4 +1,4 @@
-<?php
+<?php session_start();
 //session_start();
 /*if($_SESSION['tipo_usuario'] >= 1)
 {
@@ -152,7 +152,7 @@ echo $area_usuario;
       <div class="col-75">
 	  <?php 
 
-					$query_tipo_usuario = mysqli_query($conection,"SELECT * FROM tipo_usuario");
+					$query_tipo_usuario = mysqli_query($conection,"SELECT * FROM tipo_usuario WHERE ID_TIPOUSUARIO!=1");
 mysqli_close($conection);
 					$result_tipo_usuario = mysqli_num_rows($query_tipo_usuario);
 					
@@ -175,11 +175,14 @@ mysqli_close($conection);
 				</select>
       </div>
     </div>
-	<div class="row">
+	<?php if($_SESSION['active']=='true'){
+?>
+  <div class="row">
 	<p>¿Eres administrador, quieres crear un nuevo tipo de Usuario? | 
 	<a align="center" href="nuevo_tipousuario.php">Click Aquí</a></p>
 	</div>
-    
+  <?php }?> 
+  <br>   
     <div class="row">
       <input type="submit" value="Crear Usuario">
     </div>

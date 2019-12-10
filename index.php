@@ -1,25 +1,15 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>MENSAJERO</title>
+<?php 	session_start();
+$alert = '';
     
-    <link rel="stylesheet" href="css/PartesPag.css">
-   
-    <link rel="stylesheet" href="fontawesome-free-5.11.2-web/css/fontawesome.min.css"> <!--Ruta para las fuentes del login-->
-    <link rel="stylesheet" href="fontawesome-free-5.11.2-web/css/all.css"> <!--Ruta para los iconos del login-->
-    <link rel="stylesheet" href="bootstrap-4.3.1/dist/css/bootstrap.min.css">
-    <?php 
-	
-    $alert = '';
-    session_start();
     require_once "./conexion.php";
-   
-    if(!empty($_SESSION['active']))
+    
+    $_SESSION['active']='false';
+    if($_SESSION['active']=='true')
+   //if(!empty($_SESSION['active']))
     {
-        header('location: sistema/');
+        echo $_SESSION['active'];
+   
+       header('location: sistema/');
     }else{
     
         if(!empty($_POST))
@@ -42,10 +32,10 @@
                 if($result > 0)
                 {
                     $data = mysqli_fetch_array($query);
-                    $_SESSION['active'] = true;
+                    $_SESSION['active'] = 'true';
                     $_SESSION['idUser'] = $data['IDUSUARIO'];
                     $_SESSION['nombre'] = $data['NOMBRE'];
-                    $_SESSION['email']  = $data['EMAIL'];
+                    $_SESSION['email']  = $data['CORREO'];
                     $_SESSION['user']   = $data['USUARIO'];
                     $_SESSION['tipo_usuario']    = $data['ID_TIPOUSUARIO'];
     
@@ -62,7 +52,20 @@
     }
      ?>   
    
-</head>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MENSAJERO</title>
+    <link rel="stylesheet" href="css/PartesPag.css"> 
+    <link rel="stylesheet" href="fontawesome-free-5.11.2-web/css/fontawesome.min.css"> <!--Ruta para las fuentes del login-->
+    <link rel="stylesheet" href="fontawesome-free-5.11.2-web/css/all.css"> <!--Ruta para los iconos del login-->
+    <link rel="stylesheet" href="bootstrap-4.3.1/dist/css/bootstrap.min.css">
+    </head>
+    
 <body class="fondoP">
     <?php include "sistema/includes/functions.php"?>
     <?php include "ComponentesPagPrincipal/HeaderPrincipal.php"?>
@@ -88,11 +91,12 @@
     </footer>
 
 <script src="https://code.jquery.com/jquery-latest.js" ></script>
-<script src="js/menu.js">
+<script src="js/menu.js"></script>
 
 <script src="bootstrap-4.3.1/dist/js/bootstrap.min.js"></script>
 <script src="fontawesome-free-5.11.2-web/js/fontawesome.min.js"></script>
 <script src="js/Mostrar.js"></script>
 
 </body>
+
 </html>

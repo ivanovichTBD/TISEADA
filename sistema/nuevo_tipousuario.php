@@ -1,8 +1,12 @@
-<?php 
-	
-    session_start();
-if($_SESSION['tipo_usuario'] == 1)
-{
+<?php session_start();
+$hola='la session es :'.$_SESSION['active'];
+//echo $hola;
+if($_SESSION['active']=='false'){
+   echo $_SESSION['active'];
+ header("location: ../index.php");
+}
+
+if($_SESSION['tipo_usuario'] == 1){
 		
         
         include "../conexion.php";
@@ -41,7 +45,7 @@ if($_SESSION['tipo_usuario'] == 1)
     }
 }
 else{
-    header("location: ./");
+//   header("location: ./");
 }
     ?>
 
@@ -59,6 +63,7 @@ else{
         <div class="form_register">
             <div class="alert"><?php echo isset($alert) ? $alert : ''; ?></div>
                 <form action="" method="POST">
+
                     <h1 align="center">¿Eres administrador?<br>¿Deseas añadir un nuevo tipo de usuario?</h1>
                     <label for="nombre">Tipo de usuario</label>
                     <input type="text" name="tipo_usuario" id="tipo_usuario" placeholder="Nuevo tipo de usuario">
