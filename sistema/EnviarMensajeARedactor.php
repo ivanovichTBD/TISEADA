@@ -12,7 +12,12 @@ include "../conexion.php";
 				
 <h2>Chat Messages</h2>
 <?php 
-$listaMensaje=mysqli_query($conection,"SELECT S.ID_CARTA ,S.ASUNTO,S.TITULO,S.CONTENIDO,S.HORA_MENSAJE, U.IDUSUARIO FROM carta S,usuario_carta U WHERE ID_TIPO_CARTA=3 AND S.ID_CARTA=U.ID_CARTA AND IDUSUARIO='$mensajero'");
+$listaMensaje=mysqli_query($conection,"SELECT S.ID_CARTA ,S.ASUNTO,S.TITULO,S.CONTENIDO,S.HORA_MENSAJE, U.IDUSUARIO 
+FROM carta S,usuario_carta U 
+WHERE ID_TIPO_CARTA=3 AND S.ID_CARTA=U.ID_CARTA AND IDUSUARIO=$mensajero AND S.ID_CARTA IN(
+SELECT c.ID_CARTA
+FROM carta c,usuario_carta us 
+WHERE c.ID_TIPO_CARTA=3 AND c.ID_CARTA=us.ID_CARTA AND us.IDUSUARIO='$usuario')");
 while ($sms = mysqli_fetch_array($listaMensaje)) {
     
 

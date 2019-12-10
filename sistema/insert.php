@@ -5,7 +5,9 @@ include "../conexion.php";
 
 $ipAddress = $_SERVER['REMOTE_ADDR'];
 if(!empty($_POST))
-{	
+{	//$hola = $_POST['imagen'].'  -------'.
+    //$hola=$_FILES['imagen']['tmp_name'];
+    //echo $hola;
     $alert='';
     if(empty($_POST['titulo']) || empty($_POST['asunto']) || empty($_POST['contenido']) )
     {
@@ -15,12 +17,14 @@ if(!empty($_POST))
         //echo $user;				
         $titulo = $_POST['titulo'];
         $asunto  = $_POST['asunto'];
-  $contenido   = $_POST['contenido'];	
-          $nombre_imagen = $_REQUEST['nombre_imagen'];
+        $contenido   = $_POST['contenido'];	
+        $nombre_imagen = $_REQUEST['nombre_imagen'];
         $imagen = $_FILES['imagen']['name'];
         $ruta   = $_FILES['imagen']['tmp_name']; //ruta 
-        $destino = "repo_imagenes/".$imagen;  //destino donde se almacenara y le adjuntamos el nombre de la imagen
-        copy($ruta, $destino);   //para copiar el archivo al repositorio
+        //echo '$imagen';
+       $destino = "repo_imagenes/".$imagen;  //destino donde se almacenara y le adjuntamos el nombre de la imagen
+       move_uploaded_file($ruta,$destino);
+       //copy($ruta, $destino);   //para copiar el archivo al repositorio
 $query = mysqli_query($conection,"SELECT * FROM carta WHERE titulo = '$titulo' OR contenido = '$contenido' ");
     $result = mysqli_fetch_array($query);
         
@@ -63,7 +67,7 @@ $query = mysqli_query($conection,"SELECT * FROM carta WHERE titulo = '$titulo' O
             if($query_insert){
               //  $alert="<p class='msg_save'>$solucion</p>";
               $alert='<p class="msg_save">Tu carta see mandó correctamente</p>'; 
-              echo $alert;
+          echo $alert;
                // header("Location:index.php?sol=$alert");
             }
             else{
