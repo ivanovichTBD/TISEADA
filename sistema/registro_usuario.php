@@ -72,7 +72,9 @@ echo $area_usuario;
         <label for="nombre">Nombre Completo</label>
       </div>
       <div class="col-75">
-        <input type="name" id="nombre" name="nombre" required placeholder="Nombre Completo" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚüÜ]{2,25}+[a-zA-ZñÑáéíóúÁÉÍÓÚüÜ]{2,25}+[a-zA-ZñÑáéíóúÁÉÍÓÚüÜ]{2,25}" title="Escriba su Nombre y Apellidos" required/>
+        <input type="name" id="nombre" name="nombre" required  placeholder="Nombre Completo"
+        pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,50}" 
+        title="Ingresa solo letras, maximo 5 palabras" required/>
       </div>
     </div>
     <div class="row">
@@ -80,7 +82,8 @@ echo $area_usuario;
         <label for="edad">Edad</label>
       </div>
       <div class="col-75">
-        <input type="number" id="edad" name="edad" placeholder="Edad" min="8" max="99" pattern="\d+" required>
+        <input type="number" id="edad" name="edad" placeholder="Edad" min="6" max="99"  
+               required title="Ingresa solo numeros">
       </div>
     </div>
 	<div class="row">
@@ -88,31 +91,36 @@ echo $area_usuario;
         <label for="Telefono">Teléfono</label>
       </div>
       <div class="col-75">
-        <input type="text" id="telefono" name="telefono" pattern="[0-9]{7,8}" placeholder="Teléfono o Celular">
+        <input type="number" id="telefono" name="telefono" pattern="[0-9]{6,10}" placeholder="Teléfono o Celular"
+               title="Ingresa solo numeros, minimo 6 y maximo 10" required minlength="6">
       </div>
     </div>
 	<div class="row">
       <div class="col-25">
-        <label for="correo">Corréo Electronico</label>
+        <label for="correo">Correo Electronico</label>
       </div>
       <div class="col-75">
-        <input type="email" id="correo" name="email" placeholder="Correo Electronico" required>
+        <input type="email" id="correo" name="email" placeholder="Correo Electronico" required 
+               title="Ingresa solo formatos de correos válidos">
       </div>
     </div>
 	<div class="row">
       <div class="col-25">
-        <label for="usuario">Usuario</label>
+        <label for="usuario">Usuario <h6>(opcional con letras y numeros, minimo 5 caracteres)</h6></label>
       </div>
       <div class="col-75">
-        <input type="text" id="usuario" name="usuario" placeholder="Usuario o Apodo">
+        <input type="text" id="usuario" name="usuario" required placeholder="Nombre de usuario o Apodo"
+               pattern="[a-zA-Z0123456789.'-]{5,20}" 
+               title="Ingreso opcional de letras y numeros, minimo 5 caracteres y maximo 20">
       </div>
     </div>
 	<div class="row">
       <div class="col-25">
-        <label for="clave">Contraseña</label>
+        <label for="clave">Contraseña <h6>(minimo 8 caracteres)</h6></label>
       </div>
       <div class="col-75">
-        <input type="password" id="clave" name="clave" placeholder="Clave de Acceso" minlength="8" required>
+        <input type="password" id="clave" name="clave" placeholder="Clave de Acceso" minlength="8" required
+        title="Ingreso opcional de letras y numeros, minimo 8 caracteres">
       </div>
     </div>
     <div class="row">
@@ -207,7 +215,9 @@ mysqli_close($conection);
 
 
 <style>
-	
+h6{
+  color: #00BCD4;
+}
 	.cur{
 		background: url(img/cover4.jpg) no-repeat 0px 0px;
 		font-family: 'Raleway', sans-serif;
