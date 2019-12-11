@@ -6,11 +6,12 @@
         <form action="#" method="POST">
 
             <div class=" w3l-form-group">
-                <label>APODO:</label>
+                <label>USUARIO:</label>
                 <div class="group">
                     <i class="fas fa-user"></i>
 
-                    <input name="usuario" type="text" class="form-control" placeholder="Apodo" required="required" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚüÜ]{2,25}" title="Escriba una sola palabra"/>
+                    <input name="usuario" type="text" class="form-control" placeholder="Nombre de usuario o apodo" required pattern="[a-zA-Z0123456789.'-]{5,20}" 
+                           title="Tu nombre de usuario debe ser letras o numeros, minimo 5, maximo 20"/>
 
                 </div>
             </div>
@@ -18,7 +19,8 @@
                 <label>CONTRASEÑA:</label>
                 <div class="group">
                     <i class="fas fa-unlock"></i>
-                    <input name="clave" type="password" class="form-control inputTextPass " placeholder="Contraseña" required="required" />
+                    <input name="clave" type="password" class="form-control inputTextPass " placeholder="Contraseña" required 
+                           minlength="8" title="Tu contraseña tiene que ser minimo 8 caracteres"/>
                 </div>
             </div>
             <button class="botoningreso"type="submit">INGRESAR</button>
