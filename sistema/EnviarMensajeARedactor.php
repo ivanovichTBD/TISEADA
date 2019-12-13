@@ -9,7 +9,10 @@ include "../conexion.php";
         
                  
 ?>
-				
+				<div class="bg-secondary pt-1 pb-1 pl-3"><a href="<?php
+ 	echo './';
+	?>"><button type="button" class="btn btn-success">SALIR</button></a></div>
+
 <h2>Chat Messages</h2>
 <?php 
 $listaMensaje=mysqli_query($conection,"SELECT S.ID_CARTA ,S.ASUNTO,S.TITULO,S.CONTENIDO,S.HORA_MENSAJE, U.IDUSUARIO 

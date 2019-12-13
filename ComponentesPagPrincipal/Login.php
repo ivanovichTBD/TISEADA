@@ -10,7 +10,7 @@
                 <div class="group">
                     <i class="fas fa-user"></i>
 
-                    <input name="usuario" type="text" class="form-control" placeholder="Apodo" required="required" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚüÜ]{2,25}" title="Escriba una sola palabra"/>
+                    <input name="usuario" type="text" class="form-control" placeholder="Apodo" required="required" pattern="[a-z]{3,40}"/>
 
                 </div>
             </div>

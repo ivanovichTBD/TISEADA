@@ -38,8 +38,17 @@
         </ul>
         
         <ul class="navbar-nav mr-3">
-          <li class="botonNav"> <a href="sistema/registro_usuario.php"><span class="icon-compose"></span>Suscribirse</a></li>
-          <li class="botonNav"> <a href="#" onclick="MostrarLogin()"><span class="icon-user"></span>Ingresar</a></li>
+        <li class="submenum botonNav"> <a href="#"><span class="icon-newspaper"></span>Registro<span class="caret icon-arrow-down6"></span></a>
+              <ul class="children">
+                <!--lista de publicaciones pdf-->
+                  <li><a href="sistema/registro_usuario.php">Registro Profesional</a></li>
+                  <li><a href="sistema/registro_niño.php">Registro niño</a></li>
+   
+              </ul>         
+          </li>
+          
+          <!--<li class="botonNav"> <a href="sistema/registro_usuario.php"><span class="icon-compose"></span>Suscribirse</a></li>
+          --><li class="botonNav"> <a href="#" onclick="MostrarLogin()"><span class="icon-user"></span>Ingresar</a></li>
         </ul>
       </div>  
     </nav>

@@ -18,6 +18,10 @@
 	<title>Lista de usuarios</title>
 </head>
 <body>
+<div class="bg-secondary pt-1 pb-1 pl-3"><a href="<?php
+ 	echo './';
+	?>"><button type="button" class="btn btn-success">SALIR</button></a></div>
+
 	<section id="containerU">
 		
 		<div class= "listaUS">
