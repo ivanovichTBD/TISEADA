@@ -5,16 +5,13 @@
     header("location: ./");
 }
 */
-
 include "../conexion.php";
 if(!empty($_POST))
 {
 //    include "../conexion.php";
     $alert='';
-    echo $_POST['area_usuario'];
     if(empty($_POST['nombre']) || empty($_POST['edad']) || empty($_POST['email']) || empty($_POST['usuario']) || empty($_POST['clave']) || empty($_POST['tipo_usuario']))
     {
-        echo "hllj";
         $alert='<p class="msg_error">Todos los campos son obligatorios.</p>';
     }else{
 
@@ -26,7 +23,6 @@ if(!empty($_POST))
         $clave  = md5($_POST['clave']);
         $tipo_usuario  = $_POST['tipo_usuario'];
         $area_usuario = $_POST['area_usuario'];
-echo $area_usuario;
         $query = mysqli_query($conection,"SELECT * FROM usuario WHERE usuario = '$user' OR correo = '$email' ");
         $result = mysqli_fetch_array($query);
 
@@ -56,10 +52,14 @@ echo $area_usuario;
 <html lang="es">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8 width=device-width, initial-scale=1.0" name="viewport" content="width=device-width, initial-scale=1"/>
-		
+	<link rel="stylesheet" href="../bootstrap-4.3.1/dist/css/bootstrap.css">
 	<title>Registro Usuario</title>
 	
 </head>
+<div class="bg-secondary pt-1 pb-1 pl-3"><a href="<?php if($_SESSION['active']='false'){
+	echo '../';
+}else{echo './';}?>"><button type="button" class="btn btn-success">SALIR</button></div>
+
 <div class="cur">
 
 <h1> <center>Registro de Usuarios</center></h1>
@@ -75,6 +75,7 @@ echo $area_usuario;
         <input type="name" id="nombre" name="nombre" required  placeholder="Nombre Completo"
         pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,50}" 
         title="Ingresa solo letras, maximo 5 palabras" required/>
+        
       </div>
     </div>
     <div class="row">
@@ -160,7 +161,7 @@ echo $area_usuario;
       <div class="col-75">
 	  <?php 
 
-					$query_tipo_usuario = mysqli_query($conection,"SELECT * FROM tipo_usuario WHERE ID_TIPOUSUARIO!=1");
+					$query_tipo_usuario = mysqli_query($conection,"SELECT * FROM tipo_usuario WHERE ID_TIPOUSUARIO!=1 AND ID_TIPOUSUARIO!=4");
 mysqli_close($conection);
 					$result_tipo_usuario = mysqli_num_rows($query_tipo_usuario);
 					
@@ -200,16 +201,7 @@ mysqli_close($conection);
 
 
 	
-	<script>
-	function salir(){
-		var varia=window.location.href;
-		var comp="http://localhost:88/TISEADA/sistema/registro_usuario.php";
-		console.log(varia);
-		if(varia==comp){
-			return location.href="./"
-		}
-	}
-	</script>
+	
 	
 </div>
 

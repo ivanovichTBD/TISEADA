@@ -35,6 +35,10 @@
 
 	<?php // include "includes/header.php"; ?>
     <br>
+    <div class="bg-secondary pt-1 pb-1 pl-3"><a href="<?php
+ 	echo './';
+	?>"><button type="button" class="btn btn-success">SALIR</button></a></div>
+
     <h1><center>ESCOGE UNA PLANTILLA</center></h1>
        <center><h4>"Click en una imagen para descargar"</h4></center>
     <div class="m-4">

@@ -11,6 +11,24 @@ $alert = '';
    
        header('location: sistema/');
     }else{
+        if(isset($_GET['usuario']) && isset($_GET['clave'])){
+           // $us=@mysqli_real_escape_string($conection, $_GET['usuario']);
+           require_once "conexion.php";
+//$pas=md5(@mysqli_real_escape_string($conection, $_GET['clave']));
+           $us=$_GET['usuario'];
+            $pas=$_GET['clave'];
+            $query = @mysqli_query($conection,"SELECT * FROM usuario WHERE USUARIO= $us AND CLAVE= $pas")or die(mysqli_error($conection));
+                $data = mysqli_fetch_array($query);
+                $_SESSION['active'] = 'true';
+                $_SESSION['idUser'] = $data['IDUSUARIO'];
+                $_SESSION['nombre'] = $data['NOMBRE'];
+                $_SESSION['email']  = $data['CORREO'];
+                $_SESSION['user']   = $data['USUARIO'];
+                $_SESSION['tipo_usuario']    = $data['ID_TIPOUSUARIO'];
+                
+              header('location: sistema/');
+              
+        }
     
         if(!empty($_POST))
         {
@@ -25,7 +43,7 @@ $alert = '';
                 $user = @mysqli_real_escape_string($conection, $_POST['usuario']);
                 $pass = md5(@mysqli_real_escape_string($conection, $_POST['clave']));
     
-                $query = @mysqli_query($conection,"SELECT * FROM usuario WHERE usuario= '$user' AND clave = '$pass'");
+                $query = @mysqli_query($conection,"SELECT * FROM usuario WHERE usuario= '$user' AND clave = '$pass'")or die(mysqli_error($conection));
                 @mysqli_close($conection);
                 $result = @mysqli_num_rows($query);
     
@@ -72,6 +90,9 @@ $alert = '';
     
     <main>
     <div class="contenido" id="contenido">
+    <?php //include "sistema/registro_usuario.php"; 
+    //include "sistema/registro_niño.php"?>
+        
         <?php // include "ComponentesPagPrincipal/subMenus.php"?>
         <div>
         <?php include "ComponentesPagPrincipal/cuerpo.php"?>
