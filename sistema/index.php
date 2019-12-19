@@ -32,6 +32,7 @@
 		include "crear_carta.php";
 		?>
 	<main style="height: 100vh;">
+	
 		<div class="contenido" id="contenido">
 			<?php include "anadirPalabrasEnCarta.php"; ?>
 		</div>

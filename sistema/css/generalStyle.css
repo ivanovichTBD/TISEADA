@@ -18,9 +18,10 @@
 
 }
 body{
-	
-	background:rgb(33, 177, 175);
+	background-image: radial-gradient(ellipse farthest-corner at 50% -60% , #e8ff00 0%,#00d5ffb7 50%, #090979b7 95%);
+    background-attachment: fixed;
 }
+
 h1, h2, h3, h4, h5, h6 {
     font-family: 'arial';
     font-weight: bold;
@@ -106,7 +107,7 @@ header{
 	
 }
 .optionsBar span {
-	width: 50px;
+	/*width: 50px;*/
     color: #FFF;
     font-size: 12pt;
     font-family: 'GothamBook';
@@ -121,9 +122,10 @@ header{
 }
 .close{
 	width: 30px;
-	height: 30px;
-	background: white;
-	border-radius: 50px;
+    height: 30px;
+    background: #ffffff2e;
+    border-radius: 50px;
+    opacity: inherit;
 }
 .optionsBar a {
     display: -webkit-flex;
@@ -246,7 +248,7 @@ ul{
 }
 #container{
 	
-	padding-top: 125px;
+	/*padding-top: 125px;*/
 }
 #iframe{
 	width: 100%;
@@ -368,8 +370,8 @@ input,select{
 	margin: 15px auto;
 }
 .alert{
-	width: 100%;
-	background: #66e07d66;
+	/*width: 100%;*/
+/*	background: #66e07d66;*/
 	border-radius: 6px;
 	margin: 20px auto;
 }
@@ -377,7 +379,10 @@ input,select{
 	color: #e65656;
 }
 .msg_save{
-	color: #126e00;
+	color: #368726;
+    font-size: 18px;
+    /*background: #a0ca20a3;*/
+    font-weight: bold;
 }
 .alert p{
 	padding: 10px;
@@ -385,7 +390,7 @@ input,select{
 
 /*********FORMATO CONTENIDO CUERPO******/
 .contenido{
-    margin: 210px 5px 0px 5px;
+    /*margin: 210px 5px 0px 5px;*/
   display: flex;
   justify-content: space-between;
 }
@@ -509,13 +514,10 @@ input[type="password"]:focus {
 }
 
 /*=============== LISTA USUARIO (TABLAS O LISTAS) =============*/
-.listaUS{
-	margin: 20px;
-}
 
-#containerU h1{
+.listaUS h1{
 	font-size: 30px;
-	color: rgb(70, 92, 123);
+	color: rgb(35, 43, 54);
 	font-style: italic;
 	display: inline-block;
 	letter-spacing: normal;
@@ -786,6 +788,23 @@ table td{
 	border: none;
 	margin: 0px;
 	padding: 0px;
+}
+
+
+#container .box-ed{
+	padding-top: 10px;
+   }
+
+/*PARA REDACTAR CARTA*/
+.image-trab{
+	width: 100%;
+    height: auto;
+    opacity: 0.92;
+    border-radius: 10px;
+    margin: 15px auto;
+}
+.margin-text{
+	margin: 15px auto;
 }
 
 /*****************************RESPONSIVE**************************/

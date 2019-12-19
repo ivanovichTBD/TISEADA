@@ -12,7 +12,7 @@
 <body>
 <div class="bg-secondary pt-1 pb-1 pl-3"><a href="<?php if($_SESSION['active']='false'){
 	echo '../';
-}else{echo './';}?>"><button type="button" class="btn btn-success">SALIR</button></div>
+}else{echo './';}?>"></a><button type="button" class="btn btn-success">SALIR</button></div>
 	<div class="container h-100">
 	
 		<div class="d-flex justify-content-center h-100">
