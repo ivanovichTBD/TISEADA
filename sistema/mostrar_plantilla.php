@@ -144,8 +144,8 @@
 h1,h4{
     color:white;
 }
-body{
+/*body{
     background:rgb(33, 177, 175);
-}
+}*/
 </style>
 

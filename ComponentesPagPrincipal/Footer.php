@@ -8,12 +8,12 @@
   <!-- botones sociales  -->
   <ul class="list-unstyled list-inline text-center">
     <li class="list-inline-item">
-      <a href="https://www.facebook.com/ControlZTIS/" class="btn-floating btn-fb mx-1">
+      <a href="https://www.facebook.com/ControlZTIS/" class="btn-floating btn-fb mx-1 ">
         <i class="fab fa-facebook-f">Facebook</i>
       </a>
     </li>
     <li class="list-inline-item">
-      <a href="https://twitter.com/Control95441167" class="btn-floating btn-tw mx-1">
+      <a href="https://twitter.com/Control95441167" class="btn-floating btn-tw mx-1 ">
         <i class="fab fa-twitter">twitter </i>
       </a>
     </li>
