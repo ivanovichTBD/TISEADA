@@ -2,6 +2,11 @@
 //	session_start();
 	if($_SESSION['tipo_usuario'] == 4)
 	{
+          /*function archivo(){
+            $nombreI=$_FILES['imagen']['name'];
+            $ruta   = $_FILES['imagen']['tmp_name']; 
+            echo $ruta;
+          }*/
 		//header("location: ./");
 	//}
 	/*
@@ -112,7 +117,7 @@ $alert=$_GET['sol'];
 ?>
 
   <!--mensaje de envio-->
-			<div class="alerta"><?php echo isset($alert) ? $alert : ''; ?></div>
+			<div class="alerta" id="alerta"></div>
 
          
         <div class="row" id="creaCart">
@@ -164,7 +169,7 @@ $(document).ready(function(){
  
  function load_unseen_notification(view = '')
  {
-  $.ajax({
+   $.ajax({
    url:"fetch.php",
    method:"POST",
    data:{view:view},
@@ -184,20 +189,23 @@ $(document).ready(function(){
  
  $('#comment_form').on('submit', function(event){
   event.preventDefault();
-  if($('#titulo').val() != '' && $('#asunto').val() != '')
+  if($('#titulo').val() != '' && $('#asunto').val() != '' && $('#imagen').val()!='')
   {
     event.preventDefault();
-   var form_data = $(this).serialize();
-   console.log(form_data);
+   //var form_data = $(this).serialize()+'&ruta='+imag;
    $.ajax({
     url:"insert.php",
     method:"POST",
-    data:form_data,
+    data: new FormData(this),
+            contentType: false,
+            cache: false,
+            processData:false,          
+    //data:form_data,//{Imagen:imag},
     success:function(data)
     {
-      console.log(data);
-     $('#comment_form')[0].reset();
-     load_unseen_notification();
+       $('#alerta').html(data);//console.log(data);
+       $('#comment_form')[0].reset();
+       load_unseen_notification();
     }
    });
   }

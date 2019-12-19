@@ -5,7 +5,7 @@
 	}*/
 	session_start();
 		$idusuario=$_SESSION['idUser'];
-		
+		$_SESSION['active']='true';
 		include '../conexion.php';
 			$query = mysqli_query($conection,"select C.* , CC.CATEGORIA from carta C, usuario_carta UC ,usuario U,categoria_carta CC  WHERE UC.IDUSUARIO=U.IDUSUARIO and UC.ID_CARTA=C.ID_CARTA and UC.IDUSUARIO='$idusuario' and ID_TIPO_CARTA=1 and CC.ID_CATEGORIA=C.ID_CATEGORIA") ;
 			
@@ -20,6 +20,9 @@
     <title>Lista de Cartas</title>
 </head>
 <body>
+<div class="bg-secondary pt-1 pb-1 pl-3"><a href="<?php
+ 	echo './';
+	?>"><button type="button" class="btn btn-success">SALIR</button></a></div>
 
 	<section id="containerU container">
 		

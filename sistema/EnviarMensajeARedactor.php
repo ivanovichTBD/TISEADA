@@ -9,10 +9,18 @@ include "../conexion.php";
         
                  
 ?>
-				
+				<div class="bg-secondary pt-1 pb-1 pl-3"><a href="<?php
+ 	echo './';
+	?>"><button type="button" class="btn btn-success">SALIR</button></a></div>
+
 <h2>Chat Messages</h2>
 <?php 
-$listaMensaje=mysqli_query($conection,"SELECT S.ID_CARTA ,S.ASUNTO,S.TITULO,S.CONTENIDO,S.HORA_MENSAJE, U.IDUSUARIO FROM carta S,usuario_carta U WHERE ID_TIPO_CARTA=3 AND S.ID_CARTA=U.ID_CARTA AND IDUSUARIO='$mensajero'");
+$listaMensaje=mysqli_query($conection,"SELECT S.ID_CARTA ,S.ASUNTO,S.TITULO,S.CONTENIDO,S.HORA_MENSAJE, U.IDUSUARIO 
+FROM carta S,usuario_carta U 
+WHERE ID_TIPO_CARTA=3 AND S.ID_CARTA=U.ID_CARTA AND IDUSUARIO=$mensajero AND S.ID_CARTA IN(
+SELECT c.ID_CARTA
+FROM carta c,usuario_carta us 
+WHERE c.ID_TIPO_CARTA=3 AND c.ID_CARTA=us.ID_CARTA AND us.IDUSUARIO='$usuario')");
 while ($sms = mysqli_fetch_array($listaMensaje)) {
     
 
@@ -39,16 +47,16 @@ while ($sms = mysqli_fetch_array($listaMensaje)) {
 echo "Redactando";
 }
   ?></h3>
-  <h1 class="formulario__titulo">Enviar Mensaje a
+  <h1 class="formulario__titulo">Enviar Mensaje a :
    <?php 
             
             echo $result['NOMBRE'];
             
    ?>
    </h1>
-  <input type="text" class="formulario__input" name="asunto">
+  <input type="text" class="formulario__input" name="asunto" placeholder="Asunto">
   <label for="" class="formulario__label" >Asunto</label>
-  <input type="text" class="formulario__input" name="mensaje">
+  <input type="text" class="formulario__input" name="mensaje" placeholder="Escribe tu mensaje aqui...">
   <label for="" class="formulario__label" >Mensaje</label>
   <input type="submit" class="formulario__submit">
 </form>

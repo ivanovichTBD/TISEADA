@@ -1,6 +1,6 @@
-<?php 
-	session_start();
- ?>
+<?php session_start();
+	if($_SESSION['active']=='true'){	
+	?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -59,3 +59,7 @@
 </body>
 
 </html>
+<?php }
+else {
+header('location: ../index.php');
+}?>

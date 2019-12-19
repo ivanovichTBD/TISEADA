@@ -22,7 +22,7 @@
 			$user   = $_POST['usuario'];
 			$clave  = md5($_POST['clave']);
 			$tipo_usuario    = $_POST['tipo_usuario'];
-
+			echo $tipo_usuario;
 
 			$query = mysqli_query($conection,"SELECT * FROM usuario 
 													   WHERE (USUARIO = '$user' AND IDUSUARIO != $idUsuario)
@@ -37,13 +37,12 @@
 				if(empty($_POST['clave']))
 				{
 
-					$sql_update = mysqli_query($conection,"UPDATE USUARIO
-															SET NOMBRE = '$nombre', correo='$email',usuario='$user',tipo_usuario='$tipo_usuario'
-															WHERE idusuario= $idUsuario ");
+					$sql_update = mysqli_query($conection,"UPDATE usuario
+															SET NOMBRE = '$nombre', CORREO='$email',USUARIO='$user',ID_TIPOUSUARIO='$tipo_usuario'
+															WHERE IDUSUARIO= $idUsuario ");
 				}else{
 					$sql_update = mysqli_query($conection,"UPDATE usuario
-															SET nombre = '$nombre', correo='$email',usuario='$user',clave='$clave', tipo_usuario='$tipo_usuario'
-															WHERE idusuario= $idUsuario ");
+															SET NOMBRE = '$nombre', CORREO='$email',USUARIO='$user',CLAVE='$clave', ID_TIPOUSUARIO='$tipo_usuario' WHERE IDUSUARIO= $idUsuario ");
 
 				}
 
@@ -69,7 +68,7 @@
 	$iduser = $_REQUEST['id'];
 $sql=mysqli_query($conection,"SELECT u.IDUSUARIO, u.NOMBRE,u.CORREO,u.USUARIO,u.ID_TIPOUSUARIO,r.TIPO_USUARIO
 FROM usuario as u, tipo_usuario as r
-WHERE u.IDUSUARIO='$iduser'");
+WHERE u.IDUSUARIO='$iduser' and u.ID_TIPOUSUARIO=r.ID_TIPOUSUARIO");
 	/*$sql= mysqli_query($conection,"SELECT u.IDUSUARIO, u.NOMBRE,u.CORREO,u.USUARIO, (u.ID_TIPOUSUARIO) as ID_TIPOUSUARIO, (r.TIPO_USUARIO) as TIPO_USUARIO
 									FROM usuario u
 									INNER JOIN tipo_usuario r
@@ -90,16 +89,17 @@ WHERE u.IDUSUARIO='$iduser'");
 			$usuario = $data['USUARIO'];
 			$id_tipousuario   = $data['ID_TIPOUSUARIO'];
 			$tipo_usuario     = $data['TIPO_USUARIO'];
-
-			if($id_tipousuario==1){  /*seria el Admin*/
+//echo $id_tipousuario;
+//echo $tipo_usuario;
+			//if($id_tipousuario==1){  /*seria el Admin*/
 				$option = '<option value="'.$id_tipousuario.'" select>'.$tipo_usuario.'</option>';
-			}else if($id_tipousuario == 2){  /*seria el editor*/
-				$option = '<option value="'.$id_tipousuario.'" select>'.$tipo_usuario.'</option>';	
-			}else if($id_tipousuario == 3){  /*seria el especialista*/
+			//}else if($id_tipousuario == 2){  /*seria el editor*/
+			/*	$option = '<option value="'.$id_tipousuario.'" select>'.$tipo_usuario.'</option>';	
+			}else if($id_tipousuario == 3){ */ /*seria el especialista*/
+				/*$option = '<option value="'.$id_tipousuario.'" select>'.$tipo_usuario.'</option>';
+			}elseif ($id_tipousuario == 4) *//*seria el niño*//*{
 				$option = '<option value="'.$id_tipousuario.'" select>'.$tipo_usuario.'</option>';
-			}elseif ($id_tipousuario == 4) /*seria el niño*/ {
-				$option = '<option value="'.$id_tipousuario.'" select>'.$tipo_usuario.'</option>';
-			}
+			}*/
 
 
 
@@ -116,7 +116,7 @@ WHERE u.IDUSUARIO='$iduser'");
 	<title>Actualizar Usuario</title>
 </head>
 <body>
-	<?php include "includes/header.php"; ?>
+	<?php //include "includes/header.php"; ?>
 	<section id="container">
 		
 		<div class="form_register">
@@ -168,6 +168,6 @@ WHERE u.IDUSUARIO='$iduser'");
 
 
 	</section>
-	<?php include "includes/footer.php"; ?>
+	<?php //include "includes/footer.php"; ?>
 </body>
 </html>

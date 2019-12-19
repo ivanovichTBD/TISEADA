@@ -23,5 +23,4 @@
 
 
 	<link rel="stylesheet" type="text/css" href="css/generalStyle.css">
-	
-	<?php include "functions.php"; ?>
+  		<?php include "functions.php"; ?>

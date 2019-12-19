@@ -1,20 +1,17 @@
-<?php
+<?php session_start();
 //session_start();
 /*if($_SESSION['tipo_usuario'] >= 1)
 {
     header("location: ./");
 }
 */
-
 include "../conexion.php";
 if(!empty($_POST))
 {
 //    include "../conexion.php";
     $alert='';
-    echo $_POST['area_usuario'];
     if(empty($_POST['nombre']) || empty($_POST['edad']) || empty($_POST['email']) || empty($_POST['usuario']) || empty($_POST['clave']) || empty($_POST['tipo_usuario']))
     {
-        echo "hllj";
         $alert='<p class="msg_error">Todos los campos son obligatorios.</p>';
     }else{
 
@@ -26,7 +23,6 @@ if(!empty($_POST))
         $clave  = md5($_POST['clave']);
         $tipo_usuario  = $_POST['tipo_usuario'];
         $area_usuario = $_POST['area_usuario'];
-echo $area_usuario;
         $query = mysqli_query($conection,"SELECT * FROM usuario WHERE usuario = '$user' OR correo = '$email' ");
         $result = mysqli_fetch_array($query);
 
@@ -56,10 +52,14 @@ echo $area_usuario;
 <html lang="es">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8 width=device-width, initial-scale=1.0" name="viewport" content="width=device-width, initial-scale=1"/>
-		
+	<link rel="stylesheet" href="../bootstrap-4.3.1/dist/css/bootstrap.css">
 	<title>Registro Usuario</title>
 	
 </head>
+<div class="bg-secondary pt-1 pb-1 pl-3"><a href="<?php if($_SESSION['active']='false'){
+	echo '../';
+}else{echo './';}?>"><button type="button" class="btn btn-success">SALIR</button></div>
+
 <div class="cur">
 
 <h1> <center>Registro de Usuarios</center></h1>
@@ -72,7 +72,10 @@ echo $area_usuario;
         <label for="nombre">Nombre Completo</label>
       </div>
       <div class="col-75">
-        <input type="name" id="nombre" name="nombre" required placeholder="Nombre Completo" pattern="[a-z]{3,40}"/>
+        <input type="name" id="nombre" name="nombre" required  placeholder="Nombre Completo"
+        pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,50}" 
+        title="Ingresa solo letras, maximo 5 palabras" required/>
+        
       </div>
     </div>
     <div class="row">
@@ -80,7 +83,8 @@ echo $area_usuario;
         <label for="edad">Edad</label>
       </div>
       <div class="col-75">
-        <input type="number" id="edad" name="edad" placeholder="Edad" min="8" max="99" pattern="\d+" required>
+        <input type="number" id="edad" name="edad" placeholder="Edad" min="6" max="99"  
+               required title="Ingresa solo numeros">
       </div>
     </div>
 	<div class="row">
@@ -88,31 +92,36 @@ echo $area_usuario;
         <label for="Telefono">Teléfono</label>
       </div>
       <div class="col-75">
-        <input type="text" id="telefono" name="telefono" pattern="[0-9]{7,8}" placeholder="Teléfono o Celular">
+        <input type="number" id="telefono" name="telefono" pattern="[0-9]{6,10}" placeholder="Teléfono o Celular"
+               title="Ingresa solo numeros, minimo 6 y maximo 10" required minlength="6">
       </div>
     </div>
 	<div class="row">
       <div class="col-25">
-        <label for="correo">Corréo Electronico</label>
+        <label for="correo">Correo Electronico</label>
       </div>
       <div class="col-75">
-        <input type="email" id="correo" name="email" placeholder="Correo Electronico" required>
+        <input type="email" id="correo" name="email" placeholder="Correo Electronico" required 
+               title="Ingresa solo formatos de correos válidos">
       </div>
     </div>
 	<div class="row">
       <div class="col-25">
-        <label for="usuario">Usuario</label>
+        <label for="usuario">Usuario <h6>(opcional con letras y numeros, minimo 5 caracteres)</h6></label>
       </div>
       <div class="col-75">
-        <input type="text" id="usuario" name="usuario" placeholder="Usuario o Apodo">
+        <input type="text" id="usuario" name="usuario" required placeholder="Nombre de usuario o Apodo"
+               pattern="[a-zA-Z0123456789.'-]{5,20}" 
+               title="Ingreso opcional de letras y numeros, minimo 5 caracteres y maximo 20">
       </div>
     </div>
 	<div class="row">
       <div class="col-25">
-        <label for="clave">Contraseña</label>
+        <label for="clave">Contraseña <h6>(minimo 8 caracteres)</h6></label>
       </div>
       <div class="col-75">
-        <input type="password" id="clave" name="clave" placeholder="Clave de Acceso" minlength="8" required>
+        <input type="password" id="clave" name="clave" placeholder="Clave de Acceso" minlength="8" required
+        title="Ingreso opcional de letras y numeros, minimo 8 caracteres">
       </div>
     </div>
     <div class="row">
@@ -152,7 +161,7 @@ echo $area_usuario;
       <div class="col-75">
 	  <?php 
 
-					$query_tipo_usuario = mysqli_query($conection,"SELECT * FROM tipo_usuario");
+					$query_tipo_usuario = mysqli_query($conection,"SELECT * FROM tipo_usuario WHERE ID_TIPOUSUARIO!=1 AND ID_TIPOUSUARIO!=4");
 mysqli_close($conection);
 					$result_tipo_usuario = mysqli_num_rows($query_tipo_usuario);
 					
@@ -175,11 +184,14 @@ mysqli_close($conection);
 				</select>
       </div>
     </div>
-	<div class="row">
+	<?php if($_SESSION['active']=='true'){
+?>
+  <div class="row">
 	<p>¿Eres administrador, quieres crear un nuevo tipo de Usuario? | 
 	<a align="center" href="nuevo_tipousuario.php">Click Aquí</a></p>
 	</div>
-    
+  <?php }?> 
+  <br>   
     <div class="row">
       <input type="submit" value="Crear Usuario">
     </div>
@@ -189,22 +201,15 @@ mysqli_close($conection);
 
 
 	
-	<script>
-	function salir(){
-		var varia=window.location.href;
-		var comp="http://localhost:88/TISEADA/sistema/registro_usuario.php";
-		console.log(varia);
-		if(varia==comp){
-			return location.href="./"
-		}
-	}
-	</script>
+	
 	
 </div>
 
 
 <style>
-	
+h6{
+  color: #00BCD4;
+}
 	.cur{
 		background: url(img/cover4.jpg) no-repeat 0px 0px;
 		font-family: 'Raleway', sans-serif;
