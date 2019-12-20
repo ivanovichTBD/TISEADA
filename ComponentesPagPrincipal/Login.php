@@ -10,7 +10,7 @@
                 <div class="group">
                     <i class="fas fa-user"></i>
 
-                    <input name="usuario" type="text" class="form-control" placeholder="Nombre de usuario o apodo" required pattern="[a-zA-Z0123456789.'-]{5,20}" 
+                    <input name="usuario" type="text" class="form-control" placeholder="Nombre de usuario o apodo" required  
                            title="Tu nombre de usuario debe ser letras o numeros, minimo 5, maximo 20"/>
 
                 </div>
@@ -20,7 +20,7 @@
                 <div class="group">
                     <i class="fas fa-unlock"></i>
                     <input name="clave" type="password" class="form-control inputTextPass " placeholder="Contraseña" required 
-                           minlength="8" title="Tu contraseña tiene que ser minimo 8 caracteres"/>
+                           />
                 </div>
             </div>
             <button class="botoningreso"type="submit">INGRESAR</button>
