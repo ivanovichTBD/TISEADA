@@ -97,8 +97,11 @@ $alert = '';
         <div>
         <?php include "ComponentesPagPrincipal/cuerpo.php"?>
        </div>
-        <?php include "sistema/mostrar_boletin.php";?>
+       <div>
+       <?php include "sistema/mostrar_boletin.php";?>
 
+       </div>
+        
         <?php include "ComponentesPagPrincipal/anexo.php"?>
         <?php //include "sistema/registro_usuario.php"; ?>
     
