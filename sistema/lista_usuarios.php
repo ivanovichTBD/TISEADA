@@ -18,9 +18,12 @@
 	<title>Lista de usuarios</title>
 </head>
 <body>
-<div class="bg-secondary pt-1 pb-1 pl-3"><a href="<?php
+<div class="fixed-top trabajadores">
+			<?php include "includes/header.php"; ?>
+		</div>
+<!-- <div class="bg-secondary pt-1 pb-1 pl-3"><a href="<?php
  	echo './';
-	?>"><button type="button" class="btn btn-success">SALIR</button></a></div>
+	?>"><button type="button" class="btn btn-success">SALIR</button></a></div> -->
 
 	<section id="containerU">
 		
@@ -35,6 +38,7 @@
 			</form>
 		<?php }?>
 		</div>
+		<br>
 
 	<div class="table-responsive">
 		<table class="table">
@@ -117,6 +121,7 @@
 
 
 		</table>
+		<br>
 		</div>
 		<div class="paginador">
 			<ul>
@@ -147,7 +152,15 @@
 			?>
 			</ul>
 		</div>
+		<br>
+		<br>
 	</section>
+
+	<footer>
+		<div class="Footertrabajadores">
+						<?php include "../ComponentesPagPrincipal/Footer.php"; ?>
+		</div>
+	</footer>
 </body>
 </html>
 				<?php }

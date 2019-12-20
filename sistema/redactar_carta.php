@@ -58,33 +58,36 @@ if(!empty($_POST))
 <html lang="es">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-	<title>Redactar Carta</title>
+	<?php include "includes/scripts.php"; ?>
+	<title>MENSAJERO</title>
 </head>
 <body>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+<div class="fixed-top trabajadores">
+			<?php include "includes/header.php"; ?>
+		</div>
 	
-	<section id="container">
-		
-		<center><h1>Redactar y enviar artículo</h1></center><br>
+	<section id="container" class="box-ed">
+	<div class= "listaUS">
+		<h1>Redactar y enviar artículo</h1>
+	</div>
 		<!--formulario para redactar y enviar-->		
 		
-			<img src="img/portada_redactar_carta.jpg" alt="">
-			<center><form action="" method="POST" enctype="multipart/form-data">
+			<img class="image-trab" src="img/portada_redactar_carta.jpg" alt="">
+
+			<div  class="alerta"><?php echo isset($alert) ? $alert : ''; ?></div>
+
+			<form action="" method="POST" enctype="multipart/form-data">
                 
-                <div class="col-md-6" id="reply">
-                    <label for="titulo">Titulo de la carta</label>
-                    <input class="form-control" required type="text" id="titulo" name="titulo" placeholder="Titulo">
-                <div id="message">
-                    <label for="contenido">Contenido de la carta</label>
+                <div  id="reply">
+					<div class="col-md-2">
+						<label class="margin-text" for="titulo">Titulo del articulo</label>
+					</div>
+					<div class="col-md-10">
+						<input class="form-control margin-text" required type="text" id="titulo" name="titulo" placeholder="Titulo">
+					</div>
+                <div  class="col-md-12" id="message">
+                    <label class="margin-text" for="contenido">Contenido del articulo</label>
                     <textarea  class="texto_area" required id="contenido" name="contenido"></textarea>
                 </div>
                 </div>
@@ -99,10 +102,11 @@ if(!empty($_POST))
                 </div>
 					<br>
 					<br>
-				<button class="btn btn-primary btn-lg active" type="submit">Enviar artìculo al editor</button>
+				<button class="btn btn-primary btn-lg active margin-text" type="submit">Enviar artìculo al editor</button>
 				
-			</form>	</center>
-			<div  class="alerta col-md-6"><?php echo isset($alert) ? $alert : ''; ?></div>
+			</form>
+
+		
                 
 		<!--fin formulario para redactar y enviar-->
 		<table class="table table-hover ">
@@ -197,32 +201,25 @@ if(!empty($_POST))
 			<?php } ?>
 			</ul>
 		</div>
-		<br>
-		<br>
-		<br>
-
 
 	</section>
+
+	<footer>
+		<div class="Footertrabajadores">
+						<?php include "../ComponentesPagPrincipal/Footer.php"; ?>
+		</div>
+	</footer>
 	
 </body>
 </html>
 
 <style>
-	h1{
-		font-family:Verdana;
-		color:white;
-		font-size:45px;
-		
-	}
-body{
-	background:rgb(33, 177, 175);
-	font-family:Helvetica;
-}
+
 .texto_area{
   display : block;
   padding : 10px;
   margin  : 10px 0 0 -10px;
-  width   : 530px;
+  width   :100%;
   height  : 245px;
   border-radius:4px;
   resize  : none;
@@ -271,9 +268,5 @@ body{
   width  : auto;
   height:35px;
 }
-img{
-	width: 100%;
-  height: auto;
-  opacity: 0.92;
-}
+
 </style>

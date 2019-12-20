@@ -20,9 +20,23 @@
     <title>Lista de Cartas</title>
 </head>
 <body>
-<div class="bg-secondary pt-1 pb-1 pl-3"><a href="<?php
+<!--<div class="bg-secondary pt-1 pb-1 pl-3"><a href="<?php
  	echo './';
 	?>"><button type="button" class="btn btn-success">SALIR</button></a></div>
+-->
+		<!-- cambio de estilo cabecera segun tipo de usuario-->	
+	<?php if($_SESSION['tipo_usuario'] !=4){?>
+		<div class="fixed-top trabajadores">
+			<?php include "includes/header.php"; ?>
+		</div>
+	<?php } ?>
+
+	<?php if($_SESSION['tipo_usuario'] == 4){?>
+		<div class="fixed-top usuarioNiño">
+			<?php include "includes/header.php"; ?>
+		</div>
+	<?php } ?>
+	<!-- FIN cambio de estilo cabecera segun tipo de usuario-->	
 
 	<section id="containerU container">
 		
@@ -126,6 +140,12 @@
 			</div>
 		</div>
 	</section>
+
+	<footer>
+		<div class="Footertrabajadores">
+						<?php include "../ComponentesPagPrincipal/Footer.php"; ?>
+		</div>
+	</footer>
 </body>
 </html>
 <script src="js/functions.js"></script>
